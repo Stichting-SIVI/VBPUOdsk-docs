@@ -1,6 +1,6 @@
 # VBPUOdsk-docs
 
-This repository (https://dma61.github.io/VBPUOdsk-docs/) 
+This repository (https://stichting-sivi.github.io/VBPUOdsk-docs/)
 
 contains the **unofficial English translation** of the documentation 
 
