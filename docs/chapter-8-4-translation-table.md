@@ -28,13 +28,13 @@ In the consultation report, attribute names other than those in the final AFD 2.
 <th>Pensionfund ID</th>
 <td>party.pensionProvider</td>
 <td>puvCode</td>
-<td>ID of the pension provider (PUV code) / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
+<td>ID of the pension provider (PUV code) / Unique reference key assigned to an entity.</td>
 </tr>
 <tr>
 <th>Pension scheme ID i</th>
 <td>pension.scheme</td>
 <td>refKey</td>
-<td>ID of the pension scheme / (Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.))</td>
+<td>ID of the pension scheme / (Unique reference key assigned to an entity.)</td>
 </tr>
 <tr>
 <th>Capital i</th>
@@ -112,7 +112,7 @@ In the consultation report, attribute names other than those in the final AFD 2.
 <th>value date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>valueDate</td>
-<td>Currency date. (NL: Valutadatum)</td>
+<td>Currency date.</td>
 </tr>
 <tr>
 <th>Date</th>
@@ -389,7 +389,7 @@ date i</th>
 <th>portfolio ID i,n</th>
 <td>investment.portfolio</td>
 <td>refKey</td>
-<td>Investment portfolio ID / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
+<td>Investment portfolio ID / Unique reference key assigned to an entity.</td>
 </tr>
 <tr>
 <th>Total Market Value start I,n</th>
