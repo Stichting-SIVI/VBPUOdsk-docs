@@ -155,7 +155,7 @@ When interpreting the tables below, the following is important:
 
 - Data type string: in the tables below, the maximum number of positions is stated for strings, unless reference is made to a code list or an enumeration. In those cases “length” is empty.
 
-- Data type decimal: by default at most two decimal places (1E-2). Any exception is stated in the data type column.
+- Data type decimal: by default at most 2 decimal places (1E-2). Any exception is stated in the data type column.
 
 The attribute names differ from the naming in the consultation document; they are now – partly – designed on the basis of the AFD 2.0 conventions. Appendix 8.4 contains the “Translation table of functional attributes to AFD2.0 attributes”.
 
