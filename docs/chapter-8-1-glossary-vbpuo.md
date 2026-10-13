@@ -107,7 +107,7 @@
 <tr>
 <th>Cohorts (cohorten)</th>
 <td></td>
-<td><p>The term refers to target groups. These can be composed in all kinds of ways. Age target groups, but differentiation is also possible by, for example, active participant, deferred participant, retired, incapacitated and/or type of employment</p>
+<td><p>The term refers to target groups. These can be composed in all kinds of ways. Age target groups, but differentiation is also possible by, for example, active participant, deferred participant, retired, occupationally disabled and/or type of employment</p>
 <p>A cohort can be the basis on which a pension provider links participants to an appropriate rebalancing system.</p></td>
 </tr>
 <tr>

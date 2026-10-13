@@ -194,7 +194,7 @@ The use of the standard forms part of the individual agreements between pension 
 
 The standard is owned by the Pensioenfederatie. Management has been placed with SIVI, which acts on behalf of the Steering Group DSO. The substantive further development takes place in consultation with the sector through an Advisory Group (KBG).
 
-The precise organisation of the management, the roles, the change procedure and the working method of the Advisory Group are laid down in the document "Organisation of the Management of the Standard Asset Management Pension Administration". This document is the leading source for all governance-related agreements.
+The precise organisation of the management, the roles, the change procedure and the working method of the Advisory Group are laid down in the document "Organisation of the Management of the Standard Asset Management Pension Administration". This document is the authoritative source for all governance-related agreements.
 
 ### 2.9.2 Release Policy and Version Management
 

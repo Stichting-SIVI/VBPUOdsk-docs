@@ -1,4 +1,4 @@
-This is an unofficial, machine-assisted English translation. In case of differences, the [Dutch version](https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/) prevails.
+This is an unofficial, machine-assisted English translation. In case of differences, the [Dutch version](https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/) prevails. The figures are still in Dutch; English versions will follow.
 
 <div class="print-verberg">
 
@@ -45,7 +45,7 @@ Standard for data exchange between Asset Management and Pension Administration
 <td><a href="https://github.com/Stichting-SIVI/VBPUOdsk">https://github.com/Stichting-SIVI/VBPUOdsk</a></td>
 </tr>
 <tr>
-<td>Dutch version (leading)</td>
+<td>Dutch version (authoritative)</td>
 <td><a href="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/">https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/</a> (official; in case of differences the Dutch version prevails)</td>
 </tr>
 <tr>

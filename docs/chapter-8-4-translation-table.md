@@ -515,7 +515,7 @@ date i</th>
 <th>Price i,j</th>
 <td>financialTransaction.trade</td>
 <td>tradePrice</td>
-<td>Purchase price / rate</td>
+<td>Purchase price / quoted price</td>
 </tr>
 <tr>
 <th>Switch type</th>

@@ -52,11 +52,11 @@ The pension provider is usually supported by the fiduciary manager (FM) with reg
 
 **Cohorts**
 
-A cohort is an administrative grouping of participants who, on the basis of the lifecycle principle — less investment and interest rate risk as the retirement date or the end date of the investment horizon approaches — have the same investment allocation. A cohort can be used to distinguish groups of participants. This can be based on time (age, period until retirement, etc.), but also on a characteristic such as active, deferred or incapacitated. The number of cohorts is in principle unlimited: as many are created as are needed to distinguish groups of participants that require their own investment mix. The distribution of the weights (percentages) is usually made by the FM.
+A cohort is an administrative grouping of participants who, on the basis of the lifecycle principle — less investment and interest rate risk as the retirement date or the end date of the investment horizon approaches — have the same investment allocation. A cohort can be used to distinguish groups of participants. This can be based on time (age, period until retirement, etc.), but also on a status such as active, deferred or unable to work due to disability. The number of cohorts is in principle unlimited: as many are created as are needed to distinguish groups of participants that require their own investment mix. The distribution of the weights (percentages) is usually made by the FM.
 
 Below is a simple example with a division into three lifecycles based on age and the agreed allocation to equities and bonds.
 
-|  | **Lifecycle defensive** |  | **Lifecycle neutral** |  | **Lifecycle offensive** |  |
+|  | **Lifecycle defensive** |  | **Lifecycle neutral** |  | **Lifecycle aggressive** |  |
 |----|----|----|----|----|----|----|
 | **Cohort** | % Equities | % Bonds | % Equities | % Bonds | % Equities | % Bonds |
 | Age 39 | 90 | 10 | 95 | 5 | 100 | 0 |
@@ -99,7 +99,7 @@ For status, a distinction can be made between:
 
 - Accumulating versus receiving benefits.
 
-- Active/Deferred/Incapacitated (AO)/Receiving benefits/etc.
+- Active/Deferred/Occupationally disabled (AO)/Receiving benefits/etc.
 
 Netting of the investments takes place across the cohorts in accordance with the instructions for the investment transactions. The risk-sharing reserve is regarded as a separate cohort that invests in investment products according to its own investment policy.
 
@@ -109,7 +109,7 @@ Participants participate in cohorts according to the chosen lifecycle and the ch
 
 Four roles can be distinguished in that process — the same four that appear in the process flow of §4.3.1 and in Figure 8 and Figure 9.
 
-- The **PUO** is responsible for allocating the asset development, in accordance with the allocation rules set by the pension provider, to: the personal pension assets of participants, the risk-sharing reserve, any compensation deposit and possibly other reserves. To this end, the PUO processes changes in the participant file and the allocation of personal pension assets to cohorts. The composition of the cohorts takes into account the lifecycle the participant has chosen (offensive, neutral, defensive, etc.). Premiums paid in and possible settlements, such as with the risk-sharing reserve, are also taken into account. On the basis of these personal pension assets, benefits are projected in accordance with the principles of the pension provider. In addition, the PUO takes care of participant communication.
+- The **PUO** is responsible for allocating the asset development, in accordance with the allocation rules set by the pension provider, to: the personal pension assets of participants, the risk-sharing reserve, any compensation deposit and possibly other reserves. To this end, the PUO processes changes in the participant file and the allocation of personal pension assets to cohorts. The composition of the cohorts takes into account the lifecycle the participant has chosen (aggressive, neutral, defensive, etc.). Premiums paid in and possible settlements, such as with the risk-sharing reserve, are also taken into account. On the basis of these personal pension assets, benefits are projected in accordance with the principles of the pension provider. In addition, the PUO takes care of participant communication.
 
 - The **investment administrator (BA)**, also called asset service provider, keeps the independent investment administration of the investment pools for the pension provider. That administration has two layers:
 

@@ -155,7 +155,7 @@ When interpreting the tables below, the following is important:
 
 - Data type string: in the tables below, the maximum number of positions is stated for strings, unless reference is made to a code list or an enumeration. In those cases “length” is empty.
 
-- Data type decimal: in principle has a maximum of 2 places after the “,” (1E-2). Any deviation from this is stated in the data type column.
+- Data type decimal: by default at most two decimal places (1E-2). Any exception is stated in the data type column.
 
 The attribute names differ from the naming in the consultation document; they are now – partly – designed on the basis of the AFD 2.0 conventions. Appendix 8.4 contains the “Translation table of functional attributes to AFD2.0 attributes”.
 
@@ -660,7 +660,7 @@ See GitHub issue [#111](https://github.com/Stichting-SIVI/VBPUOdsk/issues/111).
 <tr><td>buySellId</td><td>Buy, sell or switch direction indicator</td><td>string</td><td class="vbt-td-c"></td><td>sell; buy; switchfrom; switchto</td></tr>
 <tr><td>tradeAmount</td><td>Positive amount of the transaction in the currency in which the investment is denominated; direction follows from buySellId</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
 <tr><td>tradeQuantity</td><td>Positive number of securities (units) to be traded in the transaction; direction follows from buySellId</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
-<tr><td>tradePrice</td><td>Purchase price / rate</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradePrice</td><td>Purchase price / quoted price</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
 <tr><td>switchType</td><td>Switch type; one-day or sequential</td><td>string</td><td class="vbt-td-c"></td><td>AFDSWI (1; 2)</td></tr>
 <tr><td>financialInformationRef</td><td>For switchfrom/switchto, refer here to the refKey of the other switch leg for the purpose of the consistency check.</td><td>array</td><td class="vbt-td-c"></td><td></td></tr>
 <tr><td>counterparty</td><td>Transfer Agent; the party that carries out the purchase/sale</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
