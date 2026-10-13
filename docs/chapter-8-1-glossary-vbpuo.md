@@ -72,7 +72,7 @@
 <tr>
 <th>Investment pool (beleggingspool)</th>
 <td></td>
-<td>An investment pool is a collection of investments in various funds or mandates that share a common characteristic. An example of this is the 'real assets investment pool', which invests in several real assets funds and/or mandates. Investment pools are intended to bundle and manage the investments of a group of investors. They offer investors the opportunity to diversify and spread risks by investing in different assets.</td>
+<td>An investment pool is a collection of investments in various funds or mandates that share a common characteristic. An example of this is the 'return-seeking assets investment pool' (zakelijke waarden), which invests in several return-seeking assets funds and/or mandates. Investment pools are intended to bundle and manage the investments of a group of investors. They offer investors the opportunity to diversify and spread risks by investing in different assets.</td>
 </tr>
 <tr>
 <th>Investment product (beleggingsproduct)</th>
