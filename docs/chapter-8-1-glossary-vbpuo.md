@@ -1,33 +1,4 @@
-## 8.1 Glossary / Abbreviation List Asset Management & Pension Administration
-
-> **Note:** The glossary table below is in Dutch. These are domain-specific terms from the Dutch pension sector.
->
-> **NL → EN Legend for table headers:**
->
-> | Dutch | English |
-> |-------|---------|
-> | Begrip | Term / Concept |
-> | Afkorting | Abbreviation |
-> | Omschrijving | Description |
-
-> **Key abbreviations used throughout this documentation:**
->
-> | Abbreviation | Dutch | English |
-> |---|---|---|
-> | PUO | Pensioenuitvoeringsorganisatie | Pension Administration Organization |
-> | VB | Vermogensbeheerder | Asset Manager |
-> | FM | Fiduciair manager | Fiduciary Manager |
-> | BA | Beleggingsadministrateur | Investment Administrator |
-> | SPR | Solidaire premieregeling | Solidarity Premium Scheme |
-> | FPR | Flexibele premieregeling | Flexible Premium Scheme |
-> | APF | Algemeen Pensioenfonds | General Pension Fund |
-> | ZAF | Zelf Administrerend Fonds | Self-Administering Fund |
-> | LDI | Liability-Driven Investment | Liability-Driven Investment |
-> | CVP/CVU | Collectieve uitkeringsfase | Collective Payout Phase |
-> | DC | Defined Contribution | Defined Contribution |
-> | DB | Defined Benefit | Defined Benefit |
-> | RTS | Rentetermijnstructuur | Interest Rate Term Structure |
-> | NAV | Net Asset Value | Net Asset Value |
+## 8.1 Glossary / List of Abbreviations Asset Management & Pension Administration
 
 <table>
 <colgroup>
@@ -37,212 +8,232 @@
 </colgroup>
 <thead>
 <tr>
-<th>Begrip</th>
-<th>Afkorting</th>
-<th>Omschrijving</th>
+<th>Term</th>
+<th>Abbreviation</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>Afdekkingspercentage, beschermingspercentage</th>
+<th>Hedge ratio, protection percentage (afdekkingspercentage, beschermingspercentage)</th>
 <td></td>
-<td>De mate waarin de rentegevoeligheid van op basis van persoonlijke vermogens geprognosticeerde uitkeringen wordt afgedekt.</td>
+<td>The extent to which the interest rate sensitivity of benefits projected on the basis of personal assets is hedged.</td>
 </tr>
 <tr>
-<th>Algemeen Pensioenfonds</th>
+<th>General Pension Fund (Algemeen Pensioenfonds)</th>
 <td>APF</td>
-<td>Algemeen Pensioenfonds (APF): Een APF is een pensioenuitvoerder die verschillende pensioenregelingen van verschillende werkgevers en bedrijfstakken kan bundelen in één administratie.</td>
+<td>General Pension Fund (APF): An APF is a pension provider that can bundle different pension schemes of different employers and industries in one administration.</td>
 </tr>
 <tr>
 <th>Asset service provider</th>
 <td></td>
-<td>Zie: Beleggingsadministrateur.</td>
+<td>See: Investment administrator.</td>
 </tr>
 <tr>
 <th>Bank Identifier Code</th>
 <td>BIC</td>
-<td>Bank Identifier Code. bijvoorbeeld van ABN: ABNANL2A</td>
+<td>Bank Identifier Code. For example, of ABN: ABNANL2A</td>
 </tr>
 <tr>
 <th>BIC Correspondent</th>
 <td></td>
-<td>Een BIC correspondent is de BIC-code van een correspondentbank; een bank die diensten verleent aan andere banken.</td>
+<td>A BIC correspondent is the BIC code of a correspondent bank; a bank that provides services to other banks.</td>
 </tr>
 <tr>
-<th>Beleggingsadministrateur</th>
+<th>Investment administrator (beleggingsadministrateur)</th>
 <td>BA</td>
-<td>Een onafhankelijke partij die de beleggingsadministratie voert voor de pensioenuitvoerder. Dit is een dienst die veelal door de custodian wordt verzorgd.</td>
+<td>An independent party that keeps the investment administration for the pension provider. This is a service that is often provided by the custodian.</td>
 </tr>
 <tr>
-<th>Beleggingen methode</th>
+<th>Investments method (beleggingen methode)</th>
 <td></td>
-<td>Berekening van het beschermingsrendement vindt, buiten het domein van de pensioenuitvoeringsorganisatie plaats op basis van de werkelijke renterisico afdekking.</td>
+<td>The calculation of the protection return takes place outside the domain of the pension administration organisation, on the basis of the actual interest rate risk hedge.</td>
 </tr>
 <tr>
-<th>Beleggingsinstructie</th>
+<th>Investment fund (beleggingsfonds)</th>
 <td></td>
-<td>Beleggingsorder.</td>
+<td>An investment product with its own fund structure, in which several investors participate. An investment fund may be tradable through a trading platform, but need not be. See also: Investment product.</td>
 </tr>
 <tr>
-<th>Beleggingsorder</th>
+<th>Investment fund (beleggingsfonds)</th>
 <td></td>
-<td>Een opdracht tot het aankopen van bepaalde beleggingen.</td>
+<td>An investment product with its own fund structure, whether or not tradable through a trading platform.</td>
 </tr>
 <tr>
-<th>Beleggingspool</th>
+<th>Investment instruction (beleggingsinstructie)</th>
 <td></td>
-<td>Een beleggingspool is een verzameling van beleggingen in verschillende fondsen of mandaten die een gemeenschappelijk kenmerk delen. Een voorbeeld hiervan is de 'zakelijke waarden beleggingspool', waarin wordt belegd in meerdere zakelijke waarden fondsen en/of mandaten. Beleggingspools zijn bedoeld om de beleggingen van een groep investeerders te bundelen en te beheren. Ze bieden investeerders de mogelijkheid om te diversifiëren en risico's te spreiden door te investeren in verschillende activa.</td>
+<td>Investment order.</td>
 </tr>
 <tr>
-<th>Beschermingsportefeuille</th>
+<th>Investment order (beleggingsorder)</th>
 <td></td>
-<td>Specifiek deel van de beleggingsportefeuille aangehouden met als doel om (voornamelijk) het beschermingsrendement te genereren. Bij de SPR kan dit een operationeel onderdeel zijn van de totale portefeuille waarmee de renteafdekking wordt vormgegeven. Bij het gebruik van feitelijk beschermingsrendement zal het een of meerdere afgescheiden portefeuilles zijn.</td>
+<td>An instruction to purchase certain investments.</td>
 </tr>
 <tr>
-<th>Beschermingsrendement</th>
+<th>Investment pool (beleggingspool)</th>
 <td></td>
-<td><p>De vermogensbijschrijving die ervoor zorgt dat de, uit het opgebouwde pensioenvermogen te financieren, toekomstige pensioenuitkeringen en lopende pensioenuitkeringen nominaal stabiel blijven voor de mate waarin deze worden beschermd, dat wordt gefinancierd vanuit het totaal behaalde rendement en looptijdafhankelijk wordt toebedeeld aan de vermogens op basis van marktwaardering, waarbij toedelingsregels worden gehanteerd.</p>
-<p>Toedelingsregels SPR worden vastgesteld:</p>
-<p>ofwel op basis van wijziging van de rentetermijnstructuur, die de toezichthouder beschikbaar stelt (RTS) ofwel rechtstreeks uit het rendement van de daarvoor bestemde beleggingen. (Beleggingen methode)</p>
-<p>Zie ook: Beleggingen methode en Rentetermijnstructuur methode.</p></td>
+<td>An investment pool is a collection of investments in various funds or mandates that share a common characteristic. An example of this is the 'real assets investment pool', which invests in several real assets funds and/or mandates. Investment pools are intended to bundle and manage the investments of a group of investors. They offer investors the opportunity to diversify and spread risks by investing in different assets.</td>
+</tr>
+<tr>
+<th>Investment product (beleggingsproduct)</th>
+<td></td>
+<td>Umbrella term for everything that can be invested in. An investment fund and a mandate are both an investment product.</td>
+</tr>
+<tr>
+<th>Investment product (beleggingsproduct)</th>
+<td></td>
+<td>Umbrella term for everything that can be invested in: investment funds, mandates, and both liquid and illiquid investments. The term is used where it concerns what is actually invested in, as distinct from the investment pool, which is the administrative unit above it. See §4.2.</td>
+</tr>
+<tr>
+<th>Protection portfolio (beschermingsportefeuille)</th>
+<td></td>
+<td>Specific part of the investment portfolio held with the aim of (mainly) generating the protection return. In the SPR this may be an operational part of the total portfolio through which the interest rate hedge is implemented. When actual protection return is used, it will be one or more separate portfolios.</td>
+</tr>
+<tr>
+<th>Protection return (beschermingsrendement)</th>
+<td></td>
+<td><p>The asset credit that ensures that the future pension benefits and current pension benefits to be financed from the accumulated pension assets remain nominally stable to the extent that they are protected, which is financed from the total return achieved and allocated to the assets depending on maturity on the basis of market valuation, applying allocation rules.</p>
+<p>SPR allocation rules are determined:</p>
+<p>either on the basis of the change in the interest rate term structure made available by the supervisor (RTS) or directly from the return on the investments designated for that purpose. (Investments method)</p>
+<p>See also: Investments method and Interest rate term structure method.</p></td>
 </tr>
 <tr>
 <th>Book of records</th>
 <td></td>
-<td><p>Een aanduiding voor boekhoudkundige administraties binnen vermogensbeheer. Binnen de kaders van dit rapport gaat het om:</p>
-<p>ABOR = Accounting Book of Records (hoofdadministratie, volgens accounting regels),</p>
-<p>IBOR = Investment Book of Records (vaak schaduwadministratie).</p></td>
+<td><p>A designation for accounting administrations within asset management. Within the framework of this report, this concerns:</p>
+<p>ABOR = Accounting Book of Records (main administration, according to accounting rules),</p>
+<p>IBOR = Investment Book of Records (often shadow administration).</p></td>
 </tr>
 <tr>
-<th>Cohorten</th>
+<th>Cohorts (cohorten)</th>
 <td></td>
-<td><p>De term verwijst naar doelgroepen. Deze kunnen op allerlei wijze worden samengesteld. Leeftijdsdoelgroepen maar ook op bijvoorbeeld deelnemer, slaper, gepensioneerd, arbeidsongeschikt en/of soort dienstverband kan gedifferentieerd worden</p>
-<p>Een cohort kan de basis zijn waarop een pensioenuitvoerder deelnemers aan een passende herbalanceringssystematiek koppelt.</p></td>
+<td><p>The term refers to target groups. These can be composed in all kinds of ways. Age target groups, but differentiation is also possible by, for example, active participant, deferred participant, retired, incapacitated and/or type of employment</p>
+<p>A cohort can be the basis on which a pension provider links participants to an appropriate rebalancing system.</p></td>
 </tr>
 <tr>
-<th>Cohortenpool/ Cohortpool</th>
+<th>Cohort pool (cohortenpool / cohortpool)</th>
 <td></td>
-<td>Een cohortenpool bevat de verzameling van alle beleggingen (beleggingspools) voor 1 cohort. Oftewel de gepoolde (verzamelde) combinatie van beleggingen (beleggingspools) voor een cohort.</td>
+<td>Discontinued term. Up to and including release 2026, this referred to the collection of investments (investment pools) for one cohort, as a separate administrative layer between cohort and investment pool. As of release 2027, the FPR model no longer has that layer: the PUO aggregates the changes at participant level per cohort and translates them directly into orders in one or more investment pools. See §4.2.</td>
 </tr>
 <tr>
-<th>Collectieve uitkeringsfase</th>
-<td>CVP (ook: CVU)</td>
-<td>Fase binnen een flexibele premieregeling (FPR) waarin pensioenuitkeringen collectief worden gefinancierd. De CVP kan unitized (in units geadministreerd, geïntegreerd met de opbouwfase via netting) of non-unitized (als aparte EUR-pot met eigen cashflows) worden ingericht.</td>
+<th>Collective payout phase (collectieve uitkeringsfase)</th>
+<td>CVP (also: CVU)</td>
+<td>Phase within a flexible premium scheme (FPR) in which pension benefits are financed collectively. The CVP can be set up unitized (administered in units, integrated with the accumulation phase through netting) or non-unitized (as a separate EUR pot with its own cash flows).</td>
 </tr>
 <tr>
-<th>Collectieve uitkeringsfase</th>
+<th>Collective payout phase (collectieve uitkeringsfase)</th>
 <td>CVU</td>
-<td>Zie: Collectieve uitkeringsfase (CVP). CVU is een gangbare alternatieve afkorting voor hetzelfde begrip.</td>
+<td>See: Collective payout phase (CVP). CVU is a common alternative abbreviation for the same concept.</td>
 </tr>
 <tr>
 <th>Custodians</th>
-<td></td>
-<td>Bewaarder van het beheerde vermogen van een pensioenuitvoerder. Bepaalt onafhankelijk de waardering en het rendement van de holdings en beleggingsportefeuilles/pools.</td>
+<td><mark></mark></td>
+<td>Custodian of the managed assets of a pension provider. Independently determines the valuation and the return of the holdings and investment portfolios/pools.</td>
 </tr>
 <tr>
 <th>Defined Benefit</th>
 <td>DB</td>
-<td>Pensioenregeling waarbij de uitkering vooraf is toegezegd. Niet in scope van de VBPUO-standaard, maar als referentiekader relevant voor de berekeningsmethoden van kasstromen.</td>
+<td>Pension scheme in which the benefit is promised in advance. Not in scope of the VBPUO standard, but relevant as a frame of reference for the calculation methods of cash flows.</td>
 </tr>
 <tr>
 <th>Defined Contribution</th>
 <td>DC</td>
-<td>Pensioenregeling waarbij de premie-inleg vaststaat en de uitkering afhankelijk is van het beleggingsresultaat. SPR en FPR zijn beide DC-regelingen.</td>
+<td>Pension scheme in which the contribution is fixed and the benefit depends on the investment result. SPR and FPR are both DC schemes.</td>
 </tr>
 <tr>
-<th>Direct (feitelijk)beschermingsrendement</th>
+<th>Direct (actual) protection return (direct, feitelijk beschermingsrendement)</th>
 <td></td>
-<td><p>Rendement dat gegenereerd wordt met een of meerdere directe beschermingsportefeuilles voor renterisico.</p>
-<p>Hierbij zijn er twee opties:</p>
-<p>Met één beschermingsportefeuille: de beschrijving per deelnemer vindt plaats op basis van het theoretisch beschermingsrendement waarbij het resultaat 'geschaald' wordt naar het resultaat van de beschermingsportefeuille.</p>
-<p>Voorbeeld: indien het totale theoretische beschermingsrendement 1000 zou zijn maar het feitelijk beschermingsrendement maar 900, dan krijgt iedere deelnemer 90% van het theoretisch beschermingsrendement bijgeschreven.</p>
-<p>Met meerdere beschermingsportefeuilles: per leeftijdscohort geldt een allocatie naar de beschermingsportefeuilles (eventueel inclusief inflatie-instrumenten).</p></td>
+<td><p>Return generated with one or more direct protection portfolios for interest rate risk.</p>
+<p>There are two options here:</p>
+<p>With one protection portfolio: the crediting per participant takes place on the basis of the theoretical protection return, with the result being ‘scaled’ to the result of the protection portfolio.</p>
+<p>Example: if the total theoretical protection return were 1000 but the actual protection return only 900, each participant is credited with 90% of the theoretical protection return.</p>
+<p>With several protection portfolios: an allocation to the protection portfolios applies per age cohort (possibly including inflation instruments).</p></td>
 </tr>
 <tr>
-<th>Fiduciair manager</th>
+<th>Fiduciary manager (fiduciair manager)</th>
 <td>FM</td>
-<td>Een fiduciair manager draagt zorg voor de integrale aansturing van het vermogensbeheer waarbij het (strategisch) beleggingsbeleid van het fonds in brede zin wordt geïmplementeerd. Daarbij kunnen vervolgens uiteenlopende, onderliggende vermogensbeheerders worden aangestuurd. De FM zal ook een (schaduw) beleggingsadministratie voeren.</td>
+<td>A fiduciary manager is responsible for the integral direction of the asset management, in which the (strategic) investment policy of the fund is implemented in the broad sense. In doing so, various underlying asset managers may then be directed. The FM will also keep a (shadow) investment administration.</td>
 </tr>
 <tr>
-<th>Flexibele premieregeling</th>
+<th>Flexible Premium Scheme (flexibele premieregeling)</th>
 <td>FPR</td>
-<td>Premieovereenkomst waarbij de premie individueel wordt belegd en waarbij het kapitaal voortvloeiend uit de premie vanaf de pensioendatum wordt aangewend voor financiering van een variabele uitkering of voor de aankoop van een vastgestelde uitkering.</td>
+<td>Defined contribution agreement in which the contribution is invested individually and in which the capital resulting from the contribution is used from the retirement date to finance a variable benefit or to purchase a fixed benefit.</td>
 </tr>
 <tr>
 <th>Foreign Exchange Rate</th>
 <td>FX-rate</td>
-<td><p>Wisselkoers</p>
-<p>Een investment currency waarde van 1,1 USD bij een investment-pool currency waarde van 1 leidt tot een waarde in euro van 1/1,1 = € 0,9090</p></td>
+<td><p>Exchange rate</p>
+<p>An investment currency value of 1.1 USD with an investment-pool currency value of 1 leads to a value in euros of 1/1.1 = € 0.9090</p></td>
 </tr>
 <tr>
-<th>Geprojecteerde pensioenuitkeringen</th>
+<th>Projected pension benefits (geprojecteerde pensioenuitkeringen)</th>
 <td></td>
-<td>De verwachte variabele uitkeringen in een solidaire premieovereenkomst van een pensioenuitvoerder op basis van het opgebouwde voor pensioen bestemde vermogen. De hoogte van de verwachte variabele uitkering wordt bepaald door het inrekenen van een projectierendement op het voor pensioen bestemde vermogen Dit kan hoger of lager zijn dan de risicovrije rente. De precieze invulling van geprojecteerde uitkeringen is een partijen/governance afspraak.</td>
+<td>The expected variable benefits in a solidarity defined contribution agreement of a pension provider, based on the accumulated assets designated for pension. The level of the expected variable benefit is determined by applying a projection return to the assets designated for pension This may be higher or lower than the risk-free interest rate. The precise interpretation of projected benefits is a matter of agreement between the parties/governance.</td>
 </tr>
 <tr>
 <th>Identifier</th>
 <td></td>
-<td>Een sleutel gegeven dat een beleggingsinstrument uniek identificeert bijvoorbeeld <a href="https://en.wikipedia.org/wiki/International_Securities_Identification_Number">ISIN</a> of <a href="https://en.wikipedia.org/wiki/SEDOL">SEDOL</a>.</td>
+<td>A key data item that uniquely identifies an investment instrument, for example <a href="https://en.wikipedia.org/wiki/International_Securities_Identification_Number">ISIN</a> or <a href="https://en.wikipedia.org/wiki/SEDOL">SEDOL</a>.</td>
 </tr>
 <tr>
 <th>Instruction Date</th>
 <td></td>
-<td>Datum van de verzending van de beleggingsorder/beleggingsinstructie door de pensioenuitvoeringsorganisatie.</td>
+<td>Date on which the investment order/investment instruction is sent by the pension administration organisation.</td>
 </tr>
 <tr>
 <th><a href="https://en.wikipedia.org/wiki/International_Securities_Identification_Number">International Securities Identification Number</a></th>
 <td>ISIN</td>
-<td>Een codenummer voor een "effect" bestaande uit een landencode en een uniek National Security Number (NSIN). ISIN is het acroniem van International Securities Identification Number. ISIN codes worden alleen gebruikt voor beursgenoteerde genoteerde beleggingsfondsen. In de pensioenvermogensbeheerpraktijk wordt veelal gewerkt met administratieve pools die GEEN ISIN hebben. Voor zulke pools is wel een unieke identifier nodig.</td>
+<td>A code number for a “security”, consisting of a country code and a unique National Security Number (NSIN). ISIN is the acronym of International Securities Identification Number. ISIN codes are only used for listed investment funds. In pension asset management practice, administrative pools that do NOT have an ISIN are usually used. Such pools do, however, need a unique identifier.</td>
 </tr>
 <tr>
-<th>DNB-jaarstaat kosten vermogensbeheer</th>
+<th>DNB annual statement asset management costs (DNB-jaarstaat kosten vermogensbeheer)</th>
 <td>J402</td>
-<td>Kosten vermogensbeheer uitgesplitst naar verschillende (beleggings)categorieën. De jaarstaat omvat alle vermogensbeheerkosten zowel de gefactureerde kosten als kosten die worden ingehouden op de behaalde bruto rendementen. Per beleggingscategorie worden beheervergoedingen, prestatieafhankelijke vergoedingen en transactiekosten gerapporteerd.</td>
+<td>Asset management costs broken down into various (investment) categories. The annual statement covers all asset management costs, both the invoiced costs and the costs deducted from the gross returns achieved. Management fees, performance fees and transaction costs are reported per investment category.</td>
 </tr>
 <tr>
-<th>Leidende beleggingsadministratie</th>
+<th>Leading investment administration (leidende beleggingsadministratie)</th>
 <td></td>
-<td>Beleggingsadministratie die voor de pensioenuitvoeringsorganisatie en de pensioenuitvoerder de basis is voor (mutaties in) het persoonlijk voor pensioenuitkering bestemd vermogen (SPR), voor pensioen bestemd kapitaal (FPR) en voor de rapportage aan de toezichthouder.</td>
+<td>Investment administration that, for the pension administration organisation and the pension provider, is the basis for (changes in) the personal assets designated for pension benefits (SPR), the capital designated for pension (FPR) and for reporting to the supervisor.</td>
 </tr>
 <tr>
-<th>Liability-Driven Investmentmanagers</th>
+<th>Liability-Driven Investment managers</th>
 <td>LDI</td>
-<td>Partijen die zich specialiseren in het beheer van beleggingen met als primaire doelstelling het afdekken van toekomstige verplichtingen of verplichtingen van een investeerder of instelling.</td>
+<td>Parties that specialise in managing investments with the primary objective of hedging future liabilities or obligations of an investor or institution.</td>
 </tr>
 <tr>
-<th>LDI-mandaat</th>
+<th>LDI mandate (LDI-mandaat)</th>
 <td></td>
-<td>Een op maat gemaakte beleggingsportefeuille waarmee de LDI-manager of vermogensbeheerder het renterisico van de uitkerings- en opbouwrechten afdekt, volgens vooraf vastgestelde richtlijnen, om het beschermingsrendement te realiseren conform de risicovrije termijndefinities uit het Wtp-kader.</td>
+<td>A customised investment portfolio with which the LDI manager or asset manager hedges the interest rate risk of the benefit and accrual entitlements, according to predetermined guidelines, in order to realise the protection return in accordance with the risk-free term definitions of the Wtp framework.</td>
 </tr>
 <tr>
 <th>Lifecycle</th>
 <td></td>
-<td>Het doel van beleggen volgens een lifecycle is om de grote schommelingen in de kapitaalopbouw te verminderen bij het naderen van de beleggingshorizon. Om dit te bereiken, delen pensioenuitvoerders deelnemers op in deelpopulaties op basis van de resterende tijd tot de pensioendatum. Naarmate de pensioendatum en beleggingshorizon dichterbij komen, wordt het beleggings- en renterisico voor deze deelpopulaties afgebouwd. Zo wordt ervoor gezorgd dat het beleggingsbeleid past bij de levensfase waarin de deelnemer zich bevindt.</td>
+<td>The aim of investing according to a lifecycle is to reduce large fluctuations in capital accumulation as the investment horizon approaches. To achieve this, pension providers divide participants into sub-populations based on the remaining time until the retirement date. As the retirement date and investment horizon approach, the investment and interest rate risk for these sub-populations is reduced. This ensures that the investment policy suits the life stage the participant is in.</td>
 </tr>
 <tr>
-<th>Local valuta / Local price</th>
+<th>Local currency / Local price (local valuta / local price)</th>
 <td></td>
-<td>Prijs van het beleggingsinstrument in diens originele valuta.</td>
+<td>Price of the investment instrument in its original currency.</td>
 </tr>
 <tr>
 <th>Lookthrough</th>
 <td></td>
-<td>Met dit begrip wordt gedoeld op het "doorzicht" naar daadwerkelijke beleggingen. Afhankelijk van het type product en de beleggingssamenstelling is dit "doorzicht" eenvoudig dan wel moeilijk of tegen forse kosten te realiseren. Bij SPR producten is de beleggingsmix op individueel niveau niet te bepalen. Bij FPR-producten kunnen de beleggingen in sommige gevallen direct aan een beursgenoteerd fonds worden gelinkt.</td>
+<td>This term refers to the "look-through" to the actual investments. Depending on the type of product and the composition of the investments, this "look-through" can be achieved easily, or only with difficulty or at considerable cost. For SPR products, the investment mix cannot be determined at individual level. For FPR products, the investments can in some cases be linked directly to a listed fund.</td>
 </tr>
 <tr>
-<th>Mandaat</th>
+<th>Mandate (mandaat)</th>
 <td></td>
-<td>Een beleggingsopdracht aan een vermogensbeheerder om een portefeuille te beheren volgens vooraf afgesproken richtlijnen en risicolimieten (vastgelegd in een Investment Management Agreement of beleggingsrichtlijnen), niet toegankelijk voor andere beleggers; posities, kosten en risico's zijn direct toerekenbaar aan de opdrachtgever.</td>
+<td>An investment mandate given to an asset manager to manage a portfolio according to guidelines and risk limits agreed in advance (laid down in an Investment Management Agreement or investment guidelines), not accessible to other investors; positions, costs and risks are directly attributable to the client.</td>
 </tr>
 <tr>
 <th>Net asset value</th>
 <td>NAV</td>
-<td>Zie: Total Market Value.</td>
+<td>See: Total Market Value.</td>
 </tr>
 <tr>
-<th>Netten</th>
+<th>Netting (netten)</th>
 <td></td>
-<td>Het samenvoegen (salderen/consolideren) of optellen van beleggingsorders in hetzelfde beleggingsproduct.</td>
+<td>Combining (netting/consolidating) or adding up investment orders in the same investment product.</td>
 </tr>
 <tr>
 <th>Order date</th>
@@ -250,150 +241,155 @@
 <td>Instruction Date</td>
 </tr>
 <tr>
-<th>Overrendement</th>
+<th>Excess return (overrendement)</th>
 <td></td>
-<td>Het saldo van het totaal behaalde rendement op de beleggingen, de ontwikkeling van de levensverwachting en het sterfteresultaat en het toebedeelde beschermingsrendement op basis van de toedelingsregels.</td>
+<td>The balance of the total return achieved on the investments, the development of life expectancy and the mortality result, and the allocated protection return on the basis of the allocation rules.</td>
 </tr>
 <tr>
-<th>Pensioenfonds</th>
+<th>Pension fund (pensioenfonds)</th>
 <td></td>
-<td>Instellingen die pensioenregelingen beheren en uitvoeren ten behoeve van werknemers die bij een specifiek bedrijf of bedrijfstak werken.</td>
+<td>Institutions that manage and administer pension schemes for employees who work at a specific company or in a specific industry.</td>
 </tr>
 <tr>
-<th>Pensioenuitvoerder</th>
+<th>Pension provider (pensioenuitvoerder)</th>
 <td></td>
-<td><p>In Nederland worden verschillende partijen gedefinieerd als "pensioenuitvoerder" volgens de Pensioenwet.</p>
-<p>In 2023 gaat/ging het om: Pensioenfondsen, Pensioenverzekeraars, Premiepensioeninstellingen (PPI's) en Algemeen Pensioenfonds (APF).</p></td>
+<td><p>In the Netherlands, various parties are defined as "pension provider" under the Pensions Act.</p>
+<p>In 2023 this concerns/concerned: pension funds, pension insurers, premium pension institutions (PPIs) and General Pension Fund (APF).</p></td>
 </tr>
 <tr>
-<th>Pensioenregeling</th>
+<th>Pension scheme (pensioenregeling)</th>
 <td></td>
-<td>Een pensioenregeling volgens de Pensioenwet is een overeenkomst (of toezegging) tussen een werkgever en een werknemer waarin is vastgelegd welke pensioenuitkeringen worden toegezegd en onder welke voorwaarden.</td>
+<td>A pension scheme under the Pensions Act is an agreement (or commitment) between an employer and an employee that lays down which pension benefits are promised and under which conditions.</td>
 </tr>
 <tr>
-<th>Pensioenreglement</th>
+<th>Pension scheme rules (pensioenreglement)</th>
 <td></td>
-<td>De door de pensioenuitvoerder opgestelde regeling waarin de rechten en plichten van de deelnemer en de pensioenuitvoerder zijn beschreven.</td>
+<td>The rules drawn up by the pension provider that describe the rights and obligations of the participant and the pension provider.</td>
 </tr>
 <tr>
-<th><p>Pensioen</p>
-<p>uitvoeringsorganisatie</p></th>
+<th><p>Pension</p>
+<p>administration organisation (pensioenuitvoeringsorganisatie)</p></th>
 <td>PUO/PA</td>
-<td>Administrateur van pensioenregelingen.</td>
+<td>Administrator of pension schemes.</td>
 </tr>
 <tr>
-<th>Pensioenverzekeraar</th>
+<th>Pension insurer (pensioenverzekeraar)</th>
 <td></td>
-<td>Verzekeringsmaatschappijen die individuele en collectieve pensioenverzekeringen aanbieden en de pensioenregelingen beheren en uitvoeren.</td>
+<td>Insurance companies that offer individual and collective pension insurance and manage and administer the pension schemes.</td>
 </tr>
 <tr>
 <th>Portfolio</th>
 <td></td>
-<td>Een beleggingsportefeuille, oftewel een geheel van aandelen en andere effecten.</td>
+<td>An investment portfolio, i.e. a collection of shares and other securities.</td>
 </tr>
 <tr>
-<th>Premiepensioeninstelling</th>
+<th>Premium pension institution (premiepensioeninstelling)</th>
 <td>PPI</td>
-<td>Financiële instellingen die individuele premieovereenkomsten aanbieden, waarbij de hoogte van het pensioen afhangt van de premie-inleg en het rendement daarop.</td>
+<td>Financial institutions that offer individual defined contribution agreements, in which the level of the pension depends on the contributions paid in and the return on them.</td>
 </tr>
 <tr>
-<th>Premie-uitkeringsovereenkomst</th>
+<th>Premium-benefit agreement (premie-uitkeringsovereenkomst)</th>
 <td></td>
-<td>Premieovereenkomst uitgevoerd door een verzekeraar waarbij de premie individueel wordt belegd, waarbij de premie of het kapitaal voortvloeiend uit de premie in de laatste 15 jaar voor de pensioengerechtigde leeftijd kan worden aangewend voor aankoop van een vastgestelde uitkering vanaf de pensioendatum en waarbij het resterend kapitaal vanaf de pensioendatum wordt aangewend voor financiering van een variabele uitkering of voor de aankoop van een vastgestelde uitkering.</td>
+<td>Defined contribution agreement carried out by an insurer in which the contribution is invested individually, in which the contribution or the capital resulting from the contribution may be used in the last 15 years before the retirement age to purchase a fixed benefit from the retirement date, and in which the remaining capital is used from the retirement date to finance a variable benefit or to purchase a fixed benefit.</td>
 </tr>
 <tr>
-<th>Projectierendement</th>
+<th>Projection return (projectierendement)</th>
 <td></td>
-<td>Het ingerekende toekomstig rendement voor de vaststelling van variabele uitkeringen.</td>
+<td>The future return applied for determining variable benefits.</td>
 </tr>
 <tr>
-<th>Rebalancen</th>
+<th>Rebalancing (rebalancen)</th>
 <td></td>
-<td>Het periodiek of op verzoek in evenwicht brengen van een beleggingsportefeuille met de doelgewichten binnen deze portefeuille, na in- of uitstroom in de betreffende portefeuille (externe aanleiding) of doordat binnen de portefeuille sprake is ongewenste afwijkingen van normbeleid door marktbewegingen.</td>
+<td>Periodically or on request bringing an investment portfolio back into balance with the target weights within that portfolio, after inflow into or outflow from the portfolio concerned (external cause) or because there are undesired deviations from the benchmark policy within the portfolio due to market movements.</td>
 </tr>
 <tr>
-<th>Reconciliatie</th>
+<th>Reconciliation (reconciliatie)</th>
 <td></td>
-<td>Het proces waarbij vergeleken wordt of de (totalen) van registraties van stukken tussen de verschillende partijen (bijvoorbeeld vermogensbeheerder en custodian) in overeenstemming zijn en zo nee het oplossen van verschillen.</td>
+<td>The process of comparing whether the (totals of) records of holdings between the various parties (for example asset manager and custodian) are in agreement and, if not, resolving the differences.</td>
 </tr>
 <tr>
-<th>Rentetermijnstructuur methode</th>
+<th>Interest rate term structure method (rentetermijnstructuur methode)</th>
 <td>RTS</td>
-<td>Bij de RTS-methode vindt de berekening van het SPR beschermingsrendement plaats op basis van de wijziging van de RTS in de schaduw-VPV. De schaduw VPV is de VPV van de schaduw-aanspraken op basis van het aanwezige kapitaal.</td>
+<td>In the RTS method, the SPR protection return is calculated on the basis of the change in the RTS in the shadow VPV. The shadow VPV is the VPV of the shadow entitlements on the basis of the capital present.</td>
 </tr>
 <tr>
-<th>Solidariteitsreserve</th>
+<th>Solidarity reserve (solidariteitsreserve)</th>
 <td></td>
-<td>Een collectieve vermogensreserve waarmee in een solidaire premieovereenkomst financiële mee- of tegenvallers met toekomstige opbouw kunnen worden gedeeld.</td>
+<td>A collective asset reserve with which, in a solidarity defined contribution agreement, financial windfalls or setbacks can be shared with future accrual.</td>
 </tr>
 <tr>
-<th>Risicodelingsreserve</th>
+<th>Risk-sharing reserve (risicodelingsreserve)</th>
 <td></td>
-<td>Een collectieve vermogensreserve waarmee in een flexibele premieovereenkomst financiële mee- of tegenvallers met toekomstige opbouw kunnen worden gedeeld.</td>
+<td>A collective asset reserve with which, in a flexible defined contribution agreement, financial windfalls or setbacks can be shared with future accrual.</td>
 </tr>
 <tr>
 <th>Settlement date</th>
 <td></td>
-<td>Datum waarop de volledige cyclus van de beleggingsorder vanaf de trade date - afgewikkeld is. Elk (beleggings)product heeft z'n eigen settlement duur variërend van T+1 tot T+4 (T = trade date)</td>
+<td>Date on which the full cycle of the investment order - from the trade date - has been settled. Each (investment) product has its own settlement period, varying from T+1 to T+4 (T = trade date)</td>
 </tr>
 <tr>
-<th>Solidaire premieregeling</th>
+<th>Solidarity Premium Scheme (solidaire premieregeling)</th>
 <td>SPR</td>
-<td><p>Premieregeling waarbij de premie collectief wordt belegd, de resultaten in ieder geval naar leeftijdscohorten worden toebedeeld en waarbij het voor pensioenuitkering bestemd vermogen gedurende de uitkeringsfase wordt aangewend voor financiering van een variabele uitkering.</p>
-<p>Voor de cohorten moet door de pensioenuitvoerders worden voorzien in toedelingsbeleid naar de individuen/deelnemers die van een cohort deel uitmaken.</p></td>
+<td><p>Premium scheme in which the contribution is invested collectively, the results are in any case allocated by age cohort, and in which the assets designated for pension benefits are used during the payout phase to finance a variable benefit.</p>
+<p>For the cohorts, the pension providers must provide for an allocation policy towards the individuals/participants who belong to a cohort.</p></td>
 </tr>
 <tr>
-<th>Toedelingsbeleid / Toedelingsregels</th>
+<th>Allocation policy / Allocation rules (toedelingsbeleid / toedelingsregels)</th>
 <td></td>
-<td>De wijze waarop de pensioenuitvoerder het rendement toebedeeld aan de (groepen / cohorten en vanuit die groepen naar individuele) deelnemers.</td>
+<td>The way in which the pension provider allocates the return to the (groups / cohorts and from those groups to individual) participants.</td>
 </tr>
 <tr>
 <th>Total market value</th>
 <td></td>
-<td><p>De nettowaarde van een belegging.</p>
-<p>Bij de FPR gaat het om de waarde van een aandeel of andere participatievorm in het totale kapitaal.</p>
-<p>Bij de SPR wordt door de beleggingsadministrateur de waarde (NAV) van het totale kapitaal van de (collectieve) belegging doorgegeven aan de pensioenuitvoeringsorganisatie.</p></td>
+<td><p>The net value of an investment.</p>
+<p>For the FPR, this is the value of a share or other form of participation in the total capital.</p>
+<p>For the SPR, the investment administrator passes on the value (NAV) of the total capital of the (collective) investment to the pension administration organisation.</p></td>
 </tr>
 <tr>
 <th>Trade date</th>
 <td></td>
-<td>Datum waarop de pensioenuitvoeringsorganisatie de order voor een pensioenregeling (scheme) uitgevoerd wil hebben.</td>
+<td>Date on which the pension administration organisation wants the order for a pension scheme (scheme) to be executed.</td>
 </tr>
 <tr>
-<th>Indirect (theoretisch beschermingsrendement)</th>
+<th>Indirect (theoretical) protection return (indirect, theoretisch beschermingsrendement)</th>
 <td></td>
-<td>Bescherming voor het renterisico in de solidaire premieregeling door gebruik te maken van een rentetermijnstructuur, bedoeld in artikel 2, tweede lid, van het Besluit financieel toetsingskader pensioenfondsen.</td>
+<td>Protection against interest rate risk in the solidarity premium scheme by using an interest rate term structure as referred to in Article 2, second paragraph, of the Decree on the Financial Assessment Framework for Pension Funds (Besluit financieel toetsingskader pensioenfondsen).</td>
 </tr>
 <tr>
 <th>Transfer agent</th>
 <td></td>
-<td><p>Registrar; degene die de participaties bijhoudt. Vooral van belang bij dagelijks verhandelbare stukken (bij FPR)</p>
-<p>Een transferagent is een trustmaatschappij, bank of soortgelijke instelling die is aangewezen om de financiële gegevens van een belegger bij te houden en het rekeningsaldo van elke belegger bij te houden. Voorbeelden zijn: Fundsettle, Allfunds en BBH).</p></td>
+<td><p>Registrar; the party that keeps track of the participations. Particularly important for daily tradable holdings (in FPR)</p>
+<p>A transfer agent is a trust company, bank or similar institution designated to keep the financial records of an investor and to keep track of the account balance of each investor. Examples are: Fundsettle, Allfunds and BBH).</p></td>
 </tr>
 <tr>
 <th>Valuation date</th>
 <td></td>
-<td>Datum van de waardebepaling van de cohortenpool gebruikt bij het doorgeven van de waarde van (pool)unit binnen deze pool.</td>
+<td>Date of the valuation of the investment pool, used when passing on the value of a (pool) unit within this pool.</td>
 </tr>
 <tr>
 <th>Value date</th>
 <td></td>
-<td>Valuta datum. Een datum binnen een opdracht tot het doen van een betaling.</td>
+<td>Value date (valutadatum). A date within an instruction to make a payment.</td>
 </tr>
 <tr>
-<th>Vermogensbeheerder</th>
+<th>Asset manager (vermogensbeheerder)</th>
 <td>VB</td>
-<td>Uitgever van financiële producten (structured products) verantwoordelijk voor het actief en/of passief portefeuillemanagement.</td>
+<td>Issuer of financial products (structured products) responsible for active and/or passive portfolio management.</td>
 </tr>
 <tr>
-<th>Voorziening pensioenverplichtingen</th>
+<th>Virtual pool (virtuele pool)</th>
+<td></td>
+<td>Designation for a collection of investments that is treated administratively as a single whole. The term is not defined within the VB-PUO standard and is not used in it; for the data exchange, all that matters is that it is an investment product in which an investment pool can invest. Included because the term occurs in practice. See also: Investment product, Mandate.</td>
+</tr>
+<tr>
+<th>Provision for pension liabilities (voorziening pensioenverplichtingen)</th>
 <td>VPV</td>
-<td>Het benodigde kapitaal wat nodig is om aan de huidige en toekomstige pensioenverplichtingen te kunnen voldoen.</td>
+<td>The capital required to be able to meet current and future pension obligations.</td>
 </tr>
 <tr>
-<th>Zelf uitvoerend fonds</th>
+<th>Self-administering fund (zelf uitvoerend fonds)</th>
 <td>ZAF</td>
-<td>Een pensioenfonds dat de pensioenadministratie en het vermogensbeheer geheel of grotendeels in eigen beheer uitvoert, in plaats van deze uit te besteden aan een pensioenuitvoeringsorganisatie (PUO). In de procesflows van deze standaard wordt onder PUO ook het ZAF begrepen.</td>
+<td>A pension fund that carries out the pension administration and the asset management wholly or largely in-house, instead of outsourcing them to a pension administration organisation (PUO). In the process flows of this standard, PUO also includes the ZAF.</td>
 </tr>
 </tbody>
 </table>

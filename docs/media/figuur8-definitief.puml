@@ -1,0 +1,90 @@
+@startuml
+
+title Figuur 8 — Procesflow FPR:\nopbouw en CVP unitized
+
+skinparam participant<<hidden>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+}
+
+legend right
+<b>Rollen:</b> PUO/ZAF, BA, FM/VB, LDI
+
+<b>Kleurcodering:</b>
+- <color:gray>grijs</color> = generiek (in beide varianten identiek)
+- <color:blue>blauw</color> = unitized-specifieke betekenis:
+  deze SIVI 5/6-stromen dekken zowel opbouw als CVP
+  via netting; SIVI 13 dekt tevens CVP-rendement.
+
+<b>Berichten 10 en 14:</b>
+De BA stuurt in de regel bericht 10 en 14.
+De PUO/ZAF doet dit alleen bij uitzondering,
+namelijk wanneer die zelf de rol van BA vervult.
+
+<b>Stapletters:</b>
+Figuur 8 en 9 delen hun stapletters. Ontbreekt een
+letter in deze figuur, dan komt die stap in deze
+inrichting niet voor.
+
+<b>Tijdsaanduidingen (geel):</b>
+T = handelsmoment; T-4 / T+3 / Tussen T & T+3 indicatief.
+endlegend
+
+participant " " as TIJD <<hidden>>
+actor "PUO / ZAF" as PUO
+participant "BA\nBeleggingsadministrateur" as BA
+actor "FM / VB\nFiduciair manager /\nVermogensbeheerder" as FM
+actor "LDI\nLDI-manager" as LDI
+
+
+== Order inleg ==
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#blue]> BA: <b><color:blue>A</color></b> <b><color:blue>SIVI 5</color></b> <color:blue>Orderopdracht (opbouw + CVP via netting)</color>
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#blue]-> PUO: <b><color:blue>C</color></b> <b><color:blue>SIVI 13</color></b> <color:blue>Waarde-informatie beleggingspool</color>\n<color:blue>(dekt tevens CVP-rendement)</color>
+
+
+== Sturing richting FM/VB en LDI ==
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#gray]> FM: <b>E</b> <b>SIVI 10</b> Netto stuurinformatie / estimated cashflow
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> FM: <b>F</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> LDI: <b>G</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase
+
+
+== Handelsuitvoering en terugkoppeling ==
+
+rnote over TIJD #F5CC27 : T
+LDI -[#gray]> LDI: <b>H1</b> Uitvoeren netto koop-/verkoopbehoefte\nLDI-mandaat
+FM -[#gray]> FM: <b>H2</b> Uitvoeren netto koop-/verkoopbehoefte\noverige (non-LDI) portefeuilles
+
+rnote over TIJD #F5CC27
+  Tussen
+  T & T+3
+end rnote
+LDI -[#gray]-> BA: <b>I</b> Uitgevoerde transacties (LDI-mandaat)
+FM -[#gray]-> BA: <b>I</b> Uitgevoerde transacties (non-LDI)
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#blue]-> PUO: <b><color:blue>B</color></b> <b><color:blue>SIVI 6</color></b> <color:blue>Orderconfirmation (opbouw + CVP via netting)</color>
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#blue]-> PUO: <b><color:blue>J</color></b> <b><color:blue>SIVI 13</color></b> <color:blue>Definitieve maandeinde-NAV</color>\n<color:blue>(dekt tevens CVP)</color>
+
+
+== Definitieve betaalinformatie en cash-afwikkeling ==
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#gray]> FM: <b>L</b> <b>SIVI 14</b> Definitieve betaalinformatie
+
+rnote over TIJD #F5CC27 : T+3
+FM -[#gray]-> BA: <b>M</b> Cash-overboeking definitieve betalingen\n(tussen beleggingsrekeningen en\nvan beleggingsrekeningen naar pensioenrekening)
+
+@enduml

@@ -1,8 +1,14 @@
-# Welcome to the VB-PUO Standard Documentation
+This is an unofficial, machine-assisted English translation. In case of differences, the [Dutch version](https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/) prevails.
 
-This is an **unofficial, machine-translated version** of the documentation for the data exchange standard between Asset Management (Vermogensbeheer) and Pension Administration (Pensioenuitvoering).
+<div class="print-verberg">
 
-**Disclaimer:** This translation is provided for convenience. In case of any discrepancies or conflicts between this English version and the original Dutch version, **the Dutch version shall prevail.** The official manual can be downloaded from [sivi.org](https://www.sivi.org/pensioen/standaard-data-uitwisseling-vermogensbeheer-en-pensioenuitvoering/). The original Dutch documentation is available at [stichting-sivi.github.io/VBPUOdsk-docs-prepare](https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/).
+12-10-2026
+
+Standard for data exchange between Asset Management and Pension Administration
+
+<img src="media/image1.png" style="width:3.69685in;height:3.69685in" alt="Data exchange" />
+
+</div>
 
 <table>
 <colgroup>
@@ -12,7 +18,7 @@ This is an **unofficial, machine-translated version** of the documentation for t
 <tbody>
 <tr>
 <td>Date</td>
-<td>20260715</td>
+<td>20261012</td>
 </tr>
 <tr>
 <td>Project Reference</td>
@@ -24,7 +30,7 @@ This is an **unofficial, machine-translated version** of the documentation for t
 </tr>
 <tr>
 <td>Status</td>
-<td>Pre-Release 2027</td>
+<td>Release 2027</td>
 </tr>
 <tr>
 <td>Client</td>
@@ -39,45 +45,80 @@ This is an **unofficial, machine-translated version** of the documentation for t
 <td><a href="https://github.com/Stichting-SIVI/VBPUOdsk">https://github.com/Stichting-SIVI/VBPUOdsk</a></td>
 </tr>
 <tr>
+<td>Dutch version (leading)</td>
+<td><a href="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/">https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/</a> (official; in case of differences the Dutch version prevails)</td>
+</tr>
+<tr>
 <td>Document version</td>
-<td>20260715 Manual Standard data exchange VB-PUO release 2027</td>
+<td>20261012 Manual Standard data exchange VB-PUO release 2027</td>
 </tr>
 <tr>
 <td>Release numbers</td>
-<td><a href="https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0">GitHub (pre-)release 2027 Tag v.1.4.0</a></td>
+<td><p><a href="https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0">GitHub release 2027 Tag v1.4.0</a> consists of the following components:</p>
+<ul>
+<li><p>JSON Schemas version: VBPUO-001.05<br />
+Model base: 20261011-2252 generieke-bronmetadata-json</p></li>
+</ul></td>
 </tr>
 <tr>
 <td>Release notes</td>
-<td><a href="https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0">https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0</a></td>
+<td><p><a href="https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0">https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0</a></p>
+<p>The release notes describe the changes. The impact of the changes has been incorporated into this manual.</p></td>
+</tr>
+<tr>
+<td>Prerelease 2027</td>
+<td><p>The manual of the prerelease of 21 July 2026 remains available for consultation until April 2027: <a href="../2027-prerelease/">English prerelease 2027</a> (Dutch: <a href="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/prerelease-2027/">prerelease 2027</a>).</p></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Stichting-SIVI/VBPUOdsk/releases/tag/v1.4.0">Technical changes release 2027</a></td>
+<td><p>Transition to JSON Schema Draft 2020-12:</p>
+<ul>
+<li>Transition from <code>definitions</code> to <code>$defs</code></li>
+<li>Adjustment of internal and external schema references</li>
+<li>Modernisation of JSON Schema validation and tooling support</li>
+</ul>
+<p>See also GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/104">#104 JSON Schema Version</a></p></td>
+</tr>
+<tr>
+<td><a href="chapter-8-5-changes-release-2027/">Functional changes release 2027</a></td>
+<td>
+<p>The most important functional changes:</p>
+<ul>
+<li>One FPR model; the cohort pool and the ACB role have been dropped; messages 7, 8, 9, 11 and 12 are no longer active (&sect;4.3.11).</li>
+<li>New message 15 Corporate Actions (&sect;4.3.10).</li>
+<li>SPR route and FPR route in messages 2, 3 and 4, with the investment portfolio for the FPR route (&sect;3.2.5, &sect;6.3.1).</li>
+<li>Order flow: switch convention and consistency checks for messages 5 and 6 (&sect;4.3.5, &sect;6.3.2).</li>
+<li>Messages 10, 13 and 14 simplified; multiple payments per scheme in message 14 (&sect;4.3).</li>
+<li>Feedback Message: longer error description and updated value list of message types; handling of duplicates and non-executable orders explained (&sect;4.4).</li>
+<li>Reserves and provisions: division of roles between the fields and consistency check (&sect;6.3).</li>
+<li>Sender and receiver per message according to the process flows (Table 12, &sect;6.4).</li>
+<li>Fixed <code>afdDefinitionName</code> (&sect;7.5.1.1); example messages in a separate folder per release (&sect;7.5.2).</li>
+</ul>
+<p>The complete overview, per topic and per message, is given in <a href="chapter-8-5-changes-release-2027/">&sect;8.5 Changes Release 2027</a>; what has been added or changed since the prerelease of 21 July 2026 is shown there in red.</p>
+</td>
 </tr>
 </tbody>
 </table>
 
-## Table of Contents
-*   [Chapter 1: Introduction](chapter-1-introduction.md)
-*   [Chapter 2: Principles](chapter-2-principles.md)
-*   [Chapter 3: SPR Processes](chapter-3-spr-processes.md)
-*   [Chapter 4: FPR Processes and Feedback](chapter-4-fpr-processes.md)
-*   [Chapter 5: Data Standard Setup](chapter-5-data-standard-setup.md)
-*   [Chapter 6: Functional Specifications](chapter-6-functional-specs.md)
-*   [Chapter 7: Technical Specifications](chapter-7-tech-specs.md)
-*   [Chapter 7.4: Transport / OpenAPI](chapter-7-4-transport-openapi.md)
-*   [Chapter 7.5: Message Assembly, Versioning and Publication](chapter-7-5-message-assembly.md)
-*   [Chapter 7.6: Processing Protocol for Sub-messages (Chunking)](chapter-7-6-chunking.md)
-*   [Chapter 8: Appendices](chapter-8-appendices.md)
+<!-- niet-in-word:start -->
+<h2 class="print-pagina-breuk">Table of Contents</h2>
 
-## External Links
-*   [Technical Repository (JSON Schemas)](https://github.com/Stichting-SIVI/VBPUOdsk)
-*   [Official SIVI Project Page](https://www.sivi.org/pensioen/standaard-data-uitwisseling-vermogensbeheer-en-pensioenuitvoering/)
-
-## Feedback or Issues Regarding This Translation
-
-If you encounter any issues, errors, or ambiguities in this translated version, please report them at:  
-[https://github.com/Stichting-SIVI/VBPUOdsk-docs/issues](https://github.com/Stichting-SIVI/VBPUOdsk-docs/issues)
-
-When reporting an issue, please include:
-- The **translated English text as-is**
-- The **new suggested translation text**
-- A reference to the relevant **section or paragraph number**
-
-This helps us ensure the highest possible quality of the translation and keep the documentation clear for all users.
+- [1 Introduction](chapter-1-introduction.md)
+- [2 Principles](chapter-2-principles.md)
+- [3 Processes & Information Flows – Solidarity Premium Scheme](chapter-3-spr-processes.md)
+- [4 Processes & Information Flows – Flexible Premium Scheme](chapter-4-fpr-processes.md)
+- [5 Approach/Set-up of the Data Standard](chapter-5-data-standard-setup.md)
+- [6 Functional Specifications](chapter-6-functional-specs.md)
+- [6.4 Messages](chapter-6-4-messages.md)
+- [6.5 Cross-reference Attributes & Messages](chapter-6-5-cross-reference.md)
+- [7 Technical Specifications](chapter-7-tech-specs.md)
+- [7.4 Transport / OpenAPI](chapter-7-4-transport-openapi.md)
+- [7.5 Message Assembly, Versioning and Publication](chapter-7-5-message-assembly.md)
+- [7.6 Processing Protocol for Partial messages (Chunking)](chapter-7-6-chunking.md)
+- [8 Appendices](chapter-8-appendices.md)
+- [8.1 Glossary/List of Abbreviations Asset Management & Pension Administration](chapter-8-1-glossary-vbpuo.md)
+- [8.2 Glossary of Data Exchange Based on Standards](chapter-8-2-glossary-data-exchange.md)
+- [8.3 Components of the Standard Asset Management Pension Administration](chapter-8-3-standard-components.md)
+- [8.4 Translation Table from Functional Attributes to AFD2.0 Attributes.](chapter-8-4-translation-table.md)
+- [8.5 Changes Release 2027](chapter-8-5-changes-release-2027.md)
+<!-- niet-in-word:eind -->

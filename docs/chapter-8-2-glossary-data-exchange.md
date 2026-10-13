@@ -1,13 +1,4 @@
-## 8.2 Glossary Data Exchange Based on Standards
-
-> **Note:** The glossary table below is in Dutch. These are terms related to data exchange standards and interoperability.
->
-> **NL → EN Legend for table headers:**
->
-> | Dutch | English |
-> |-------|---------|
-> | Begrip | Term / Concept |
-> | Betekenis | Meaning / Definition |
+## 8.2 Glossary of Data Exchange Based on Standards
 
 <table>
 <colgroup>
@@ -16,144 +7,144 @@
 </colgroup>
 <thead>
 <tr>
-<th>Begrip</th>
-<th>Betekenis</th>
+<th>Term</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>API</th>
-<td>Een application programming interface (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Voor steeds meer organisaties vormen API's (bibliotheek met webservices) de sleutelrol in het aanbieden van transacties, het distribueren van content of het ontsluiten van een workflow tussen schakels in de keten.</td>
+<td>An application programming interface (API) is a structured and documented interface for communication between applications. For more and more organisations, APIs (library of web services) play the key role in offering transactions, distributing content or opening up a workflow between links in the chain.</td>
 </tr>
 <tr>
-<th>Attribuut</th>
-<td>Een uniek kenmerk of gegeven van een entiteit.</td>
+<th>Attribute (attribuut)</th>
+<td>A unique characteristic or data item of an entity.</td>
 </tr>
 <tr>
-<th>Begrijpelijkheid gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens eenvoudig gelezen en geïnterpreteerd kunnen worden door gebruikers.</p></td>
+<th>Understandability of data (begrijpelijkheid gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data can easily be read and interpreted by users.</p></td>
 </tr>
 <tr>
-<th>Bericht</th>
-<td>Een bericht beschrijft de interface tussen twee geautomatiseerde toepassingen die berichten uitwisselen.</td>
+<th>Message (bericht)</th>
+<td>A message describes the interface between two automated applications that exchange messages.</td>
 </tr>
 <tr>
-<th>Berichtschema</th>
-<td>Een bericht-/productdefinitie in schemavorm.</td>
+<th>Message schema (berichtschema)</th>
+<td>A message/product definition in schema form.</td>
 </tr>
 <tr>
-<th>Berichtstructuur</th>
-<td>Op basis van de bouwstenendoos met entiteiten, attributen etc. worden een of meer hiërarchische structuren gespecificeerd. In deze structuur worden de relaties tussen de entiteiten aangegeven.</td>
+<th>Message structure (berichtstructuur)</th>
+<td>On the basis of the building block set of entities, attributes etc., one or more hierarchical structures are specified. This structure indicates the relationships between the entities.</td>
 </tr>
 <tr>
-<th>Consistentie gegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens vrij van tegenspraak zijn en samenhang vertonen met andere gegevens.</p></td>
+<th>Consistency of data (consistentie gegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are free of contradiction and are coherent with other data.</p></td>
 </tr>
 <tr>
-<th>CSV-bestand</th>
-<td>Een gegevensbestand waarvan de waarden door een leesteken worden gescheiden (in de regel een komma of puntkomma) als specificatie voor tabelbestanden. De waarden kunnen in een rekenblad­ of een databaseprogramma worden ingelezen en vervolgens op een beeldscherm als tabel worden gepresenteerd.</td>
+<th>CSV file (CSV-bestand)</th>
+<td>A data file whose values are separated by a punctuation mark (usually a comma or semicolon), as a specification for table files. The values can be read into a spreadsheet or database program and then presented as a table on a screen.</td>
 </tr>
 <tr>
 <th>Data Exchange</th>
-<td>Data Exchange is de techniek waarbij de data van verschillende geautomatiseerde toepassingen op geautomatiseerde wijze met elkaar uitwisselbaar zijn op basis van gemaakte afspraken over onder andere standaarden.</td>
+<td>Data Exchange is the technique whereby the data of different automated applications can be exchanged with each other in an automated way on the basis of agreements made on, among other things, standards.</td>
 </tr>
 <tr>
 <th>Data Governance</th>
-<td>Een systeem dat interoperabiliteitscomponenten (standaarden en beleidsregels) toepast om het acceptabele gebruik en de hoge kwaliteit van gegevens binnen een specifiek ecosysteem te garanderen. Beheert de beschikbaarheid, bruikbaarheid, consistentie, integriteit en beveiliging van de gebruikte gegevens.</td>
+<td>A system that applies interoperability components (standards and policy rules) to guarantee the acceptable use and high quality of data within a specific ecosystem. Manages the availability, usability, consistency, integrity and security of the data used.</td>
 </tr>
 <tr>
-<th>Entiteit</th>
-<td>Dit is 'iets wat een bestaan heeft'. Dus iets dat er toe doet, dat men kan duiden, kan benoemen en waarde heeft. Bijvoorbeeld een persoon is een entiteit en kan beschreven worden met attributen zoals voornaam, familienaam of <a href="https://nl.wikipedia.org/wiki/Burgerservicenummer">BSN</a>-nummer (uniek persoonsgebonden nummer).</td>
+<th>Entity (entiteit)</th>
+<td>This is ‘something that has an existence’. In other words, something that matters, that can be identified, can be named and has value. For example, a person is an entity and can be described with attributes such as first name, surname or <a href="https://nl.wikipedia.org/wiki/Burgerservicenummer">BSN</a> number (unique personal number).</td>
 </tr>
 <tr>
-<th>Gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Weergave van een feit, begrip of aanwijzing, geschikt voor overdracht, interpretatie of verwerking door een persoon of apparaat.</p></td>
+<th>Data item (gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Representation of a fact, concept or instruction, suitable for transfer, interpretation or processing by a person or device.</p></td>
 </tr>
 <tr>
-<th>Gegevensgroep (entiteit)</th>
-<td>Groep van gegevenselementen die logisch bij elkaar hoort.</td>
+<th>Data group (entity) (gegevensgroep)</th>
+<td>Group of data elements that logically belong together.</td>
 </tr>
 <tr>
-<th>Gegevenskwaliteit of Datakwaliteit</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin een geheel van eigenschappen en kenmerken van één of meer gegevens voldoet aan eisen.</p>
-<p>Het streven is dat gegevenskwaliteit "fit-for-purpose" is; dat deze aansluit bij het gebruik. Kwaliteit heeft betrekking op de mate waarin wordt voldaan aan verwachtingen.</p></td>
+<th>Data quality (gegevenskwaliteit, datakwaliteit)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which a set of properties and characteristics of one or more data items meets requirements.</p>
+<p>The aim is for data quality to be "fit-for-purpose"; that it matches the use. Quality relates to the extent to which expectations are met.</p></td>
 </tr>
 <tr>
-<th>Gegevensoverdraagbaarheid</th>
-<td>Dataportabiliteit. De mogelijkheid om gegevens gemakkelijk te verplaatsen tussen interoperabele toepassingen en domeinen.</td>
+<th>Data portability (gegevensoverdraagbaarheid)</th>
+<td>Data portability. The ability to move data easily between interoperable applications and domains.</td>
 </tr>
 <tr>
-<th>Interoperabiliteit</th>
-<td><p>I<a href="https://www.noraonline.nl/wiki/Interoperabiliteit">nteroperabiliteit</a> is het vermogen van organisaties (en hun processen en systemen) om effectief en efficiënt informatie te delen met hun omgeving.</p>
-<p>In het <a href="https://joinup.ec.europa.eu/collection/nifo-national-interoperability-framework-observatory/european-interoperability-framework-detail">European Interoperability Framework</a> worden drie vormen van interoperabiliteit onderscheiden:</p>
+<th>Interoperability (interoperabiliteit)</th>
+<td><p>I<a href="https://www.noraonline.nl/wiki/Interoperabiliteit">nteroperability</a> is the ability of organisations (and their processes and systems) to share information with their environment effectively and efficiently.</p>
+<p>The <a href="https://joinup.ec.europa.eu/collection/nifo-national-interoperability-framework-observatory/european-interoperability-framework-detail">European Interoperability Framework</a> distinguishes three forms of interoperability:</p>
 <ol type="1">
-<li><p>Technische interoperabiliteit – Om systemen te kunnen koppelen, moeten er afspraken worden gemaakt over interfaces, standaarden en protocollen voor communicatie, berichtenformaten, gegevensintegratie, beveiliging, beschikbaarheid, etc.</p></li>
-<li><p>Semantische interoperabiliteit – De informatie die partijen uitwisselen, moet wederzijds begrijpelijk zijn. Context en betekenis van gegevens moet eenduidig zijn vastgelegd.</p></li>
-<li><p>Organisatorische interoperabiliteit – Om gezamenlijke diensten te kunnen leveren, moeten organisaties op elkaar zijn afgestemd in termen van hun businessdoelen, verdeling van verantwoordelijkheden en uitwisselingsprocessen.</p></li>
+<li><p>Technical interoperability – In order to connect systems, agreements must be made on interfaces, standards and protocols for communication, message formats, data integration, security, availability, etc.</p></li>
+<li><p>Semantic interoperability – The information that parties exchange must be mutually understandable. The context and meaning of data must be laid down unambiguously.</p></li>
+<li><p>Organisational interoperability – In order to deliver joint services, organisations must be aligned with each other in terms of their business goals, division of responsibilities and exchange processes.</p></li>
 </ol></td>
 </tr>
 <tr>
-<th>Koppelvlak</th>
-<td>Het geheel van gemeenschappelijke afspraken dat de uitwisseling van gegevens tussen digitale systemen mogelijk maakt.</td>
+<th>Interface (koppelvlak)</th>
+<td>The set of common agreements that makes the exchange of data between digital systems possible.</td>
 </tr>
 <tr>
-<th>Kwaliteitseis of norm</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Een norm waaraan gegevens moeten voldoen.</p>
-<p>Een kwaliteitseis wordt in veel gevallen uitgedrukt in een getal zoals een percentage.</p></td>
+<th>Quality requirement or norm (kwaliteitseis, norm)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>A norm that data must meet.</p>
+<p>In many cases a quality requirement is expressed as a number, such as a percentage.</p></td>
 </tr>
 <tr>
 <th>Metadata</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Metagegevens. Data over data.</p>
-<p>Metadata zijn data die de karakteristieken van andere data beschrijven. Het bewaren bij of koppelen van metadata aan de data waarop ze betrekking hebben, heeft als voordeel dat de data makkelijker gevonden kunnen worden.</p></td>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Metadata (metagegevens). Data about data.</p>
+<p>Metadata are data that describe the characteristics of other data. Storing metadata with, or linking them to, the data to which they relate has the advantage that the data can be found more easily.</p></td>
 </tr>
 <tr>
-<th>Metagegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Gegevens die context, inhoud, structuur en vorm van informatie en het beheer ervan door de tijd heen beschrijven.</p></td>
+<th>Metadata (metagegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Data that describe the context, content, structure and form of information and its management over time.</p></td>
 </tr>
 <tr>
-<th>Onweerlegbaarheid gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Begrip dat gebruikt wordt bij elektronische berichtuitwisseling en dat inhoudt dat de zender van een bericht niet kan ontkennen een bepaald bericht te hebben verstuurd en dat de ontvanger van een bericht niet kan ontkennen het bericht van de zender in de oorspronkelijke staat te hebben ontvangen.</p></td>
+<th>Non-repudiation of data (onweerlegbaarheid gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Concept used in electronic message exchange, meaning that the sender of a message cannot deny having sent a particular message and that the recipient of a message cannot deny having received the message from the sender in its original state.</p></td>
 </tr>
 <tr>
-<th>Plausibiliteit gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens worden beschouwd als waar en geloofwaardig door gebruikers.</p></td>
+<th>Plausibility of data (plausibiliteit gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are regarded as true and credible by users.</p></td>
 </tr>
 <tr>
-<th>Precisie gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens exact of onderscheidend genoeg zijn.</p></td>
+<th>Precision of data (precisie gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are exact or sufficiently distinctive.</p></td>
 </tr>
 <tr>
-<th>Semantiek</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Leer van de betekenis van woorden en woordgroepen.</p></td>
+<th>Semantics (semantiek)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The study of the meaning of words and word groups.</p></td>
 </tr>
 <tr>
-<th>Standaard</th>
-<td>Dit zijn afspraken over informatie of over een proces, dit kan zowel op het niveau van semantische als technische standaarden. Veelal worden de afspraken vastgelegd in documenten met erkende status. Standaarden worden onderhouden vanuit standaardisatie organisaties zoals het NEN en aanbevolen of verplicht gesteld door bijvoorbeeld <a href="https://forumstandaardisatie.nl/node/229">Bureau Forum Standaardisatie.</a></td>
+<th>Standard (standaard)</th>
+<td>These are agreements about information or about a process; this can be at the level of both semantic and technical standards. The agreements are often laid down in documents with a recognised status. Standards are maintained by standardisation organisations such as NEN and recommended or made mandatory by, for example, <a href="https://forumstandaardisatie.nl/node/229">Bureau Forum Standaardisatie.</a></td>
 </tr>
 <tr>
 <th>Straight Through Processing (STP)</th>
-<td>STP is de elektronische verwerking van processen waarbij de elkaar opvolgende administratieve handelingen plaatsvinden met zo min mogelijk menselijke tussenkomst.</td>
+<td>STP is the electronic processing of processes in which successive administrative actions take place with as little human intervention as possible.</td>
 </tr>
 <tr>
-<th>Transparantie</th>
-<td><p>Bron: <a href="https://open.overheid.nl/repository/ronl-9fa0e23a-0b04-442a-917b-36bce29403a8/1/pdf/eindrapport-nederlandse-self-sovereign-identity-ecosysteem-ssi.pdf">SSI Speelveldanalyse</a>, Innopay &amp; TNO, 1 oktober 2021</p>
-<p>De mate waarin personen, groepen en organisaties zicht hebben op welke gegevens die op henzelf betrekking hebben voor welk doel gebruikt worden.</p></td>
+<th>Transparency (transparantie)</th>
+<td><p>Source: <a href="https://open.overheid.nl/repository/ronl-9fa0e23a-0b04-442a-917b-36bce29403a8/1/pdf/eindrapport-nederlandse-self-sovereign-identity-ecosysteem-ssi.pdf">SSI Speelveldanalyse</a>, Innopay &amp; TNO, 1 October 2021</p>
+<p>The extent to which persons, groups and organisations have insight into which data relating to themselves are used for which purpose.</p></td>
 </tr>
 <tr>
-<th>Validiteit gegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens voldoen aan de verwachte structuur en opslagvorm.</p></td>
+<th>Validity of data (validiteit gegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data comply with the expected structure and storage form.</p></td>
 </tr>
 </tbody>
 </table>

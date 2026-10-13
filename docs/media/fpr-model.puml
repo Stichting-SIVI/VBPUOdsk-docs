@@ -1,0 +1,104 @@
+@startuml
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName Arial
+skinparam defaultFontSize 13
+
+skinparam rectangle {
+    BackgroundColor #C8D6DC
+    BorderColor #8FA3AD
+    FontColor #202020
+}
+
+skinparam ArrowColor #555555
+skinparam ArrowThickness 1
+
+skinparam ranksep 55
+skinparam nodesep 30
+
+title FPR-model
+
+rectangle "Deelnemers             " as label_deelnemers #white
+rectangle "Cohorten               " as label_cohorten #white
+rectangle "Beleggingspools        " as label_pools #white
+
+rectangle "\n1\n" as d1
+rectangle "\n2\n" as d2
+rectangle "\n3\n" as d3
+rectangle "\n4\n" as d4
+rectangle "\n5\n" as d5
+rectangle "\n6\n" as d6
+
+rectangle "Cohort 1" as c1
+rectangle "Cohort 2" as c2
+rectangle "Cohort 3" as c3
+rectangle "Etc." as cetc
+rectangle "Reserve" as reserve #DCEBFF
+rectangle "Uitkeringen" as uitkeringen #DCEBFF
+
+rectangle "Zakelijke\nwaarden" as pZakelijk
+rectangle "Vastrentend" as pVastrentend
+rectangle "Matching / LDI" as matching
+rectangle "Etc." as pEtc
+
+label_deelnemers -[hidden]down-> label_cohorten
+label_cohorten -[hidden]down-> label_pools
+
+label_deelnemers -[hidden]right-> d1
+d1 -[hidden]right-> d2
+d2 -[hidden]right-> d3
+d3 -[hidden]right-> d4
+d4 -[hidden]right-> d5
+d5 -[hidden]right-> d6
+
+label_cohorten -[hidden]right-> c1
+c1 -[hidden]right-> c2
+c2 -[hidden]right-> c3
+c3 -[hidden]right-> cetc
+cetc -[hidden]right-> reserve
+reserve -[hidden]right-> uitkeringen
+
+label_pools -[hidden]right-> pZakelijk
+pZakelijk -[hidden]right-> pVastrentend
+pVastrentend -[hidden]right-> matching
+matching -[hidden]right-> pEtc
+
+d2 -[hidden]down-> c1
+d5 -[hidden]down-> c2
+
+c1 -[hidden]down-> pZakelijk
+c2 -[hidden]down-> pVastrentend
+c3 -[hidden]down-> matching
+reserve -[hidden]down-> pEtc
+
+d1 -- c1
+d2 -- c1
+d3 -- c1
+
+d4 -- c2
+d5 -- c2
+d6 -- c2
+
+c1 -- pZakelijk
+c1 -- pVastrentend
+
+c2 -- pZakelijk
+c2 -- pVastrentend
+
+c3 -- pZakelijk
+c3 -- pVastrentend
+
+cetc -- pZakelijk
+cetc -- pVastrentend
+cetc -- pEtc
+
+reserve -- pVastrentend
+reserve -- pEtc
+
+uitkeringen -- matching
+uitkeringen -- pZakelijk
+uitkeringen -- pVastrentend
+
+@enduml

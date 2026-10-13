@@ -1,17 +1,6 @@
-## 8.4 Translation Table from Functional Attributes to AFD 2.0 Attributes
+## 8.4 Translation table of functional attributes to AFD2.0 attributes
 
-> **Note:** The translation table below is in Dutch. It maps functional attribute names from the consultation report to the final AFD 2.0 data element names.
->
-> **NL → EN Legend for table headers:**
->
-> | Dutch | English |
-> |-------|---------|
-> | Attribuutnaam Functioneel | Functional Attribute Name |
-> | AFD 2.0 entity.entitytype | AFD 2.0 entity.entitytype |
-> | AFD 2.0 attribuutnaam | AFD 2.0 attribute name |
-> | Omschrijving | Description |
-
-In the consultation report, different attribute names were used in various places than in the final AFD 2.0 model. Below is an overview of the functional attribute names and the final AFD 2.0 data element names.
+In the consultation report, attribute names other than those in the final AFD 2.0 model were used in various places. Below is an overview of the functional attribute names and the final AFD 2.0 data names. The attributes of the cohort pool were discontinued in release 2027, because the cohort pool as a layer has been discontinued (#124); they are no longer included in the table.
 
 <table>
 <colgroup>
@@ -22,10 +11,10 @@ In the consultation report, different attribute names were used in various place
 </colgroup>
 <thead>
 <tr>
-<th><strong>Attribuutnaam Functioneel</strong></th>
+<th><strong>Functional attribute name</strong></th>
 <th><strong>AFD 2.0 entity.entitytype</strong></th>
-<th><strong>AFD 2.0 attribuutnaam</strong></th>
-<th><strong>Omschrijving</strong></th>
+<th><strong>AFD 2.0 attribute name</strong></th>
+<th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -33,91 +22,91 @@ In the consultation report, different attribute names were used in various place
 <th>Transfer ID</th>
 <td>commonTechnical.default</td>
 <td>messageId</td>
-<td>Unieke berichtidentificatie</td>
+<td>Unique message identification</td>
 </tr>
 <tr>
 <th>Pensionfund ID</th>
 <td>party.pensionProvider</td>
 <td>puvCode</td>
-<td>ID van het pensioenuitvoerder (PUV-code) / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
+<td>ID of the pension provider (PUV code) / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
 </tr>
 <tr>
 <th>Pension scheme ID i</th>
 <td>pension.scheme</td>
 <td>refKey</td>
-<td>ID van de pensioenregeling / (Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.))</td>
+<td>ID of the pension scheme / (Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.))</td>
 </tr>
 <tr>
 <th>Capital i</th>
 <td>pension.scheme</td>
 <td>startAmount</td>
-<td>Totaal pensioenvermogen per startdatum</td>
+<td>Total pension assets as at the start date</td>
 </tr>
 <tr>
 <th>Portfolio</th>
 <td>pension.scheme</td>
 <td>tradingPortfolioId</td>
-<td>Portefeuille ID van de custodian (bewaren en beheren van financiële activa)</td>
+<td>Portfolio ID of the custodian (safekeeping and management of financial assets)</td>
 </tr>
 <tr>
 <th>Capital date i / Start date PUO admin / Start date Investment Report</th>
 <td>financialInformation.reportingPeriod</td>
 <td>startDate</td>
-<td>Begindatum van de gegevensperiode waarop de aanlevering vanuit de PUO wordt gebaseerd of Peildatum</td>
+<td>Start date of the data period on which the delivery from the PUO is based, or reference date</td>
 </tr>
 <tr>
 <th>End date PUO admin</th>
 <td>financialInformation.reportingPeriod</td>
 <td>endDate</td>
-<td>Einddatum van de gegevensperiode waarop de aanlevering vanuit de PUO wordt gebaseerd</td>
+<td>End date of the data period on which the delivery from the PUO is based</td>
 </tr>
 <tr>
 <th>Mutations date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>mutationValuationDate</td>
-<td>Datum verwerking mutaties per leeftijdsgroep</td>
+<td>Date of processing of changes per age group</td>
 </tr>
 <tr>
 <th>End date​ Investment Report</th>
 <td>financialInformation.reportingPeriod</td>
 <td>endDate</td>
-<td>Einddatum van de gegevensperiode waarover rendement wordt gerapporteerd</td>
+<td>End date of the data period over which return is reported</td>
 </tr>
 <tr>
 <th>Trade date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>tradeDate</td>
-<td>Gewenste handelsdatum</td>
+<td>Requested trade date</td>
 </tr>
 <tr>
 <th>Settlement date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>investmentOrderSettlementDate</td>
-<td>Datum waarop de volledige cyclus van de beleggingsorder afgewikkeld moet zijn</td>
+<td>Date by which the full cycle of the investment order must have been settled</td>
 </tr>
 <tr>
 <th>Projection date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>projectionDate</td>
-<td>Datum van de projectie van pensioenuitkeringen</td>
+<td>Date of the projection of pension benefits</td>
 </tr>
 <tr>
 <th>instruction date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>instructionDate</td>
-<td>Instructiedatum (datum van de bestelling verzonden door de PUO)</td>
+<td>Instruction date (date of the order sent by the PUO)</td>
 </tr>
 <tr>
 <th>Estimation date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>unitValueEstimationDate</td>
-<td>Geeft de datum aan waarop de voorlopige unitwaarde (belegginspool) is bepaald</td>
+<td>Indicates the date on which the preliminary unit value (investment pool) was determined</td>
 </tr>
 <tr>
 <th>Valuation date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>participationValuationDate</td>
-<td>Prijsdatum participatiewaarde (cohortpool)</td>
+<td>Price date of the participation value (cohort pool)</td>
 </tr>
 <tr>
 <th>value date</th>
@@ -129,488 +118,447 @@ In the consultation report, different attribute names were used in various place
 <th>Date</th>
 <td>financialInformation.reportingPeriod</td>
 <td>positionDate</td>
-<td>De datum waarop de posities in de beleggingsadministratie zijn vastgesteld</td>
+<td>The date on which the positions in the investment administration were established</td>
 </tr>
 <tr>
 <th>Value</th>
 <td>financialTransaction.payment</td>
 <td>amount</td>
-<td>Bedrag in valuta</td>
+<td>Amount in currency</td>
 </tr>
 <tr>
 <th>currency i</th>
 <td>financialTransaction.payment</td>
 <td>currencyType</td>
-<td>Valuta</td>
+<td>Currency</td>
 </tr>
 <tr>
 <th>IBAN debet i</th>
 <td>financialTransaction.payment</td>
 <td>collectionAccountIban</td>
-<td>IBAN-nummer van debet rekening</td>
+<td>IBAN of the debit account</td>
 </tr>
 <tr>
 <th>Description i</th>
 <td>financialTransaction.payment</td>
 <td>description</td>
-<td>Omschrijving van de transactie (betaling)</td>
+<td>Description of the transaction (payment)</td>
 </tr>
 <tr>
 <th>IBAN credit i</th>
 <td>party.creditor</td>
 <td>collectionAccountIban</td>
-<td>IBAN-nummer van credit rekening per regeling</td>
+<td>IBAN of the credit account per scheme</td>
 </tr>
 <tr>
 <th>Counterparty i</th>
 <td>party.creditor</td>
 <td>collectionAccountInNameOf</td>
-<td>Naam van de tegenpartij per regeling</td>
+<td>Name of the counterparty per scheme</td>
 </tr>
 <tr>
 <th>BIC i</th>
 <td>party.creditor</td>
 <td>collectionAccountBic</td>
-<td>Business Identifier Code (BIC) per regeling</td>
+<td>Business Identifier Code (BIC) per scheme</td>
 </tr>
 <tr>
 <th>BIC-correspondent i</th>
 <td>party.creditor</td>
 <td>collectionAccountBicCorrespondent</td>
-<td>BIC-correspondent per regeling</td>
+<td>BIC correspondent per scheme</td>
 </tr>
 <tr>
 <th>Contribution i</th>
 <td>financialTransaction.cashflow</td>
 <td>contributionAmount</td>
-<td>Som van inleg</td>
+<td>Sum of contributions</td>
 </tr>
 <tr>
 <th>Contribution date i</th>
 <td>financialTransaction.cashflow</td>
 <td>contributionDate</td>
-<td>Datum van ontvangst van de inleg</td>
+<td>Date of receipt of the contribution</td>
 </tr>
 <tr>
 <th>Withdrawal i</th>
 <td>financialTransaction.cashflow</td>
 <td>withdrawalAmount</td>
-<td>Som van de uitstroom</td>
+<td>Sum of the outflow</td>
 </tr>
 <tr>
 <th>Withdrawal date i</th>
 <td>financialTransaction.cashflow</td>
 <td>withdrawalDate</td>
-<td>Datum waarop (uiterlijk) de liquiditeiten ten behoeve van de onttrekking zijn vrijgemaakt</td>
+<td>Date on which (at the latest) the liquidity for the withdrawal has been released</td>
 </tr>
 <tr>
 <th>Net contribution/withdrawal i</th>
 <td>financialTransaction.cashflow</td>
 <td>netAmount</td>
-<td>Som van inleg en onttrekkingen per regeling (net). Een negatief bedrag is een (netto) withdrawal. / Verschil tussen inleg en onttrekking. Een negatief bedrag is een (netto) onttrekking.)</td>
+<td>Sum of contributions and withdrawals per scheme (net). A negative amount is a (net) withdrawal. / Difference between contribution and withdrawal. A negative amount is a (net) withdrawal.)</td>
 </tr>
 <tr>
 <th>Net contribution/withdrawal<br />
 date i</th>
 <td>financialTransaction.cashflow</td>
 <td>netDate</td>
-<td>Datum waarop gesaldeerde instroom en uitstroom wordt gefaciliteerd / Datum waarop het saldo van inleg en onttrekking is bepaald</td>
+<td>Date on which netted inflow and outflow is facilitated / Date on which the balance of contribution and withdrawal is determined</td>
 </tr>
 <tr>
 <th>Cohort ID i, k</th>
 <td>financialTransaction.payment</td>
 <td>refKey</td>
-<td>ID van de expected payment</td>
+<td>ID of the expected payment</td>
 </tr>
 <tr>
 <th>Expected pension payment Date i, k</th>
 <td>financialTransaction.payment</td>
 <td>expectedPensionPaymentDate</td>
-<td>Pensioenuitkeringsmoment</td>
+<td>Time of pension benefit payment</td>
 </tr>
 <tr>
 <th>Hedged expected pension payment i,k</th>
 <td>financialTransaction.payment</td>
 <td>hedgedExpectedPensionPaymentAmount</td>
-<td>Af te dekken kasstroom over alle cohorten</td>
+<td>Cash flow to be hedged across all cohorts</td>
 </tr>
 <tr>
 <th>Cohort expected pension payment i,j,k</th>
 <td>financialTransaction.payment</td>
 <td>amount</td>
-<td>Geprojecteerde uitkering over alle cohorten</td>
+<td>Projected benefit across all cohorts</td>
 </tr>
 <tr>
 <th>Cohort ID i, k</th>
 <td>pension.cohort</td>
 <td>refKey</td>
-<td>ID van het cohort</td>
+<td>ID of the cohort</td>
 </tr>
 <tr>
 <th>Cohort Capital i,k</th>
 <td>pension.cohort</td>
 <td>startAmount</td>
-<td>Pensioenvermogen van het cohort per begindatum</td>
+<td>Pension assets of the cohort as at the start date</td>
 </tr>
 <tr>
 <th>Net contribution/withdrawal I,k</th>
 <td>pension.cohort</td>
 <td>netAmount</td>
-<td>Som van inleg en onttrekkingen per cohort. Een negatief bedrag is een (netto) onttrekking.)</td>
+<td>Sum of contributions and withdrawals per cohort. A negative amount is a (net) withdrawal.)</td>
 </tr>
 <tr>
 <th>Cohort contribution i,k</th>
 <td>pension.cohort</td>
 <td>contributionAmount</td>
-<td>Instroom te beleggen door de fiduciair manager</td>
+<td>Inflow to be invested by the fiduciary manager</td>
 </tr>
 <tr>
 <th>Cohort withdrawal i,k</th>
 <td>pension.cohort</td>
 <td>withdrawalAmount</td>
-<td>Uitstroom te beleggen door de fiduciair manager</td>
+<td>Outflow to be invested by the fiduciary manager</td>
 </tr>
 <tr>
 <th>Cohort return rate protection i,k</th>
 <td>pension.cohort</td>
 <td>protectionReturnPercentage</td>
-<td>Het behaalde beschermingsrendement in percentage over gegevensperiode per regeling en per cohort</td>
+<td>The protection return achieved, as a percentage, over the data period per scheme and per cohort</td>
 </tr>
 <tr>
 <th>Cohort return rate excess i,k</th>
 <td>pension.cohort</td>
 <td>excessReturnPercentage</td>
-<td>Het behaalde overrendement in percentage over gegevensperiode per regeling en per cohort</td>
+<td>The excess return achieved, as a percentage, over the data period per scheme and per cohort</td>
 </tr>
 <tr>
 <th>Cohort return protection i,k</th>
 <td>pension.cohort</td>
 <td>protectionReturnAmount</td>
-<td>Het behaalde beschermingsrendement in valuta van de regeling over gegevensperiode per regeling en per cohort</td>
+<td>The protection return achieved, in the currency of the scheme, over the data period per scheme and per cohort</td>
 </tr>
 <tr>
 <th>Cohort return excess i,k</th>
 <td>pension.cohort</td>
 <td>excessReturnAmount</td>
-<td>Het behaalde overrendement in valuta van de regeling over gegevensperiode per regeling en per cohort</td>
+<td>The excess return achieved, in the currency of the scheme, over the data period per scheme and per cohort</td>
 </tr>
 <tr>
 <th>Hedged expected pension payment i,k</th>
 <td>financialTransaction.payment</td>
 <td>hedgedExpectedPensionPaymentAmount</td>
-<td>Af te dekken kasstroom</td>
+<td>Cash flow to be hedged</td>
 </tr>
 <tr>
 <th>Cohort expected pension payment i,j,k</th>
 <td>financialTransaction.payment</td>
 <td>amount</td>
-<td>Geprojecteerde uitkering</td>
-</tr>
-<tr>
-<th>Cohort ID i, k</th>
-<td>pension.cohortPool</td>
-<td>cohortRef</td>
-<td>Geeft aan op welk cohort in de regeling de cohortpool-gegevens betrekking hebben</td>
-</tr>
-<tr>
-<th>Cohort Inflow i-k (1)</th>
-<td>pension.cohortPool</td>
-<td>inflowPremiumAmount</td>
-<td>Premie-inleg per cohortpool per regeling</td>
-</tr>
-<tr>
-<th>Cohort Inflow i-k (2)</th>
-<td>pension.cohortPool</td>
-<td>inflowRebalanceAmount</td>
-<td>Geldbedrag van rebalance transacties per cohortpool per regeling</td>
-</tr>
-<tr>
-<th>Cohort withdrawal i,k</th>
-<td>pension.cohortPool</td>
-<td>numberOfNewParticipations</td>
-<td>Nieuwe uit te geven participaties in cohortpool per regeling (instroom)</td>
-</tr>
-<tr>
-<th>Number of units, i,k</th>
-<td>pension.cohortPool</td>
-<td>numberOfParticipations</td>
-<td>Aantal uitstaande units (participaties) in de Cohortpool</td>
-</tr>
-<tr>
-<th>Cohort rebalance i,k</th>
-<td>pension.cohortPool</td>
-<td>numberOfRebalanceParticipations</td>
-<td>Rebalance participaties per cohortpool per regeling (bij overgang van een cohortpool naar een ander cohort)</td>
-</tr>
-<tr>
-<th>Cohort Capital i,k / Cohort value i, k</th>
-<td>pension.cohortPool</td>
-<td>participationsSummedValueAmount</td>
-<td>Waarde per cohortpool (som participatiewaarde) per participationValuationDate</td>
+<td>Projected benefit</td>
 </tr>
 <tr>
 <th>Pool ID i,j</th>
 <td>investment.pool</td>
 <td>refKey</td>
-<td>ID van de beleggingspool per regeling</td>
+<td>ID of the investment pool per scheme</td>
 </tr>
 <tr>
 <th>Market value portfolio</th>
 <td>investment.pool</td>
 <td>marketValueAmount</td>
-<td>Marktwaarde per portefeuille per regeling in currencyType</td>
+<td>Market value per portfolio per scheme in currencyType</td>
 </tr>
 <tr>
 <th>Pool value i, k</th>
 <td>investment.pool</td>
 <td>unitsSummedValueAmount</td>
-<td>Waarde per beleggingspool(unitwaarde)</td>
+<td>Value per investment pool (unit value)</td>
 </tr>
 <tr>
 <th>Market value instrument</th>
 <td>investment.pool</td>
 <td>marketValueAmount</td>
-<td>Marktwaarde van de beleggingspool in currencyType van de pool</td>
+<td>Market value of the investment pool in currencyType of the pool</td>
 </tr>
 <tr>
 <th>Preliminary market value i, k</th>
 <td>investment.pool</td>
 <td>preliminaryMarketValueAmount</td>
-<td>Voorlopige Marktwaarde per portefeuille per regeling in currencyType van de pool</td>
+<td>Preliminary market value per portfolio per scheme in currencyType of the pool</td>
 </tr>
 <tr>
 <th>Preliminary pool value i, k</th>
 <td>investment.pool</td>
 <td>preliminaryUnitValueAmount</td>
-<td>Dagelijks vastgestelde unitprijs/NAV in currencyType van de pool</td>
+<td>Daily determined unit price/NAV in currencyType of the pool</td>
 </tr>
 <tr>
 <th>number of units investment pool i,k</th>
 <td>investment.pool</td>
 <td>numberOfUnits</td>
-<td>Aantal units uitgegeven voor de beleggingspool,</td>
+<td>Number of units issued for the investment pool,</td>
 </tr>
 <tr>
 <th>currency i,j</th>
 <td>investment.pool</td>
 <td>currencyType</td>
-<td>Valuta van de pool</td>
+<td>Currency of the pool</td>
 </tr>
 <tr>
 <th>Transaction description i,j, k /Description</th>
 <td>investment.pool</td>
 <td>description</td>
-<td>Beschrijving</td>
+<td>Description</td>
 </tr>
 <tr>
 <th>Dummy cash ID</th>
 <td>investment.pool</td>
 <td>dummyCashId</td>
-<td>ID voor dummy cash instrument per beleggingspool per regeling per cohort(pool)</td>
+<td>ID for dummy cash instrument per investment pool per scheme per cohort(pool)</td>
 </tr>
 <tr>
 <th>Sell buy ID i,j, k</th>
 <td>investment.pool</td>
 <td>buySellId</td>
-<td>Aan- verkoopindicator; ID voor aan-/verkoop per beleggingspool per regeling per cohort</td>
+<td>Buy/sell indicator; ID for buy/sell per investment pool per scheme per cohort</td>
 </tr>
 <tr>
 <th>Amount i,j, k</th>
 <td>investment.pool</td>
 <td>tradeQuantity</td>
-<td>Aantal te verhandelen stukken (units) van de transactie</td>
+<td>Number of pieces (units) to be traded in the transaction</td>
 </tr>
 <tr>
 <th>Unit value i,j, k</th>
 <td>investment.pool</td>
 <td>unitPrice</td>
-<td>Unitwaarde (/prijs) per beleggingspool per regeling per cohort</td>
+<td>Unit value (/price) per investment pool per scheme per cohort</td>
 </tr>
 <tr>
 <th>FX rate i,j, k</th>
 <td>investment.pool</td>
 <td>currencyExchangeRate</td>
-<td>FX rate per beleggingspool per regeling per cohort</td>
+<td>FX rate per investment pool per scheme per cohort</td>
 </tr>
 <tr>
 <th>Value i,k</th>
 <td>investment.pool</td>
 <td>tradeValueAmount</td>
-<td>Waarde transactie per beleggingspool per regeling (gesommeerd over cohorten)</td>
+<td>Transaction value per investment pool per scheme (summed over cohorts)</td>
 </tr>
 <tr>
 <th>portfolio ID i,n</th>
 <td>investment.portfolio</td>
 <td>refKey</td>
-<td>ID Beleggingsportefeuille / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
+<td>Investment portfolio ID / Unique reference key assigned to an entity. (NL: Entiteitsreferentie is een unieke referentie sleutel die aan een entiteit wordt toegekend.)</td>
 </tr>
 <tr>
 <th>Total Market Value start I,n</th>
 <td>investment.portfolio</td>
 <td>startAmount</td>
-<td>De waarde van de Total Market Value aan het begin van de gegevensperiode</td>
+<td>The value of the Total Market Value at the start of the data period</td>
 </tr>
 <tr>
 <th>Net contribution/withdrawal I, n</th>
 <td>investment.portfolio</td>
 <td>netAmount</td>
-<td>Som van inleg en onttrekkingen per regeling (net). Een negatief bedrag is een (netto) withdrawal</td>
+<td>Sum of contributions and withdrawals per scheme (net). A negative amount is a (net) withdrawal</td>
 </tr>
 <tr>
 <th>Total Market Value end I,n</th>
 <td>investment.portfolio</td>
 <td>endAmount</td>
-<td>De waarde van de Total Market Value aan het eind van de gegevensperiode. Per regeling en beleggingsportefeuille</td>
+<td>The value of the Total Market Value at the end of the data period. Per scheme and investment portfolio</td>
 </tr>
 <tr>
 <th>Return rate i,n​</th>
 <td>investment.portfolio</td>
 <td>returnPercentage</td>
-<td>Het behaalde rendement in percentage over gegevensperiode per regeling en per beleggingsportefeuille</td>
+<td>The return achieved, as a percentage, over the data period per scheme and per investment portfolio</td>
 </tr>
 <tr>
 <th>Return i,n​</th>
 <td>investment.portfolio</td>
 <td>returnAmount</td>
-<td>Het behaalde rendement in valuta van de regeling over gegevensperiode per regeling en per beleggingsportefeuille</td>
+<td>The return achieved, in the currency of the scheme, over the data period per scheme and per investment portfolio</td>
 </tr>
 <tr>
 <th>Identifier</th>
 <td>investment.investmentDetails</td>
 <td>refKey</td>
-<td>Identifier (bijvoorbeeld ISIN of interne code)</td>
+<td>Identifier (for example ISIN or internal code)</td>
 </tr>
 <tr>
 <th>Fund Name i</th>
 <td>investment.investmentDetails</td>
 <td>description</td>
-<td>De naam van de belegging / de officiële naam van het fonds / van het instrument</td>
+<td>The name of the investment / the official name of the fund / of the instrument</td>
 </tr>
 <tr>
 <th>Local Price i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>currencyType</td>
-<td>Valuta van het instrument</td>
+<td>Currency of the instrument</td>
 </tr>
 <tr>
 <th>Total holdings i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>numberOfHoldings</td>
-<td>Aantal holdings per instrument per regeling per beleggingsportefeuille</td>
+<td>Number of holdings per instrument per scheme per investment portfolio</td>
 </tr>
 <tr>
 <th>Local Price i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>localPrice</td>
-<td>Prijs per instrument in originele valuta per regeling per beleggingsportefeuille</td>
+<td>Price per instrument in original currency per scheme per investment portfolio</td>
 </tr>
 <tr>
 <th>Local Value instrument i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>localValueAmount</td>
-<td>Totale marktwaarde in originele valuta per instrument per regeling per beleggingsportefeuille</td>
+<td>Total market value in original currency per instrument per scheme per investment portfolio[1]</td>
 </tr>
 <tr>
-<th>Result i,j, k</th>
+<th>Result i,j, k[1]</th>
 <td>investment.investmentDetails</td>
 <td>result</td>
-<td>Ongerealiseerd resultaat per instrument per regeling per beleggingsportefeuille</td>
+<td>Unrealised result per instrument per scheme per investment portfolio</td>
 </tr>
 <tr>
 <th>Accrued Interest i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>accruedInterest</td>
-<td>Opgelopen rente per instrument per regeling per beleggingsportefeuille</td>
+<td>Accrued interest per instrument per scheme per investment portfolio</td>
 </tr>
 <tr>
 <th>Portfolio weight i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>poolPercentage</td>
-<td>Gewicht in de portefeuille per instrument per regeling per beleggingsportefeuille</td>
+<td>Weight in the portfolio per instrument per scheme per investment portfolio[2]</td>
 </tr>
 <tr>
 <th>FX rate i,j, k</th>
 <td>investment.investmentDetails</td>
 <td>currencyExchangeRate</td>
-<td>FX rates per instrument per regeling per beleggingsportefeuille / koers per positionDate</td>
+<td>FX rates per instrument per scheme per investment portfolio / rate per positionDate</td>
 </tr>
 <tr>
 <th>Trade date / Transaction date</th>
 <td>financialTransaction.trade</td>
 <td>tradeDate</td>
-<td>Gewenste handelsdatum</td>
+<td>Requested trade date</td>
 </tr>
 <tr>
 <th>Adj Trade i, j</th>
 <td>financialTransaction.trade</td>
 <td>adjustmentIndicator</td>
-<td>Aangepaste trade instructie</td>
+<td>Adjusted trade instruction</td>
 </tr>
 <tr>
 <th>Buy/Sell i,j</th>
 <td>financialTransaction.trade</td>
 <td>buySellId</td>
-<td>Aan- verkoop- switchindicator</td>
+<td>Buy, sell, switch indicator</td>
 </tr>
 <tr>
 <th>Amount</th>
 <td>financialTransaction.trade</td>
 <td>tradeAmount</td>
-<td>Bedrag van de aankoop in de valuta waarin de belegging luidt</td>
+<td>Amount of the purchase in the currency in which the investment is denominated</td>
 </tr>
 <tr>
 <th>Quantity</th>
 <td>financialTransaction.trade</td>
 <td>tradeQuantity</td>
-<td>Aantal te verhandelen stukken (units) van de transactie</td>
+<td>Number of pieces (units) to be traded in the transaction</td>
 </tr>
 <tr>
 <th>Price i,j</th>
 <td>financialTransaction.trade</td>
 <td>tradePrice</td>
-<td>Aankoopprijs / koers</td>
+<td>Purchase price / rate</td>
 </tr>
 <tr>
 <th>Switch type</th>
 <td>financialTransaction.trade</td>
 <td>switchType</td>
-<td>Type switch; one-day of sequential</td>
+<td>Type of switch; one-day or sequential</td>
 </tr>
 <tr>
 <th>Counterparty i,j</th>
 <td>financialTransaction.trade</td>
 <td>counterparty</td>
-<td>Transfer Agent; de partij die de aankoop/verkoop verricht</td>
+<td>Transfer Agent; the party that carries out the purchase/sale</td>
 </tr>
 <tr>
 <th>Broker i,j</th>
 <td>financialTransaction.trade</td>
 <td>broker</td>
-<td>Effectenmakelaar die beleggingsorders uitvoert namens klanten op de markt</td>
+<td>Broker that executes investment orders on the market on behalf of clients</td>
 </tr>
 <tr>
 <th>Interest i,j</th>
 <td>financialTransaction.trade</td>
 <td>interestAmount</td>
-<td>Bedrag aan van toepassing zijnde rente</td>
+<td>Amount of applicable interest</td>
 </tr>
 <tr>
 <th>Commission i, j</th>
 <td>financialTransaction.trade</td>
 <td>commissionAmount</td>
-<td>Vergoeding voor het uitvoeren van de transactie</td>
+<td>Fee for executing the transaction</td>
 </tr>
 <tr>
 <th>Clearing broker i,j</th>
 <td>financialTransaction.trade</td>
 <td>clearingBroker</td>
-<td>Effectenmakelaar verantwoordelijk administratieve en financiële afwikkeling van de transactie</td>
+<td>Broker responsible for the administrative and financial settlement of the transaction</td>
 </tr>
 <tr>
 <th>Cash account i,j</th>
 <td>financialTransaction.trade</td>
 <td>clearingBrokerCashAccount</td>
-<td>Geldrekening (IBAN) bij de clearingbroker op naam van de Pensioenuitvoerder</td>
+<td>Cash account (IBAN) with the clearing broker in the name of the pension provider</td>
 </tr>
 </tbody>
 </table>
+

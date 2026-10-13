@@ -1,17 +1,19 @@
-# Chapter 6: Functional Specifications
-This chapter contains the detailed functional specifications.
+# 6 Functional Specifications
 
-This chapter contains the functional specifications:
+**This chapter sets out the functional specifications:**
 
-*   Data Dictionary
-*   Base Message
-*   Cross-reference: Base Message & Messages
+- **Data dictionary;**
+
+- **Base message;**
+
+- **Cross-reference base message & messages.**
 
 ## 6.1 Data Dictionary
-An overview of all entities and their purpose. This section will link to detailed pages or files for each entity.
 
-| Entity.entitytype                    |
-| :----------------------------------- |
+The data dictionary gives an overview of all entities and entity types used within this standard.
+
+| **Entity.entitytype**                |
+|--------------------------------------|
 | commonTechnical.default              |
 | party.sender                         |
 | party.contact                        |
@@ -23,506 +25,765 @@ An overview of all entities and their purpose. This section will link to detaile
 | financialTransaction.payment         |
 | party.creditor                       |
 | financialTransaction.cashflow        |
-| financialTransaction.expectedPayment |
 | pension.cohort                       |
-| pension.cohortPool                   |
 | investment.pool                      |
 | investment.portfolio                 |
 | investment.investmentDetails         |
+| investment.corporateAction           |
 | financialTransaction.trade           |
 | error.default                        |
 | document.default                     |
-| investment.corporateAction           |
 | chunking.default                     |
 
-## 6.2 Entity Types
+## 6.2 Entities and Entity Types
+
 This section describes the various entities and the attributes within those entities.
 
-Below is an explanation of the entities. This information is derived from AFD 2.0, which can be consulted via [this link](https://www.sivi.org/standaarden/sivi-all-finance-standaard/afd-online-2-0/).
+Below is an explanation of the entities. This information is derived from AFD 2.0, which can be consulted via this [link](https://www.sivi.org/standaarden/sivi-all-finance-standaard/afd-online-2-0/).
 
-**Note:** The entity type is mandatory.
+Note: the entity type is mandatory.
 
-| **Entity.entitytype** | **Description** |
-| :--- | :--- |
-| `commonTechnical.default` | This entity contains technical details about sending and storing messages. It forms the basis for the technical aspects within the messaging system. |
-| `party.sender` | The "party.sender" entity refers to the sender of the message. |
-| `party.contact` | The "party.contact" entity represents a contact person within a legal entity. |
-| `party.receiver` | This entity represents the recipient of the message. |
-| `commonFunctional.default` | This entity contains domain-specific information about the content of the message. |
-| `party.pensionProvider` | This entity represents a pension provider (pension fund, insurer, or PPI). |
-| `pension.scheme` | This entity contains data at the level of the pension scheme or plan. |
-| `financialInformation.reportingPeriod` | This entity relates to reporting periods, time intervals, and other generic dates. |
-| `financialTransaction.payment` | This entity/entity type combination contains data about a payment. |
-| `party.creditor` | This entity represents the creditor; the recipient of the payments. |
-| `financialTransaction.cashflow` | This entity deals with financial transactions related to pensions, specifically focusing on cash flows. |
-| `financialTransaction.expectedPayment` | This entity contains information about projected future cash flows/payments. |
-| `pension.cohort` | This entity contains information about specific target groups (cohorts) within the pension scheme. |
-| `pension.cohortPool` | The pooled combination of investment pools for a cohort. Investments in a cohort pool are made for a group of participants with a similar investment allocation. |
-| `investment.pool` | This entity (investment pool) represents collections of underlying investments (liquid, illiquid, funds, mandates). |
-| `investment.portfolio` | This entity relates to investment portfolios, which represent the total managed assets (or a sub-portfolio). |
-| `investment.investmentDetails` | This entity describes individual investments of a pension provider. |
-| `investment.corporateAction` | This entity contains data about corporate action events on investment products, such as cash dividend, stock dividend, rebate, unit and capital shifts and product changes. The message is intended for communicating such events from the asset management chain to the PUO. |
-| `financialTransaction.trade` | This entity relates to trading activities within the pension scheme. |
-| `error.default` | In case of errors, this entity is used to generate error messages. |
-| `document.default` | This entity is intended for adding any attachments to messages. |
-| `chunking.default` | This entity contains metadata for splitting and merging large messages into sub-messages (chunking). If present, it indicates that the message is part of a larger logical message. |
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr>
+<th>Entity.entitytype</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>commonTechnical.default</th>
+<td>This entity contains technical details about sending and storing messages. It forms, as it were, the basis for the technical aspects within the messaging system.</td>
+</tr>
+<tr>
+<th>party.sender</th>
+<td>The entity "party.sender" refers to the sender of the message.</td>
+</tr>
+<tr>
+<th>party.contact</th>
+<td>The entity "party.contact" represents a contact person within a legal entity. These contact persons can be approached for further information about the message.</td>
+</tr>
+<tr>
+<th>party.receiver</th>
+<td>This entity represents the receiver of the message.</td>
+</tr>
+<tr>
+<th>commonFunctional</th>
+<td>This entity contains domain-specific information about the content of the message. It gives context and meaning to the functional details in the message.</td>
+</tr>
+<tr>
+<th>party.pensionProvider</th>
+<td><p>This entity represents a pension provider,</p>
+<p>A pension provider is a pension fund, insurer or premium pension institution (PPI) with which pension is accrued for the employee by the employer.</p></td>
+</tr>
+<tr>
+<th>pension.scheme</th>
+<td>This entity contains data at the level of the pension scheme, or the pension plan or schema.</td>
+</tr>
+<tr>
+<th>financialInformation.reportingPeriod</th>
+<td>This entity relates to reporting periods, time intervals over which reporting takes place and other generic dates.</td>
+</tr>
+<tr>
+<th>financialTransaction.payment</th>
+<td>This combination of entity and entity type contains data about a payment.</td>
+</tr>
+<tr>
+<th>party.creditor</th>
+<td>This entity represents the creditor; the recipient of the payments, within the ecosystem in which the messages are exchanged.</td>
+</tr>
+<tr>
+<th>financialTransaction.cashflow</th>
+<td>This entity deals with financial transactions relating to pensions, specifically focused on cash flows.</td>
+</tr>
+<tr>
+<th>financialTransaction.payment</th>
+<td>This entity contains information about payments and future cash flows/payments.</td>
+</tr>
+<tr>
+<th>pension.cohort</th>
+<td>This entity contains information about specific target groups within the pension scheme.</td>
+</tr>
+<tr>
+<th>investment.pool</th>
+<td>This entity (investment pool) represents the collections of diverse underlying investments (liquid, illiquid, funds and mandates).</td>
+</tr>
+<tr>
+<th>investment.portfolio</th>
+<td>This entity relates to investment portfolios, which represent the total managed assets (or a sub-portfolio) within the collective.</td>
+</tr>
+<tr>
+<th>investment.investmentDetails</th>
+<td>This entity describes individual investments of a pension provider in shares or investment funds.</td>
+</tr>
+<tr>
+<th>investment.corporateAction</th>
+<td>This entity contains data about corporate action events on investment products, such as cash dividend, stock dividend, rebate, unit and capital shifts and product changes. The message is intended for passing on such events from the asset management chain to the PUO.</td>
+</tr>
+<tr>
+<th>financialTransaction.trade</th>
+<td>This entity relates to trading activities within the pension scheme.</td>
+</tr>
+<tr>
+<th>error</th>
+<td>In the case of errors in the system, this entity is used to generate error messages and to indicate exactly what went wrong.</td>
+</tr>
+<tr>
+<th>document</th>
+<td>This entity is intended for adding any attachments to messages.</td>
+</tr>
+<tr>
+<th>chunking.default</th>
+<td>This entity contains metadata for splitting large messages into partial messages and merging them again (chunking). If present, it indicates that the message is part of a larger logical message.</td>
+</tr>
+</tbody>
+</table>
 
 ## 6.3 Attributes in Entities.Entity Types
 
-The tables in this section detail the attributes per entity/entity type combination. Each entry includes the attribute's name, definition, data type, max length, and a link to any code list.
+In the tables in this section, the attributes are described per combination of entity and entity type. In addition to the attribute name, the description contains a definition of the attribute, the data type of the attribute, the intended maximum length of the data item and a reference (link) to any code list.
 
-*Note: Attribute descriptions in the feedback message may differ from those in the 14 content messages.*
+Note: the description of the attributes in the feedback message may differ from the description in the substantive messages.
 
-Data type descriptions are available in the SIVI All-Finance Standard manual.
+The description of the data types used can be found in the [sivi-all-finance-standard manual](https://www.manula.com/manuals/sivi/sivi-all-finance-standard/1/en/topic/data-types-and-formats?q=string).
 
-**Interpretation rules:**
+When interpreting the tables below, the following is important:
 
-*   **`string`:** Max length is specified unless a code list applies (then 'length' is empty).
-*   **`decimal`:** Defaults to 2 decimal places. Deviations are specified in the data type column.
+- Data type string: in the tables below, the maximum number of positions is stated for strings, unless reference is made to a code list or an enumeration. In those cases “length” is empty.
 
-Attribute names have been aligned with AFD 2.0 conventions and differ from the consultation document. See Appendix 8.4 for the translation table.
+- Data type decimal: in principle has a maximum of 2 places after the “,” (1E-2). Any deviation from this is stated in the data type column.
+
+The attribute names differ from the naming in the consultation document; they are now – partly – designed on the basis of the AFD 2.0 conventions. Appendix 8.4 contains the “Translation table of functional attributes to AFD2.0 attributes”.
 
 **Use of `refKey`**
 
-In the tables below, nearly every entity has the attribute `refKey`. This attribute serves as the unique identifier of an entity. The purpose is that an entity can be reliably recognized and referenced within or between messages and files — much like an ISIN identifies an investment instrument without saying anything about the investment policy that applies to it.
+In the tables below, the attribute `refKey` occurs in almost every entity. This attribute serves as the unique identifier of an entity. The aim is that an entity can be reliably recognised and referred to within or between messages and files — just as an ISIN identifies an investment instrument without saying anything about the investment policy that applies to it.
 
-`refKey` may be technically or functionally recognizable, but no classification, investment policy, or business logic should be derived from it. The substantive classification belongs in the designated fields (e.g. `reserveType`).
+`refKey` may be technically or functionally recognisable, but no classification, investment policy or business logic may be derived from it. The substantive classification belongs in the fields intended for that purpose (for example `reserveType`).
 
 See GitHub issue [#111](https://github.com/Stichting-SIVI/VBPUOdsk/issues/111).
 
-### `commonTechnical.default`
-_The commonTechnical entity covers all information about sending or storing the message. This is typically technical information._
+<!-- Generated by gen_html_assets.py — entities/attributes §6.3          -->
+<!-- Integrate into chapter-6-functionele-specificaties.md               -->
+<!-- Keep footnotes manually BETWEEN the entity blocks                   -->
 
-| Attribute Name     | Definition                     | Data Type | Length | Code List |
-| :----------------- | :----------------------------- | :-------- | :----- | :-------- |
-| `messageId`        | Unique message identification  | string    | 70     |           |
-| `creationDateTime` | Creation date and time         | timestamp |        |           |
-| `testMessage`      | Test message indicator         | boolean   |        |           |
+<!-- Entity blocks generated by gen_html_assets.py from the model delivery.   -->
+<!-- Explanations between and below the blocks belong to the documentation    -->
+<!-- side and are re-applied on regeneration by scripts/integreer63.py.       -->
+
+<div class="vbt-entiteit" id="entiteit-commontechnical-default">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">commonTechnical.default</span>
+  <span class="vbt-titel-nr">[T1]</span>
+</div>
+<div class="vbt-omschrijving-rij">The commonTechnical entity covers all information about sending or storing the message. This is typically technical information.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>messageId</td><td>Unique message identification</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>creationDateTime</td><td>Creation date and time Date</td><td>timestamp</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>testMessage</td><td>Test message indicator</td><td>boolean</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
 **Uniqueness of `messageId`**
 
-The `messageId` is always unique across all messages, regardless of message type or period. Using `messageId` for grouping or bundling messages is not allowed. Any relationship between messages is derived from substantive characteristics, such as the period to which the message pertains.
+The `messageId` is always unique across all messages, regardless of message type or period. Using the `messageId` to group or bundle messages is not allowed. Any relationship between messages is derived from substantive characteristics, such as the period to which the message relates.
 
 The only exception is chunking (§7.6): chunks of the same logical message share the same `messageId`.
 
 See GitHub issue [#108](https://github.com/Stichting-SIVI/VBPUOdsk/issues/108).
 
-### `party.sender`
-_Sender of the message._
+<div class="vbt-entiteit" id="entiteit-party-sender">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">party.sender</span>
+  <span class="vbt-titel-nr">[T2]</span>
+</div>
+<div class="vbt-omschrijving-rij">Sender.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>rsinNumber</td><td>Governmental identification number for legal entities and associations (RSIN)</td><td>string</td><td class="vbt-td-c">9</td><td></td></tr>
+<tr><td>organizationName</td><td>Organisation name of the sender</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>applicationSenderName</td><td>Name of the application that created the message<a href="#fn-appsender" id="fnref-appsender"><sup>*</sup></a></td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+</tbody></table>
 
-| Attribute Name            | Definition                                                     | Data Type | Length | Code List |
-| :------------------------ | :------------------------------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`                  | Unique reference key assigned to an entity.                    | string    | 70     |           |
-| `rsinNumber`              | Governmental identification number for legal entities (RSIN).  | string    | 9      |           |
-| `organizationName`        | Organization name of the sender.                               | string    | 60     |           |
-| `applicationSenderName`   | Name of the application that created the message.*             | string    | 60     |           |
+<p id="fn-appsender" style="font-size: 0.85em; margin-top: 0.5em;"><sup>*</sup> In AFD 2.0, applicationSendername is available under both party.sender and commonTechnical. This is indeed not apparent from the AFD 2.0 Online consultation documentation (as of April 2024). It was decided to place the attribute under party.sender for VBPUO. <a href="#fnref-appsender">↩︎</a></p>
+</div>
 
-*\* `applicationSenderName` is available in AFD 2.0 under both `party.sender` and `commonTechnical`. This is not apparent from the AFD 2.0 Online documentation (as of April 2024). For VB-PUO, the attribute has been placed under `party.sender`.*
+<div class="vbt-entiteit" id="entiteit-party-contact">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">party.contact</span>
+  <span class="vbt-titel-nr">[T3]</span>
+</div>
+<div class="vbt-omschrijving-rij">A natural person who can be contacted within a legal person for further information.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>emailWork</td><td>Work email address </td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>workPhoneNumber</td><td>Work phone number </td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+</tbody></table>
+</div>
 
-### `party.contact`
-_A natural person who can be contacted within a legal entity for further information._
+<div class="vbt-entiteit" id="entiteit-party-receiver">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">party.receiver</span>
+  <span class="vbt-titel-nr">[T4]</span>
+</div>
+<div class="vbt-omschrijving-rij">Receiver.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>rsinNumber</td><td>Governmental identification number for legal entities and associations (RSIN)</td><td>string</td><td class="vbt-td-c">9</td><td></td></tr>
+<tr><td>organizationName</td><td>Name of the receiver(s) (organisation(s))</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name      | Definition         | Data Type | Length | Code List |
-| :------------------ | :----------------- | :-------- | :----- | :-------- |
-| `emailWork`         | Work email address | string    | 60     |           |
-| `workPhoneNumber`   | Work phone number  | string    | 60     |           |
+<div class="vbt-entiteit" id="entiteit-commonfunctional-default">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">commonFunctional.default</span>
+  <span class="vbt-titel-nr">[T5]</span>
+</div>
+<div class="vbt-omschrijving-rij">The commonFunctional entity covers all information about the content of the message. This is typically domain-specific information.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>function</td><td>Message function code.</td><td>string</td><td class="vbt-td-c"></td><td>ADNFUN (01; 02;09;54 or 23)</td></tr>
+<tr><td>statusType</td><td>Status of the proccessing of the original message for which the status and/or errors are being sent to the Feedback endpoint. Message statuses are either &#x27;Accepted (8 - Geaccepteerd)&#x27; or &#x27;Not Accepted (0 - Afgewezen).</td><td>string</td><td class="vbt-td-c"></td><td>ADNSTS (0; 8)</td></tr>
+<tr><td>afdDefinitionName</td><td>Message type</td><td>string</td><td class="vbt-td-c">80</td><td></td></tr>
+<tr><td>afdDefinitionVersion</td><td>Version of the standard</td><td>string</td><td class="vbt-td-c">80</td><td></td></tr>
+<tr><td>originalMessageId</td><td>The original messageId of the message that is replaced by this message</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>originalMessageType</td><td>Message type of the original request to which this message is a response. For example: 0001a from “Message Structure 1. Assets (0001a)”</td><td>string</td><td class="vbt-td-c"></td><td>0001a; 0001b; 0001c; 00002; 00541; 00542; 00553; 00555b; 00556; 00557</td></tr>
+</tbody></table>
+</div>
 
-### `party.receiver`
-_Receiver of the message._
+<div class="vbt-entiteit" id="entiteit-party-pensionprovider">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">party.pensionProvider</span>
+  <span class="vbt-titel-nr">[T6]</span>
+</div>
+<div class="vbt-omschrijving-rij">Information on pensionprovider Level</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>puvCode</td><td>ID of the pension provider (PUV code) / Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c"></td><td>AFDIDP (U0003; U0005; ... ;U0765)</td></tr>
+<tr><td>rsinNumber</td><td>Governmental identification number for legal entities and associations (RSIN)</td><td>string</td><td class="vbt-td-c">9</td><td></td></tr>
+<tr><td>organizationName</td><td>Name of the pension provider</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name     | Definition                                                    | Data Type | Length | Code List |
-| :----------------- | :------------------------------------------------------------ | :-------- | :----- | :-------- |
-| `refKey`           | Unique reference key assigned to an entity.                   | string    | 70     |           |
-| `rsinNumber`       | Governmental identification number for legal entities (RSIN). | string    | 9      |           |
-| `organizationName` | Name of the recipient organization(s).                        | string    | 60     |           |
+For APFs with multiple ring-fenced compartments (kringen), there are two common scenarios for the use of PUV codes. See the explanation of the [base message in §6.4.1](../chapter-6-4-messages/#641-base-message).
 
-### `commonFunctional.default`
-_The commonFunctional entity covers all information about the content of the message. This is typically domain-specific information._
+<div class="vbt-entiteit" id="entiteit-pension-scheme">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">pension.scheme</span>
+  <span class="vbt-titel-nr">[T7]</span>
+</div>
+<div class="vbt-omschrijving-rij">Data on pension scheme level</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>ID of the pension scheme / (Unique reference key assigned to an entity.)</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>pensionSchemeName</td><td>Name of the pension scheme</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>startAmount</td><td>Total pension assets as at the start date</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradingPortfolioId</td><td>Portfolio ID of the custodian (safekeeping and administration of financial assets)</td><td>string</td><td class="vbt-td-c">10</td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name         | Definition                                                                                             | Data Type | Length | Code List |
-| :--------------------- | :----------------------------------------------------------------------------------------------------- | :-------- | :----- | :-------- |
-| `function`             | Message function code.                                                                                 | string    |        | ADNFUN    |
-| `statusType`           | Status of the original message processing (Accepted or Rejected).                                      | string    |        | ADNSTS    |
-| `afdDefinitionName`    | Type of message, name of the message.                                                                  | string    | 80     |           |
-| `afdDefinitionVersion` | Version of the `afdDefinition` of the message. See section 7.5.1 for details.                          | string    | 80     |           |
-| `originalMessageId`    | The original `messageId` of the message being replaced or being responded to.                          | string    | 70     |           |
-| `originalMessageType`  | Message type of the original request to which this message is a response. E.g. `0001a`, `0001b`, etc.   | string    |        | 0001a; 0001b; 0001c; 00002; 00541; 00542; 00551; 00552a; 00552b; 00553; 00554; 00555a; 00555b; 00556 |
-
-### `party.pensionProvider`
-_Information on the Pension Provider level (Pension Fund, Insurer, PPI, APF)._
-
-| Attribute Name     | Definition                                                    | Data Type | Length | Code List |
-| :----------------- | :------------------------------------------------------------ | :-------- | :----- | :-------- |
-| `puvCode`          | ID of the pension provider (PUV-code).                        | string    |        | AFDIDP    |
-| `rsinNumber`       | Governmental identification number for legal entities (RSIN). | integer   | 9      |           |
-| `organizationName` | Name of the pension provider.                                 | string    | 60     |           |
-
-For APFs (general pension funds) with multiple circles ("kringen"), there are two common scenarios for the use of PUV codes. See the explanation in the base message in [§6.4.1](chapter-6-4-messages.md).
-
-### `pension.scheme`
-_Data on the pension scheme level._
-
-| Attribute Name         | Definition                                    | Data Type | Length | Code List |
-| :--------------------- | :-------------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`               | ID of the pension scheme.                     | string    | 70     |           |
-| `pensionSchemeName`    | Name of the pension scheme.                   | string    | 60     |           |
-| `StartAmount`          | Total pension assets as of the start date.    | decimal   |        |           |
-| `tradingPortfolioId`   | Portfolio ID of the custodian.                | string    | 10     |           |
-
-### `financialInformation.reportingPeriod`
-_Reporting period information._
-
-| Attribute Name                  | Definition                                                          | Data Type | Length | Code List |
-| :------------------------------ | :------------------------------------------------------------------ | :-------- | :----- | :-------- |
-| `startDate`                     | Start date of the data period or reference date.                    | date      |        |           |
-| `endDate`                       | End date of the data period.                                        | date      |        |           |
-| `tradeDate`                     | Desired trade date.                                                 | date      |        |           |
-| `investmentOrderSettlementDate` | Date by which the investment order cycle must be settled.           | date      |        |           |
-| `mutationValuationDate`         | Date for processing mutations per age group.                        | date      |        |           |
-| `projectionDate`                | Date of the pension benefit projection.                             | date      |        |           |
-| `instructionDate`               | Date of the instruction sent by the PUO.                            | date      |        |           |
-| `unitValueEstimationDate`       | Date on which the preliminary unit value (investment pool) was determined. | date      |        |           |
-| `participationValuationDate`    | Pricing date of the participation value (cohort pool).              | date      |        |           |
-| `positionDate`                  | Date on which the positions in the investment administration were established. | date      |        |           |
-| `valueDate`                     | Currency date.                                                      | date      |        |           |
+<div class="vbt-entiteit" id="entiteit-financialinformation-reportingperiod">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">financialInformation.reportingPeriod</span>
+  <span class="vbt-titel-nr">[T8]</span>
+</div>
+<div class="vbt-omschrijving-rij">Reportingperiod Information</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>startDate</td><td>Start date of the data period on which the delivery from the PUO is based, or reference date</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>endDate</td><td>End date of the data period on which the delivery from the PUO is based</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>endDate</td><td>End date of the data period over which return is reported</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradeDate</td><td>Desired trade date</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>investmentOrderSettlementDate</td><td>Date by which the full cycle of the investment order must have been settled</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>projectionDate</td><td>Date of the projection of pension benefits</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>instructionDate</td><td>Instruction date (date of the order sent by the PUO)</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>participationValuationDate</td><td>Price date of the net asset value (NAV) per unit of the investment pool, as determined by the investment administrator.</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>valueDate</td><td>Currency date.</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
 **Date conventions for startDate and projectionDate**
 
 To prevent inconsistent use of dates between chain parties, the standard applies the following convention:
 
 | Field | Message | Convention | Example |
-|-------|---------|-----------|---------|
-| startDate | Message 1 (Capital) | Last day of the preceding month | 31-01-2025 |
-| projectionDate | Message 3 (Pension projection) | Last day of the preceding month | 31-01-2025 |
-| firstExpectedPaymentDate | Message 3 (Pension projection) | First day of the current month | 01-02-2025 |
+|------|---------|-----------|-----------|
+| startDate | Message 1 (Assets) | Last day of the preceding month | 31-01-2025 |
+| projectionDate | Message 3 (Pension Projection) | Last day of the preceding month | 31-01-2025 |
+| firstExpectedPaymentDate | Message 3 (Pension Projection) | First day of the current month | 01-02-2025 |
 
 This approach provides clarity and predictability in the chain. See GitHub issue [#94](https://github.com/Stichting-SIVI/VBPUOdsk/issues/94).
 
-### `financialTransaction.payment`
-_Information about payments._
+<div class="vbt-entiteit" id="entiteit-financialtransaction-payment">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">financialTransaction.payment</span>
+  <span class="vbt-titel-nr">[T9]</span>
+</div>
+<div class="vbt-omschrijving-rij">Information about payments.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>amount</td><td>Amount in currency</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>currencyType</td><td>Currency</td><td>string</td><td class="vbt-td-c"></td><td>ISOVAL (EUR; USD; …)</td></tr>
+<tr><td>collectionAccountIban</td><td>IBAN of the debit account</td><td>string</td><td class="vbt-td-c">34</td><td></td></tr>
+<tr><td>description</td><td>Description of the transaction (payment)</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>refKey</td><td>ID of the expected payment</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>expectedPensionPaymentDate</td><td>Pension benefit payment date</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>amount</td><td>Projected benefit across all cohorts</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>hedgedExpectedPensionPaymentAmount</td><td>Cash flow to be hedged across all cohorts</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>amount</td><td>Projected benefit </td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>hedgedExpectedPensionPaymentAmount</td><td>Cash flow to be hedged</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
 
-| Attribute Name                       | Definition                                 | Data Type | Length | Code List |
-| :----------------------------------- | :----------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`                             | ID of the expected payment.                | string    | 70     |           |
-| `amount`                             | Amount in currency / projected benefit.    | decimal   |        |           |
-| `currencyType`                       | Currency code.                             | string    |        | ISOVAL    |
-| `collectionAccountIban`              | IBAN of the debit account.                 | string    | 34     |           |
-| `description`                        | Description of the transaction (payment).  | string    | 60     |           |
-| `expectedPensionPaymentDate`         | Pension payment date.                      | date      |        |           |
-| `hedgedExpectedPensionPaymentAmount` | Cash flow to be hedged.                    | decimal   |        |           |
+Field length of `collectionAccountIban` corrected from 10 to 34 (international maximum IBAN length in accordance with ISO 13616). See GitHub issue [#135](https://github.com/Stichting-SIVI/VBPUOdsk/issues/135).
+</div>
 
-Field length `collectionAccountIban` corrected from 10 to 34 (international IBAN maximum length per ISO 13616). See GitHub issue [#135](https://github.com/Stichting-SIVI/VBPUOdsk/issues/135).
+<div class="vbt-entiteit" id="entiteit-party-creditor">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">party.creditor</span>
+  <span class="vbt-titel-nr">[T10]</span>
+</div>
+<div class="vbt-omschrijving-rij">The party that has a claim.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>collectionAccountIban</td><td>IBAN of the credit account per scheme</td><td>string</td><td class="vbt-td-c">34</td><td></td></tr>
+<tr><td>collectionAccountInNameOf</td><td>Name of the counterparty per scheme</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>collectionAccountBic</td><td>Business Identifier Code (BIC) per scheme</td><td>string</td><td class="vbt-td-c">10</td><td></td></tr>
+<tr><td>collectionAccountBicCorrespondent</td><td>BIC correspondent per scheme</td><td>string</td><td class="vbt-td-c">10</td><td></td></tr>
+</tbody></table>
 
-### `party.creditor`
-_The party that has a claim._
+Field length of `collectionAccountIban` corrected from 10 to 34. See GitHub issue [#135](https://github.com/Stichting-SIVI/VBPUOdsk/issues/135).
+</div>
 
-| Attribute Name                      | Definition                                | Data Type | Length | Code List |
-| :---------------------------------- | :---------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`                            | Unique reference key assigned to an entity. | string    | 70     |           |
-| `collectionAccountIban`             | IBAN of the credit account per scheme.    | string    | 34     |           |
-| `collectionAccountInNameOf`         | Name of the counterparty per scheme.      | string    | 60     |           |
-| `collectionAccountBic`              | Business Identifier Code (BIC) per scheme. | string    | 10     |           |
-| `collectionAccountBicCorrespondent` | BIC correspondent per scheme.             | string    | 10     |           |
-
-Field length `collectionAccountIban` corrected from 10 to 34. See GitHub issue [#135](https://github.com/Stichting-SIVI/VBPUOdsk/issues/135).
-
-### `financialTransaction.cashflow`
-_The sum of contributions and withdrawals on all cohorts._*
-
-| Attribute Name     | Definition                                    | Data Type | Length | Code List |
-| :----------------- | :-------------------------------------------- | :-------- | :----- | :-------- |
-| `contributionAmount` | Sum of contributions.                         | decimal   |        |           |
-| `contributionDate` | Date of receipt of the contribution.          | date      |        |           |
-| `withdrawalAmount` | Sum of withdrawals.                           | decimal   |        |           |
-| `withdrawalDate`   | Date by which funds for withdrawal are available. | date      |        |           |
-| `netAmount`        | Net sum of contributions and withdrawals.     | decimal   |        |           |
-| `netDate`          | Date on which the net cash flow is actually paid. | date      |        |           |
-
-_*Note: The amount and date fields in `financialTransaction.cashflow` are optional. At least one pair must be used._
+<div class="vbt-entiteit" id="entiteit-financialtransaction-cashflow">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">financialTransaction.cashflow</span>
+  <span class="vbt-titel-nr">[T11]</span>
+</div>
+<div class="vbt-omschrijving-rij">The sum of contributions and withdrawals on all cohorts</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>contributionAmount</td><td>Sum of contributions</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>contributionDate</td><td>Date of receipt of the contributions</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>withdrawalAmount</td><td>Sum of the outflow</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>withdrawalDate</td><td>Date on which (at the latest) the liquidity for the withdrawal has been made available</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netAmount</td><td>Sum of contributions and withdrawals per scheme (net). A negative amount is a (net) withdrawal. / Difference between contributions and withdrawals. A negative amount is a (net) withdrawal.)</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netDate</td><td>The value date on which the netted cash flow amount (contributions minus withdrawals) is actually paid by the PUO to, or received by the PUO from, the asset manager</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netAmount</td><td>Netted cash flow amount per investment portfolio within a scheme. A negative amount is a net withdrawal.</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netDate</td><td>The value date on which the net cash flow amount per investment portfolio is actually paid by the PUO to, or received by the PUO from, the asset manager</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
 **Field usage in `financialTransaction.cashflow`**
 
-In the SPR context, `financialTransaction.cashflow` is used directly under `pension.scheme`; the amount and date fields are optional. Parties coordinate which amount/date combinations they use; in the JSON schema all fields are optional. When using the entity, at least one combination must be filled.
+In the SPR context, `financialTransaction.cashflow` is used directly under `pension.scheme`. The entity itself is optional, but if it occurs, `netAmount` and `netDate` are mandatory; the fields for inflow and outflow are optional (see §6.3.1).
 
-In the FPR context, the `financialTransaction.cashflow` entity is used under `investment.portfolio`, and `netAmount` and `netDate` are required.
+In the FPR context, the `financialTransaction.cashflow` entity is used under `investment.portfolio` and `netAmount` and `netDate` are mandatory.
 
-### `pension.cohort`
-_Information on cohort (pension target audience) level._
+<div class="vbt-entiteit" id="entiteit-pension-cohort">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">pension.cohort</span>
+  <span class="vbt-titel-nr">[T12]</span>
+</div>
+<div class="vbt-omschrijving-rij">Information on cohort (pension target audience) level</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>ID of the cohort</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>Description of the cohort</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>participationStatus</td><td>Status of the participants in a cohort</td><td>string</td><td class="vbt-td-c"></td><td>ADNDNS (16; 20; 35; 40; 70; 80)</td></tr>
+<tr><td>startAge</td><td>Start age in months</td><td>integer</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>endAge</td><td>End age in months</td><td>integer</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>reserveIndicator</td><td>Indicator of whether the cohort reflects a reserve</td><td>boolean</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>reserveType</td><td>Choice of the type of (reserve, in fact a) provision / type of provision. Where the investment policy is shared, consolidation is possible; an explicit code only for a separate investment policy.</td><td>string</td><td class="vbt-td-c"></td><td>AFDRES (1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12; 13; 14; 15; 99)</td></tr>
+<tr><td>reserveDescription</td><td>Description of the reserve when &quot;Other&quot; is chosen in reserve type.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>startAmount</td><td>Pension assets of the cohort as at the start date</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netAmount</td><td>Sum of contributions and withdrawals per cohort. A negative amount is a (net) withdrawal.)</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netDate</td><td>The value date on which the netted cash flow amount for the cohort is actually paid by the PUO to, or received by the PUO from, the asset manager</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>contributionAmount</td><td>Inflow to be invested by the fiduciary manager</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>withdrawalAmount</td><td>Outflow to be invested by the fiduciary manager</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>protectionReturnPercentage</td><td>The protection return achieved, as a percentage, over the data period per scheme and per cohort</td><td>decimal (1E-12)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>excessReturnPercentage</td><td>The excess return achieved, as a percentage, over the data period per scheme and per cohort </td><td>decimal (1E-12)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>protectionReturnAmount</td><td>The protection return achieved, in the currency of the scheme, over the data period per scheme and per cohort</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>excessReturnAmount</td><td>The excess return achieved, in the currency of the scheme, over the data period per scheme and per cohort</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name             | Definition                                      | Data Type     | Length | Code List |
-| :------------------------- | :---------------------------------------------- | :------------ | :----- | :-------- |
-| `refKey`                   | ID of the cohort.                               | string        | 70     |           |
-| `description`              | Description of the cohort.                      | string        | 60     |           |
-| `participationStatus`      | Status of the participants in a cohort.         | string        |        | ADNDNS    |
-| `startAge`                 | Start age in months.                            | integer       |        |           |
-| `endAge`                   | End age in months.                              | integer       |        |           |
-| `reserveIndicator`         | Indicates if the cohort represents a reserve.   | boolean       |        |           |
-| `reserveType`              | Type of reserve.                                | string        |        | AFDRES    |
-| `reserveDescription`       | Description for "Other" reserve type.           | string        | 60     |           |
-| `startAmount`              | Pension assets of the cohort at the start date. | decimal       |        |           |
-| `netAmount`                | Net sum of contributions and withdrawals per cohort. | decimal       |        |           |
-| `netDate`                  | Settlement date on which the net cash flow for the cohort is actually paid by or received from the asset manager. | date          |        |           |
-| `contributionAmount`       | Inflow to be invested by the fiduciary manager. | decimal       |        |           |
-| `withdrawalAmount`         | Outflow to be invested by the fiduciary manager.| decimal       |        |           |
-| `protectionReturnPercentage` | Achieved protection return as a percentage.     | Decimal (1E-12) |      |           |
-| `excessReturnPercentage`   | Achieved excess return as a percentage.         | Decimal (1E-12) |      |           |
-| `protectionReturnAmount`   | Achieved protection return in currency.         | decimal       |        |           |
-| `excessReturnAmount`       | Achieved excess return in currency.             | decimal       |        |           |
+**Age cohorts: standard set-up**
 
-**Age cohorts: standard setup**
+The standard set-up uses annual age cohorts. This means that, in principle, a difference of 12 months is applied between two consecutive `startAge` values: `startAge` is a multiple of 12 (0, 12, 24, ...) and `endAge` = `startAge` + 11. Smaller steps (for example monthly) are not excluded, but the annual division serves as the reference model. See GitHub issue [#111](https://github.com/Stichting-SIVI/VBPUOdsk/issues/111).
 
-The standard setup uses yearly age cohorts. This means that two consecutive `startAge` values differ by 12 months in principle: `startAge` is a multiple of 12 (0, 12, 24, ...) and `endAge` = `startAge` + 11. Smaller steps (e.g. monthly) are not excluded, but the yearly division serves as the reference model. See GitHub issue [#111](https://github.com/Stichting-SIVI/VBPUOdsk/issues/111).
 
-**Reserves and provisions: role of fields**
+**Cohorts with value 0**
+{: #cohorten-met-waarde-0 }
 
-For cohorts representing a reserve or provision (`reserveIndicator` = true), the following role assignment applies:
+For all messages with cohorts (messages 1 to 4), the following applies: a cohort with value 0 may be sent with the value `0` or be omitted. Sending it makes the distinction visible between "the value is 0" and "the cohort is missing"; omitting it keeps the message compact. Parties must be able to process both. What the absence of a cohort means is laid down by chain parties in their agreements (TOM/SLA). For large messages, the [chunking mechanism](../chapter-7-6-chunking/#761-fundamental-principles-of-chunking) can offer a solution. See GitHub issue [#100](https://github.com/Stichting-SIVI/VBPUOdsk/issues/100).
 
-- **`reserveType`** (code list AFDRES) is the substantive classification and the exclusive key for the investment policy. Reserves or provisions with a different investment policy require a different `reserveType` value. The code list has been extended in release 2027 with codes 9 through 15. Where investment policy is shared, consolidation is possible; an explicit code is only needed for separate investment policies. This applies to both SPR and FPR. See GitHub issue [#134](https://github.com/Stichting-SIVI/VBPUOdsk/issues/134).
-- **`reserveDescription`** is purely descriptive. The description may clarify or elaborate, but does not determine classification, routing, or investment policy.
+This also applies to cohorts that represent a reserve or provision (`reserveIndicator` = true). Omitting a reserve therefore does not automatically mean that the value is 0.
+
+The standard has no separate representation for "nothing to report": parties use the value `0` for this or omit the cohort. The standard does not recognise a field without a value (in JSON: `null`): a field is delivered with a value, or it is omitted.
+
+
+**Reserves and provisions: division of roles between fields**
+
+
+**Consistency check.** If `reserveIndicator` = true, `reserveType` is mandatory. `reserveDescription` is desirable for `reserveType` 99 (Other) and possible for the other codes. Both fields are optional in the model; the obligation for `reserveType` follows from this rule. The reserve fields are only on `pension.cohort`, not on `investment.portfolio`.
+
+
+For cohorts that represent a reserve or provision (`reserveIndicator` = true), the following division of roles applies:
+
+- **`reserveType`** (code list AFDRES) is the substantive classification and the exclusive key for the investment policy. Reserves or provisions with a different investment policy require a different `reserveType` value. As of release 2027, the code list has been extended with codes 9 to 15. Where the investment policy is shared, consolidation is possible; an explicit code is only needed for a separate investment policy. This applies to both SPR and FPR. See GitHub issue [#134](https://github.com/Stichting-SIVI/VBPUOdsk/issues/134).
+- **`reserveDescription`** is purely descriptive. The description may explain or clarify, but does not determine classification, routing or investment policy.
 - **`refKey`** uniquely identifies the cohort (see the general explanation of `refKey` above). Multiple cohorts with the same `reserveType` are permitted, provided they fall under the same investment policy.
 
 See GitHub issue [#111](https://github.com/Stichting-SIVI/VBPUOdsk/issues/111).
 
-### `pension.cohortPool`
-_The pooled combination of investments (investment pools) for a cohort._
+<div class="vbt-entiteit" id="entiteit-investment-portfolio">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">investment.portfolio</span>
+  <span class="vbt-titel-nr">[T13]</span>
+</div>
+<div class="vbt-omschrijving-rij">Investment portfolio</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Investment portfolio ID / Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>Description</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>startExposureAmount</td><td>The allocation of the pension assets per cohort to a specific investment portfolio, calculated on the basis of the allocation rules as applied by the PUO.)</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>startExposurePercentage</td><td>The relative share of startExposureAmount in relation to the total pension assets as at the date.)</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>startAmount</td><td>The value of the Total Market Value at the start of the data period</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>netAmount</td><td>Sum of contributions and withdrawals per scheme (net). A negative amount is a (net) withdrawal</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>endAmount</td><td>The value of the Total Market Value at the end of the data period. Per scheme and investment portfolio</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>returnPercentage</td><td>The return achieved, as a percentage, over the data period per scheme and per investment portfolio</td><td>decimal (1E-12)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>returnAmount</td><td>The return achieved, in the currency of the scheme, over the data period per scheme and per investment portfolio</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name                    | Definition                                           | Data Type | Length | Code List |
-| :-------------------------------- | :--------------------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`                          | ID of the cohort pool.                               | string    | 70     |           |
-| `cohortRef`                       | Reference to the cohort this pool belongs to.        | string    | 70     |           |
-| `description`                     | Description.                                         | string    | 60     |           |
-| `currencyType`                    | Currency of the cohort data.                         | string    |        | ISOVAL    |
-| `inflowPremiumAmount`             | Premium contribution per cohort pool.                | decimal   |        |           |
-| `inflowRebalanceAmount`           | Cash amount of rebalance transactions per cohort pool. | decimal   |        |           |
-| `numberOfNewParticipations`       | New participations to be issued in the cohort pool.  | decimal   |        |           |
-| `numberOfParticipations`          | Number of outstanding units (participations).        | decimal   |        |           |
-| `numberOfRebalanceParticipations` | Rebalance participations per cohort pool.            | decimal   |        |           |
-| `participationsSummedValueAmount` | Value per cohort pool (sum of participation value).  | decimal   |        |           |
+<div class="vbt-entiteit" id="entiteit-investment-pool">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">investment.pool</span>
+  <span class="vbt-titel-nr">[T14]</span>
+</div>
+<div class="vbt-omschrijving-rij">Investment pool / investment portfolio</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>ID of the investment pool per scheme</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>Description</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>unitsSummedValueAmount</td><td>Value per investment pool (unit value)</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>preliminaryUnitValueAmount</td><td>The net asset value (NAV) per unit of the investment pool, as determined by the investment administrator</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>numberOfUnits</td><td>Number of units issued for the investment pool, </td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>currencyType</td><td>Currency of the pool</td><td>string</td><td class="vbt-td-c"></td><td>ISOVAL (EUR; USD; …)</td></tr>
+<tr><td>buySellId</td><td>Buy/sell indicator; ID for buy/sell per investment pool per scheme</td><td>string</td><td class="vbt-td-c"></td><td>sell; buy</td></tr>
+<tr><td>tradeValueAmount</td><td>Transaction value per investment pool per scheme</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
 
-### `investment.pool`
-_Investment pool / investment portfolio._
+`marketValueAmount` has been removed from the standard as of release 2027; the net asset value is expressed exclusively through `preliminaryUnitValueAmount`. The field name `preliminary` has historical origins and will be cleaned up in a future release. See GitHub issue [#128](https://github.com/Stichting-SIVI/VBPUOdsk/issues/128).
+</div>
 
-| Attribute Name                 | Definition                                   | Data Type      | Length | Code List |
-| :----------------------------- | :------------------------------------------- | :------------- | :----- | :-------- |
-| `refKey`                       | ID of the investment pool per scheme.        | string         | 70     |           |
-| `description`                  | Description.                                 | string         | 60     |           |
-| `unitsSummedValueAmount`       | Value per investment pool (unit value).      | decimal        |        |           |
-| `preliminaryUnitValueAmount`   | Net asset value (NAV) per unit of the investment pool, as determined by the investment administrator. | decimal (1E-06) |   |           |
-| `numberOfUnits`                | Number of units issued for the investment pool. | decimal (1E-06) |    |           |
-| `currencyType`                 | Currency of the pool.                        | string         |        | ISOVAL    |
-| `buySellId`                    | Buy/Sell indicator.                          | string         |        | sell; buy |
-| `tradeValueAmount`             | Trade value per investment pool per scheme (summed across cohorts). | decimal |   |           |
+<div class="vbt-entiteit" id="entiteit-investment-investmentdetails">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">investment.investmentDetails</span>
+  <span class="vbt-titel-nr">[T15]</span>
+</div>
+<div class="vbt-omschrijving-rij">An investment in both liquid (easily tradable) and illiquid (of limited tradability) funds or groups (pools) thereof.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Identifier (for example ISIN or internal code)</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>The name of the investment / the official name of the fund / of the instrument</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>currencyType</td><td>Currency of the instrument </td><td>string</td><td class="vbt-td-c"></td><td>ISOVAL (EUR; USD; …)</td></tr>
+<tr><td>numberOfUnits</td><td>Number of units purchased per instrument per scheme per investment portfolio</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>refKey</td><td>Identifier of the investment product, for example ISIN or internal code.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>Description of the investment product.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>tradeDate</td><td>trade date (intended)</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
-`marketValueAmount` has been removed from the standard as of release 2027; the net asset value is expressed exclusively via `preliminaryUnitValueAmount`. The field name `preliminary` is historically grown and will be cleaned up in a future release. See GitHub issue [#128](https://github.com/Stichting-SIVI/VBPUOdsk/issues/128).
+<div class="vbt-entiteit" id="entiteit-investment-corporateaction">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">investment.corporateAction</span>
+  <span class="vbt-titel-nr">[T16]</span>
+</div>
+<div class="vbt-omschrijving-rij">A Corporate Action belonging to the investment product.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Key of the Corporate Action.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>description</td><td>Description of the Corporate Action.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>corporateActionType</td><td>Type of Corporate Action.</td><td>string</td><td class="vbt-td-c"></td><td>AFDCOA (1; 2; 3; 99)</td></tr>
+<tr><td>instructionDate</td><td>Instruction date of the Corporate Action.</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradeDate</td><td>Transaction date of the Corporate Action.</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>paymentDate</td><td>Payment date of the Corporate Action.</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>cashDividendTotalAmount</td><td>Total cash amount of the Corporate Action.</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>cashDividendPerUnitAmount</td><td>Cash amount per unit.</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>currencyType</td><td>Currency of the cash amount.</td><td>string</td><td class="vbt-td-c">3</td><td>ISOVAL (EUR; USD; GBP; CHF; JPY)</td></tr>
+<tr><td>stockDividendPerUnitNumber</td><td>Stock dividend quantity per unit.</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>stockDividendTotalNumber</td><td>Total stock dividend quantity.</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>newProductName</td><td>Name of the new product.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>newProductIdentifier</td><td>Identifier of the new product.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+</tbody></table>
+</div>
 
-### `investment.portfolio`
-_Investment portfolio._
+<div class="vbt-entiteit" id="entiteit-financialtransaction-trade">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">financialTransaction.trade</span>
+  <span class="vbt-titel-nr">[T17]</span>
+</div>
+<div class="vbt-omschrijving-rij">Trading/ ordering; Buying and selling</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>tradeDate</td><td>trade date (actual)</td><td>date</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>adjustmentIndicator</td><td>Adjusted trade instruction</td><td>boolean</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>buySellId</td><td>Buy, sell or switch direction indicator</td><td>string</td><td class="vbt-td-c"></td><td>sell; buy; switchfrom; switchto</td></tr>
+<tr><td>tradeAmount</td><td>Positive amount of the transaction in the currency in which the investment is denominated; direction follows from buySellId</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradeQuantity</td><td>Positive number of securities (units) to be traded in the transaction; direction follows from buySellId</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>tradePrice</td><td>Purchase price / rate</td><td>decimal (1E-06)</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>switchType</td><td>Switch type; one-day or sequential</td><td>string</td><td class="vbt-td-c"></td><td>AFDSWI (1; 2)</td></tr>
+<tr><td>financialInformationRef</td><td>For switchfrom/switchto, refer here to the refKey of the other switch leg for the purpose of the consistency check.</td><td>array</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>counterparty</td><td>Transfer Agent; the party that carries out the purchase/sale</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>broker</td><td>Broker that executes investment orders on the market on behalf of clients</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>interestAmount</td><td>Amount of applicable interest</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>commissionAmount</td><td>Fee for executing the transaction</td><td>decimal</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>clearingBroker</td><td>Broker responsible for the administrative and financial settlement of the transaction</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>clearingBrokerCashAccount</td><td>Cash account (IBAN) at the clearing broker in the name of the pension provider</td><td>string</td><td class="vbt-td-c">18</td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name            | Definition                                       | Data Type     | Length | Code List |
-| :------------------------ | :----------------------------------------------- | :------------ | :----- | :-------- |
-| `refKey`                  | ID of the Investment Portfolio.                  | string        | 70     |           |
-| `description`             | Description.                                     | string        | 60     |           |
-| `startAmount`             | Total Market Value at the start of the period.   | decimal       |        |           |
-| `netAmount`               | Net sum of contributions and withdrawals.        | decimal       |        |           |
-| `endAmount`               | Total Market Value at the end of the period.     | decimal       |        |           |
-| `returnPercentage`        | Achieved return as a percentage.                 | Decimal (1E-12) |      |           |
-| `returnAmount`            | Achieved return in currency.                     | decimal       |        |           |
-| `startExposureAmount`     | Allocation of pension assets to this portfolio.  | decimal       |        |           |
-| `startExposurePercentage` | Relative share of `startExposureAmount`.         | decimal       |        |           |
+<div class="vbt-entiteit" id="entiteit-error-default">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">error.default</span>
+  <span class="vbt-titel-nr">[Te]</span>
+</div>
+<div class="vbt-omschrijving-rij">Error message.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>errorCode</td><td>Error code type.</td><td>string</td><td class="vbt-td-c"></td><td><a href="https://www.sivi.org/afd-online-tool/json/2020-12/ADNFTM.json">ADNFTM</a> (09; 11; 12; 13; 14; 99)</td></tr>
+<tr><td>errorCodeExplanation</td><td>Explanation of the error message.</td><td>string</td><td class="vbt-td-c">1000</td><td></td></tr>
+</tbody></table>
+</div>
 
-### `investment.investmentDetails`
-_An investment in either liquid or illiquid funds or pools thereof._
+See also the information about error.default in the [SIVI All Finance Standard](https://www.manula.com/manuals/sivi/sivi-all-finance-standard/1/en/topic/error-handling)
 
-| Attribute Name         | Definition                                   | Data Type | Length | Code List |
-| :--------------------- | :------------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`               | Identifier (e.g., ISIN or internal code).    | string    | 70     |           |
-| `description`          | Name of the investment/fund/instrument.      | string    | 60     |           |
-| `currencyType`         | Currency of the instrument.                  | string    |        | ISOVAL    |
-| `numberOfUnits`        | Number of purchased units per instrument.    | decimal   |        |           |
-| `numberOfHoldings`     | Number of holdings per instrument.           | decimal   |        |           |
-| `localPrice`           | Price per instrument in original currency.   | decimal   |        |           |
-| `localValueAmount`     | Total market value in original currency.     | decimal   |        |           |
-| `Result`               | Unrealized result per instrument.            | decimal   |        |           |
-| `accruedInterest`      | Accrued interest per instrument.             | decimal   |        |           |
-| `poolPercentage`       | Weight in the portfolio per instrument.      | decimal   |        |           |
-| `currencyExchangeRate` | FX rate per instrument.                      | decimal   |        |           |
+<div class="vbt-entiteit" id="entiteit-document-default">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">document.default</span>
+  <span class="vbt-titel-nr">[T18]</span>
+</div>
+<div class="vbt-omschrijving-rij">Information about an attachment/document.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>refKey</td><td>Unique reference key assigned to an entity.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>fileName</td><td>Name of the file under which the attachment can be saved.</td><td>string</td><td class="vbt-td-c">60</td><td></td></tr>
+<tr><td>fileExtension</td><td>Extension of the file under which the attachment can be saved. For example &quot;pdf&quot;, &quot;doc&quot;, etc.</td><td>string</td><td class="vbt-td-c"></td><td>pdf; csv; txt</td></tr>
+</tbody></table>
+</div>
 
-### `financialTransaction.trade`
-_Trading/ordering; Buying and selling._
+<div class="vbt-entiteit" id="entiteit-chunking-default">
+<div class="vbt-titel-rij">
+  <span class="vbt-titel-naam">chunking.default</span>
+  <span class="vbt-titel-nr">[T19]</span>
+</div>
+<div class="vbt-omschrijving-rij">Chunking&quot; (splitting large messages) into partial messages.</div>
+<table>
+<thead><tr>
+<th style="width:25%">Attribute name</th>
+<th style="width:43%">Definition</th>
+<th style="width:12%">data type</th>
+<th style="width:8%" class="vbt-td-c">length</th>
+<th style="width:12%">Code list</th>
+</tr></thead>
+<tbody>
+<tr><td>currentChunkId</td><td>Unique reference (id) of the current chunk.</td><td>string</td><td class="vbt-td-c">70</td><td></td></tr>
+<tr><td>chunkSequenceNumber</td><td>Sequence number of the current chunk.</td><td>integer</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>totalNumberOfChunks</td><td>Total number of chunks the message has been split into.</td><td>integer</td><td class="vbt-td-c"></td><td></td></tr>
+<tr><td>chunkFragmentPaths</td><td>Array of JMESPath references to the message fragments used within the current chunk.</td><td>array</td><td class="vbt-td-c"></td><td></td></tr>
+</tbody></table>
+</div>
 
-| Attribute Name              | Definition                                       | Data Type | Length | Code List |
-| :-------------------------- | :----------------------------------------------- | :-------- | :----- | :-------- |
-| `tradeDate`                 | Actual trade date.                               | date      |        |           |
-| `refKey`                    | Unique reference key assigned to an entity.      | string    | 70     |           |
-| `adjustmentIndicator`       | Adjusted trade instruction.                      | boolean   | 1      |           |
-| `buySellId`                 | Buy/Sell/Switch direction indicator.             | string    |        | sell; buy; switchfrom; switchto |
-| `tradeAmount`               | Amount of the purchase in the investment's currency. | decimal |      |           |
-| `tradeQuantity`             | Number of units to be traded.                    | decimal   |        |           |
-| `tradePrice`                | Purchase price/rate.                             | decimal   |        |           |
-| `switchType`                | Type of switch; one-day or sequential.           | string    |        | sequential, one-day |
-| `financialInformationRef`   | On a switch, reference to the target identifier. | string    |        |           |
-| `Counterparty`              | Transfer Agent; the party executing the trade.   | string    | 70     |           |
-| `Broker`                    | Broker executing investment orders.              | string    | 70     |           |
-| `interestAmount`            | Amount of applicable interest.                   | decimal   |        |           |
-| `commissionAmount`          | Fee for executing the transaction.               | decimal   |        |           |
-| `clearingBroker`            | Broker responsible for settlement.               | string    | 70     |           |
-| `clearingBrokerCashAccount` | Cash account (IBAN) at the clearing broker.      | string    | 18     |           |
+## 6.3.1 Consistency Checks Cashflow Message (0001b) { #consistency-checks-cashflow-message-0001b }
 
-### `error.default`
-_Error message._
 
-| Attribute Name         | Definition                                   | Data Type | Length | Code List |
-| :--------------------- | :------------------------------------------- | :-------- | :----- | :-------- |
-| `refKey`               | Unique reference key assigned to an entity.  | string    | 70     |           |
-| `errorCode`            | Error code type.                             | string    |        | ADNFTM    |
-| `errorCodeExplanation` | Explanation of the error message.            | string    | 1000   |           |
 
-_See also the information about `error.default` in the SIVI All-Finance Standard._
+### Structural rule: cohort or investment portfolio (messages 2 and 3)
 
-### `document.default`
-_Information about an attachment/document._
+In messages 2 and 3, the breakdown under a `pension.scheme` may take place either per cohort (`pension.cohort`, the SPR route) or per investment portfolio (`investment.portfolio`, the FPR route), not both. A message that uses both breakdowns within one scheme is not valid. In message 2 the breakdown is optional: a scheme with only the cash flow directly under the scheme is valid. In message 3, exactly one breakdown is used per scheme.
 
-| Attribute Name  | Definition                               | Data Type | Length | Optional |
-| :-------------- | :--------------------------------------- | :-------- | :----- | :------- |
-| `refKey`        | Unique reference key assigned to an entity. | string    | 70     |          |
-| `fileName`      | Name of the file for the attachment.     | string    | 60     |          |
-| `fileExtension` | Extension of the file (e.g., pdf, csv, txt). | string    | 10     | pdf;csv;txt |
+The data directly under the scheme fall outside this rule and apply in both routes: in message 2 the cash flow `financialTransaction.cashflow` (0..1), in message 3 the payments at scheme level. In message 4 the rule does not apply: there, the investment portfolio is mandatory (1..99) and the breakdown per cohort is an optional addition.
 
-### `investment.corporateAction`
-_Corporate action events on investment products._
+### Cash flow blocks in message 2
 
-| Attribute Name                | Definition                                                          | Data Type | Length | Code List |
-| :---------------------------- | :------------------------------------------------------------------ | :-------- | :----- | :-------- |
-| `refKey`                      | Key of the corporate action.                                        | string    | 70     |           |
-| `description`                 | Description of the corporate action.                                | string    | 60     |           |
-| `corporateActionType`         | Type of corporate action.                                           | string    |        | AFDCAE (cashDividend; productChange; rebate; stockDividend) |
-| `instructionDate`             | Instruction date of the corporate action.                           | date      |        |           |
-| `tradeDate`                   | Transaction date of the corporate action.                           | date      |        |           |
-| `paymentDate`                 | Payment date of the corporate action.                               | date      |        |           |
-| `cashDividendTotalAmount`     | Total cash amount of the corporate action.                          | decimal   |        |           |
-| `cashDividendPerUnitAmount`   | Cash amount per unit.                                               | decimal   |        |           |
-| `currencyType`                | Currency of the cash amount.                                        | string    | 3      | ISOVAL    |
-| `stockDividendPerUnitNumber`  | Number of stock dividend per unit.                                  | decimal   |        |           |
-| `stockDividendTotalNumber`    | Total number of stock dividend.                                     | decimal   |        |           |
-| `newProductName`              | Name of the new product.                                            | string    | 60     |           |
-| `newProductIdentifier`        | Identifier of the new product.                                      | string    | 60     |           |
+- In every cash flow block, directly under the scheme, per cohort and per investment portfolio, `netAmount` and `netDate` are mandatory.
+- Every investment portfolio used contains exactly one `financialTransaction.cashflow`.
+- Per scheme, the message contains at least one cash flow: directly under the scheme, per cohort or per investment portfolio.
 
-### `chunking.default`
-_Metadata for splitting and merging large messages into sub-messages (chunking)._
-
-| Attribute Name        | Definition                                     | Data Type | Length | Code List |
-| :-------------------- | :--------------------------------------------- | :-------- | :----- | :-------- |
-| `currentChunkId`      | Unique reference (id) of the current chunk.    | string    | 70     |           |
-| `chunkSequenceNumber` | Sequence number of the current chunk.          | integer   |        |           |
-| `totalNumberOfChunks` | Total number of chunks the message is split into. | integer |      |           |
-| `chunkFragmentPaths`  | Array of JMESPath references to the message fragments. | array |    |           |
-
-## 6.3.1 Consistency checks for the cashflow message (0001b)
-
-### Structural rule: SPR route and FPR route are mutually exclusive
-
-Per `pension.scheme`, exactly one cashflow pattern applies:
-
-- **SPR route** — the cashflow is included directly under `pension.scheme` as `financialTransaction.cashflow`, with optional breakdown via `pension.cohort`.
-- **FPR route** — the cashflow is included per investment portfolio via `pension.scheme → investment.portfolio → financialTransaction.cashflow`.
-
-Within a single `pension.scheme`, the following exclusion rules apply:
-
-- Presence of `investment.portfolio` → `financialTransaction.cashflow` is not filled directly under `pension.scheme`.
-- Presence of `pension.cohort` → `investment.portfolio` may not be used.
-
-This rule is a formal consistency check: a message that combines both routes or applies neither is invalid.
 
 ### Sum checks for cohort breakdown (SPR route)
 
-When `pension.cohort` is used in the SPR route as a breakdown of the cashflow at scheme level, the detail amounts must reconcile with the total. This is a reconciliation check: verifying that the sum of the individual cohort amounts matches the previously reported amount at the cohort-scheme level — i.e., the parts add up to the whole.
+When, in the SPR route, `pension.cohort` is used as a breakdown of the cash flow at scheme level, the detail amounts must reconcile with the total. This is a reconciliation check: the check that the sum of the individual cohort amounts matches the previously reported amount at cohort-scheme level — in other words, the parts add up to the whole.
 
 - `scheme.netAmount = sum(cohort.netAmount)`
 - `scheme.contributionAmount = sum(cohort.contributionAmount)`
 - `scheme.withdrawalAmount = sum(cohort.withdrawalAmount)`
 
-These sum checks apply to the SPR route and not automatically to the FPR route. In the FPR model, cashflows are recorded per investment portfolio without a hierarchy from scheme to cohort level; the sum relationship is not definable there. Apply these checks exclusively when totals and underlying breakdowns are simultaneously present.
+These sum checks apply to the SPR route and not automatically to the FPR route. In the FPR route, the total is in the cash flow directly under the scheme, alongside the cash flows per investment portfolio. Whether the sum of the portfolio amounts must reconcile with that total has not been laid down; a sum check for the FPR route is therefore not part of the standard. Apply these checks only when totals and underlying breakdowns are present at the same time.
 
-**Open item (AOS)**
+**Technical enforcement**
 
-The formal processing of `M002-0001b-001` in SIVI AOS has not yet been finalized. The consistency checks have been functionally established; technical implementation will follow in a separate step.
-
-## 6.4 Messages
-
-The data exchange described in this document is supported by a set of messages, supplemented by a feedback message. From release 2027, 10 content messages and the Feedback Message are active; 5 messages from the FPR layered order model have been discontinued (see §4.5).
-
-Below (in Figure 12) is an overview of the messages and the roles (sender/receiver) involved.
-
-| Message Name | PUO | FM | BA | LDI |
-| :--- | :---: | :---: | :---: | :---: |
-| 1. Vermogen (0001a) | from | to | | |
-| 2. Cashflow (0001b) | from | to | | |
-| 3. Pensioenprojectie (0001c) | from | to | | to |
-| 4. Rendementsinformatie (00002) | to | | from | |
-| 5. Orderopdracht (00541) | from | | to | |
-| 6. Orderconfirmation (00542) | to | | from | |
-| 10. Stuurinformatiebeleggingspools (00553) | | to | from | |
-| 13. Waarde-informatie beleggingspool (00555b) | to | | from | |
-| 14. Betaalinformatie (00556) | from | to | from | |
-| 15. Corporate Actions (00557) | to | from | from | |
-| Feedback Message | | | | |
-
-The Feedback Message can be used for both FPR and SPR and is always a response to a received message; one of the other messages.
-
-Messages 7, 8, 9, 11 and 12 have been **discontinued from release 2027**. See GitHub issues [#99](https://github.com/Stichting-SIVI/VBPUOdsk/issues/99), [#119](https://github.com/Stichting-SIVI/VBPUOdsk/issues/119), [#121](https://github.com/Stichting-SIVI/VBPUOdsk/issues/121).
-
-**Legend for the roles:**
-
-*   **PUO:** Pension Administration Organizations — this also covers Self-Administering Funds (ZAF)
-*   **FM:** Fiduciary Managers
-*   **BA:** Investment Administrators / Asset Service Provider
-*   **LDI:** Liability-Driven Investment Managers
-
-**Discontinued roles:**
-
-*   **ACB:** Administrators of Cohort and Investment Pools — discontinued as a separate actor. In practice this role is fulfilled by the BA, or sometimes by the PUO. Because the ACB role no longer appeared as a separate party as of July 2026, the column has been removed from the matrix. Should the ACB role act as an explicit party again in the future, the message schema still allows for it. See GitHub issue [#131](https://github.com/Stichting-SIVI/VBPUOdsk/issues/131).
-*   **BR:** Brokers / Transfer Agents — no longer appears in the release 2027 matrix; messages 5 and 6 now go via the BA.
-
-**Note:** Each receiving party receives its information directly from the sending party.
-
-**Note:** Each receiving party/role gets its information directly from the sending party. In addition to the parties/roles mentioned in Figure 12, messages can also be sent to other parties, such as Liability-Driven Investment managers (LDIs). The transmission to unmentioned parties/roles is also direct. Received information is not forwarded to other parties.
-
-The table below lists the message types and their meaning. In parentheses is the reference to the working group's final report: "Final Report Research Standard VB PUO (September 2023.pdf)".
-
-*   **PMT** = `pensionMessageType` in AFD 2.0 (the descriptions of the message types are provided).
-*   **TAG** = The identifier used for the message in the API.
-
-| Type | Message Type | PMT/TAG | Description |
-| :--- | :--- | :--- | :--- |
-| **SPR** | **1a** (4.2.1.1) | Capital | **From PUO to Fiduciary Manager & Investment Administrator.**<br>On a periodic (expected monthly) basis, the fiduciary manager receives the total pension assets at the start of the period for a scheme. This can also be provided per cohort. With this information, the fiduciary manager can check alignment with the fund's policy and rebalance if necessary. |
-| **SPR** | **1b** (4.2.1.3) | Cashflow | **From PUO to Fiduciary Manager & Investment Administrator.**<br>Periodically, the fiduciary manager receives the inflow and outflow for a scheme. This can be provided at a total level and per cohort. The cash flow includes premiums, value transfers, benefits, and shifts between cohorts. |
-| **SPR** | **1c** (4.2.1.3) | PensionProjection | **From PUO to Fiduciary Manager & Investment Administrator.**<br>Periodically, the fiduciary manager receives the projected benefits per scheme and cohort based on the accrued assets. It also includes the cash flows to be hedged per scheme, calculated as the sum of weighted projected benefits per cohort. |
-| **SPR** | **2** (4.2.2.) | ReturnOnInvestment | **From Investment Administrator to PUO.**<br>The PUO periodically receives information about the achieved investment return, including start and end values and the return percentage per portfolio. This is necessary for the PUO to allocate returns to participants, the solidarity reserve, etc. |
-| **FPR** | **541** (5.4.1.) | Trade | **From PUO to Brokers/Transfer Agents/Order Desks.**<br>This message contains the minimum data set required to send an order or a switch to an order processing party. The PUO submits orders at the investment fund level. |
-| **FPR** | **542** (5.4.2.) | Orderconfirmation | **From Brokers/Transfer Agents/Order Desks to PUO.**<br>The confirmation details of the order are returned from the order processing party to the PUO. |
-| **FPR** | **551** (5.5.1) | BalanceAdjustments | **From PUO to Administrator of Cohort & Investment Pools.**<br>This first monthly information flow concerns netted mutations (purchases, sales, switches) per cohort pool. The administrator uses this to calculate cash flows for the investment pools and instruct the fiduciary manager. |
-| **FPR** | **552a** (5.5.2) | InvestmentDetails | **Between Administrator, Fiduciary Manager, and Investment Administrator.**<br>The administrator receives monthly positions from the investment administrator and reconciles them with their own administration. |
-| **FPR** | **552b** (5.5.2) | InvestmentDetailsPUO | **From Investment Pool Administrator to PUO.**<br>Additional information needed when the PUO also acts as the cohort pool administrator. This message provides the preliminary unit values of the investment pools to the PUO. |
-| **FPR** | **553** (5.5.3) | ControlInformationInvestmentPools | **From Administrator to Fiduciary Manager.**<br>The administrator calculates participation values and combines them with mutations to estimate the cash effects on the investment pools. These effects are then sent to the fiduciary manager. |
-| **FPR** | **554** (5.5.4) | RebalancingDetails | **From Administrator to Fiduciary Manager.**<br>The administrator rebalances the relevant cohorts based on the unit values at time T and sends all month-end transactions to the fiduciary manager. |
-| **FPR** | **555a** (5.5.5) | ValueAmountCohortPool | **From PUO to Fiduciary Manager (when PUO administers cohort pools).**<br>The administrator (or PUO, if applicable) calculates and distributes the participation values of the cohort pools. |
-| **FPR** | **555b** (5.5.5) | ValueAmountInvestmentPool | **Between Investment Administrator, Administrator, Fiduciary Manager, and PUO.**<br>The administrator calculates the unit value per unit in the investment pool and the participation value per participation in the cohort pool and distributes them to the PUO and fiduciary. |
-| **FPR** | **556** (5.5.6) | PaymentDetailsCreditor | **From Administrator to Fiduciary Manager.**<br>At the beginning of the month, the administrator sends the payment instruction for withdrawals to the fiduciary manager. |
-| **FPR** | **557** | CorporateAction | **From the asset management chain to PUO.**<br>Communicates corporate action events (cash dividend, rebate, unit/capital shifts, product changes) on investment products to the PUO. Enables the PUO to keep its administration synchronized with the asset management administration. |
-| **SPR/FPR** | Feedback | Feedback | **From the recipient of a content message to the original sender.**<br>Provides feedback on errors or confirms the processability of a message. |
-
-Unlike the Dutch manual, this documentation references the `MessageStructureView` folders on GitHub to illustrate the structure of each message. For example, the structure for **Message 11** can be viewed [here](https://github.com/dma61/VBPUOdsk/tree/main/VBPUO-Bericht_11._Rebalancinginformatie_(00554)/MessageStructureView).
-
-Below is a diagram depicting the structure of **Message 11**:
-
-![Message 11 Structure](https://raw.githubusercontent.com/dma61/VBPUOdsk/refs/heads/main/VBPUO-Bericht_11._Rebalancinginformatie_(00554)/MessageStructureView/20250630_083428-00554.svg)
-
-These diagrams clearly visualize the relationships between entities. For detailed text-based specifications, please refer to the original Dutch manual.
+The consistency checks in this section have been established functionally. Technically, consistency checks are enforced in the file `(..)-validationRules.json` that accompanies the JSON schemas of each message. For these checks, that technical enforcement has not yet been modelled.
 
 
-## 6.5 Cross-Reference Attributes & Messages
-please refer to the original Dutch manual.
+## 6.3.2 Consistency Checks Order Instruction and Order Confirmation (00541, 00542) { #consistency-checks-order-instruction-order-confirmation }
 
----
-| <div align="left">[< Previous: Chapter 5: Data Standard Setup](chapter-5-data-standard-setup.md)</div> | <div align="right">[Next: Chapter 7: Technical Specifications >](chapter-7-tech-specs.md)</div> |
-|:---|---:|
+### Message 5: amount or quantity
+
+- Per trade instruction, exactly one of `tradeAmount` or `tradeQuantity` is filled. Filling both is not allowed; leaving both empty is allowed only for the leg of a switch that does not drive the switch.
+- A switch consists of two legs: one with `buySellId` = `switchfrom` and one with `buySellId` = `switchto`. They refer to each other through `financialInformationRef`, which contains the `refKey` of the other leg.
+- Per switch pair, exactly one leg carries exactly one of the two fields; the other leg carries neither.
+
+### Message 6: quantity, price and amount reconcile
+
+- If `tradeQuantity` and `tradePrice` both occur, the following applies per trade: `tradeQuantity × tradePrice = tradeAmount`.
+- In a switch, the amount that comes out of the `switchfrom` leg goes into the `switchto` leg. This check does not apply to a switch between investment products in different currencies: the messages contain no exchange rate.
+
+See [§4.3.5](../chapter-4-fpr-processes/#435-message-5-order-instruction-00541) for the explanation, and GitHub issues [#115](https://github.com/Stichting-SIVI/VBPUOdsk/issues/115) and [#116](https://github.com/Stichting-SIVI/VBPUOdsk/issues/116).
+
+**Technical enforcement.** For these checks too, the technical enforcement in `(..)-validationRules.json` has not yet been modelled.
+

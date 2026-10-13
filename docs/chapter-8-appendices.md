@@ -1,7 +1,9 @@
 # 8 Appendices
 
-**The appendices contain:**
+**In the appendices you will find the:**
 
-- **Glossary/Abbreviation list Asset Management & Pension Administration;**
+- **Glossary/List of abbreviations Asset Management & Pension Administration;**
 
-- **Glossary data exchange based on standards;**
+- **Glossary of data exchange based on standards;**
+
+- **Changes release 2027 (§8.5).**

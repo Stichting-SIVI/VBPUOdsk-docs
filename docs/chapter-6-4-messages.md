@@ -1,86 +1,54 @@
 ## 6.4 Messages
 
-> **Note:** The tables and detailed message structures below are in Dutch. Technical field names (entity.entitytype, attributes) are identical in both languages.
->
-> **NL → EN Legend for table headers and terms:**
->
-> | Dutch | English |
-> |-------|---------|
-> | Berichten | Messages |
-> | Berichtnaam | Message name |
-> | Berichtsoort | Message type |
-> | Soort | Type |
-> | Omschrijving | Description |
-> | Basisbericht | Base message |
-> | Berichtstructuur | Message structure |
-> | Kardinaliteit | Cardinality |
-> | V (Verplicht) | R (Required) |
-> | O (Optioneel) | O (Optional) |
-> | Maximumaantal iteraties | Maximum number of iterations |
-> | Vervallen | Discontinued |
-> | Van → Naar | From → To |
-> | Zie ook | See also |
-> | Pensioenuitvoeringsorganisaties (PUO) | Pension Administration Organizations (PUO) |
-> | Fiduciair managers (FM) | Fiduciary Managers (FM) |
-> | Beleggingsadministrateurs (BA) | Investment Administrators (BA) |
-> | Vermogen | Assets |
-> | Cashflow | Cash flow |
-> | Pensioenprojectie | Pension Projection |
-> | Rendementsinformatie | Return Information |
-> | Orderopdracht | Trade Order |
-> | Betaalinformatie | Payment Information |
-> | Stuurinformatiebeleggingspools | Control Information Investment Pools |
-> | Waarde-informatie beleggingspool | Value Information Investment Pool |
-> | Mutatiesaldi | Balance Adjustments |
-> | Reconciliatie-informatie | Reconciliation Information |
-> | Rebalancinginformatie | Rebalancing Details |
-> | Waarde-informatie cohortenpool | Value Information Cohort Pool |
-> | Corporate Actions | Corporate Actions |
-> | Feedbackbericht | Feedback Message |
+The base message is elaborated below into specific messages. From release 2027, 10 substantive messages and the Feedback Message are active; 5 FPR messages have been discontinued (see [§4.3.11](../chapter-4-fpr-processes/#4311-discontinued-messages)). The distinction between a direct and a layered order model has been dropped as of release 2027; see §4.2.
 
-The base message is further elaborated into specific messages. From release 2027, 10 content messages and the Feedback Message are active; 5 messages from the FPR layered order model have been discontinued (see marking in Table 12).
+Table 12 below gives an overview of these messages and between which roles they are exchanged:
 
-Table 12 below provides an overview of these messages and between which roles they are exchanged:
-
-| Berichtnaam | PUO | FM | BA | LDI |
+| Message name | PUO | FM | BA | LDI |
 |----|----|----|----|----|
-| 1\. Vermogen (0001a) | van | naar |  |  |
-| 2\. Cashflow (0001b) | van | naar |  |  |
-| 3\. Pensioenprojectie (0001c) | van | naar |  | naar |
-| 4\. Rendementsinformatie (00002) | naar |  | van |  |
-| 5\. Orderopdracht (00541) | van |  | naar |  |
-| 6\. Orderconfirmation (00542) | naar |  | van |  |
-| 10\. Stuurinformatiebeleggingspools (00553) |  | naar | van |  |
-| 13\. Waarde-informatie beleggingspool (00555b) | naar |  | van |  |
-| 14\. Betaalinformatie (00556) | van | naar | van |  |
-| 15\. Corporate Actions (00557) | naar | van | van |  |
+| 1\. Assets (0001a) | from | to |  |  |
+| 2\. Cashflow (0001b) | from | to | from |  |
+| 3\. Pension Projection (0001c) | from | to |  | to |
+| 4\. Return Information (00002) | to |  | from |  |
+| 5\. Order Instruction (00541) | from |  | to |  |
+| 6\. Order Confirmation (00542) | to |  | from |  |
+| 10\. Control Information Investment Pools (00553) |  | to | from |  |
+| 13\. Value Information Investment Pool (00555b) | to |  | from |  |
+| 14\. Payment Information (00556) |  | to | from |  |
+| 15\. Corporate Actions (00557) | to | from | from |  |
 | Feedback Message |  |  |  |  |
 
 The Feedback Message can be used for both FPR and SPR and is always a response to a received message; one of the other messages.
 
-**Tabel 12 – Overzicht berichten tussen zenders en ontvangers**
+**Table 12 – Overview of messages between senders and receivers**
 
-**Legenda**
+**Legend**
 
-- Pensioenuitvoeringsorganisaties (PUO) — hieronder vallen ook Zelf Administrerende Fondsen (ZAF)
+- Pension administration organisations (PUO) — these also include self-administering funds (ZAF)
 
-- Fiduciair managers (FM)
+- Fiduciary managers (FM)
 
-- Beleggingsadministrateurs / asset serviceprovider (BA)
+- Investment administrators / asset service provider (BA)
 
-- Liability-Driven Investment-managers (LDI)
+- Liability-Driven Investment managers (LDI)
 
-**Toelichting: Administrateur cohorten- en beleggingspools (ACB) — vervallen**
+**Explanation: Administrator of Cohort and Investment Pools (ACB) — discontinued**
 
-De rol ACB is als zelfstandige actor vervallen uit dit overzicht. In de praktijk wordt deze rol ingevuld door de BA of soms de PUO. Omdat de ACB-rol per juli 2026 niet meer als afzonderlijke partij voorkwam, is de kolom uit de matrix verwijderd. Mocht de ACB-rol in de toekomst opnieuw als expliciete partij optreden, dan biedt het berichtenschema via de aanwezige berichten nog steeds de mogelijkheid om daar invulling aan te geven. Zie GitHub issue [#131](https://github.com/Stichting-SIVI/VBPUOdsk/issues/131).
+The ACB role has been discontinued as a separate actor in this overview. In practice this role is fulfilled by the BA or sometimes by the PUO. Because the ACB role no longer appeared as a separate party as of July 2026, the column has been removed from the matrix. Should the ACB role act as an explicit party again in the future, the message schema still allows for this through the existing messages. See GitHub issue [#131](https://github.com/Stichting-SIVI/VBPUOdsk/issues/131).
 
-**Let op:** Elke ontvangende partij/rol krijgt zijn **informatie rechtstreeks** van de verzendende partij. Ook de verzending naar niet in Tabel 12 genoemde partijen/rollen is rechtstreeks. Ontvangen informatie wordt niet doorgestuurd aan andere partijen.
+**Explanation: role versus party.** Table 12 is a **role** matrix and is generated from the data model. Messages 10 and 14 are sent by the BA role. That role can be fulfilled by the PUO; this does not make the PUO a second sender. For that reason, the PUO column for message 14 does not contain `from`. See GitHub issue [#142](https://github.com/Stichting-SIVI/VBPUOdsk/issues/142).
 
-In onderstaande tabel de berichtsoorten en de betekenis. Berichten die vanaf release 2027 zijn vervallen, zijn doorgehaald weergegeven. Tussen haakjes de verwijzing naar het eindrapport van de werkgroep[^7]: "Eindrapport onderzoek standaard VB PUO (september 2023.pdf".
+The Feedback Message has no fixed sender and receiver — it follows the message to which it responds — and therefore falls outside the generated rows.
 
-PMT = pensionMessageType in AFD 2.0 (aangegeven zijn de omschrijvingen van de berichttypes).
+**Note:** Each receiving party/role receives its **information directly** from the sending party. Sending to parties/roles not mentioned in Table 12 is also direct. Received information is not forwarded to other parties. A message can therefore be sent to more than one receiver, each with its own endpoint and identification; see [§2.4](../chapter-2-principles/#24-principles-of-data-exchange).
 
-TAG = de in de API[^8] gebruikte aanduiding voor het bericht.
+**Explanation: suffixes in the message diagrams on GitHub.** An entity can occur in more than one position in a single message. In message 3, for example, `financialTransaction.payment` occurs directly under the scheme, under the cohort and under the investment portfolio. In the message diagrams on GitHub (the [Wiki/Berichtenoverzicht](https://github.com/Stichting-SIVI/VBPUOdsk/wiki/Berichtenoverzicht) and the folder `MessageStructureView` for each message), these positions are given a suffix, such as `financialTransaction.payment_1`. That suffix is a sequence number to keep the positions in the diagram apart, not a different entity type: the attribute `entityType` has the same value in every position (here `payment`). The suffix does not occur in the message itself; which position is meant follows from the parent entity. The sequence number is assigned per message, so the same suffix can denote a different position in another message. This manual does not show the suffixes: in the base message (§6.4.1), the message structures and the cross-reference table (§6.5), each position appears under its own parent entity.
+
+The table below shows the message types and their meaning. The messages discontinued from release 2027 are listed in [§4.3.11](../chapter-4-fpr-processes/#4311-discontinued-messages). In parentheses, the reference to the final report of the working group[^7]: “Eindrapport onderzoek standaard VB PUO (september 2023.pdf”.
+
+PMT = pensionMessageType in AFD 2.0 (the descriptions of the message types are given).
+
+TAG = the designation of the message used in the API[^8].
 
 <table>
 <colgroup>
@@ -91,25 +59,25 @@ TAG = de in de API[^8] gebruikte aanduiding voor het bericht.
 </colgroup>
 <thead>
 <tr>
-<th>Soort</th>
-<th>Berichtsoort</th>
+<th>Type</th>
+<th>Message type</th>
 <th>PMT/<br />
 TAG</th>
-<th>Omschrijving</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>SPR</th>
-<td><p>1. Vermogen (0001a)</p>
+<td><p>1. Assets (0001a)</p>
 <p>(4.2.1.1)</p></td>
 <td>Vermogen/<br />
 Capital</td>
-<td><p><strong>Van 🡪 Naar</strong></p>
-<p>Van PUO naar FM en BA/asset serviceprovider.</p>
-<p>Op periodieke (naar verwachting maandelijkse) basis ontvangt de FM over een pensioenuitvoerder per regeling het totale pensioenvermogen bij aanvang van de periode.</p>
-<p>Naast de informatie op totaalniveau kan de FM ook per cohort het pensioenvermogen ontvangen. Zo kan bijvoorbeeld voor het leeftijdscohort 25-29 jaar het totaal van de persoonlijke pensioenvermogens bij aanvang worden ontvangen.</p>
-<p>Met de cohortinformatie kan de FM desgewenst een totaalberekening maken en de aansluiting bij de geleverde informatie op totaal/collectief niveau toetsen aan het beleid van het fonds. Dit is nuttig voor een robuuste overdracht en audittrail afhankelijk van afspraken die partijen maken. Conform het beleid van de pensioenuitvoerder kan bij (grote) afwijkingen herbalancering wenselijk zijn. Deze informatie kan behalve aan de FM desgewenst ook worden verstrekt aan de BA/asset serviceprovider om deze ook in staat te stellen toetsings- en rapportage-activiteiten uit te voeren met behulp van de leidende beleggingsadministratie.</p></td>
+<td><p><strong>From 🡪 To</strong></p>
+<p>From PUO to FM and BA/asset service provider.</p>
+<p>On a periodic (expected to be monthly) basis, the FM receives, for a pension provider, per scheme the total pension assets at the start of the period.</p>
+<p>In addition to the information at total level, the FM can also receive the pension assets per cohort. For example, for the age cohort 25-29 years, the total of the personal pension assets at the start can be received.</p>
+<p>With the cohort information, the FM can, if desired, make a total calculation and test the reconciliation with the information supplied at total/collective level against the policy of the fund. This is useful for a robust handover and audit trail, depending on agreements the parties make. In accordance with the policy of the pension provider, rebalancing may be desirable in the event of (large) deviations. In addition to the FM, this information can, if desired, also be provided to the BA/asset service provider, so that it too is able to carry out testing and reporting activities using the leading investment administration.</p></td>
 </tr>
 <tr>
 <th>SPR</th>
@@ -117,225 +85,165 @@ Capital</td>
 <p>(4.2.1.3)</p></td>
 <td>Cashflow/<br />
 Cashflow</td>
-<td><p>Instroom en uitstroom</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Van PUO naar FM en BA/asset serviceprovider.</p>
-<p>Op periodieke (naar verwachting maandelijkse) basis ontvangt de FM over een pensioenuitvoerder per regeling de instroom in de periode en de uitstroom. Naast op totaalniveau kan ook per cohort instroom en uitstroom aangeleverd worden.</p>
-<p>De in- en uitstroom bevat naast premies, waardeoverdrachten en uitkeringen ook de verschuivingen over cohorten als daar sprake van is. Een cohort kan ook een geboortejaar zijn. Ook het 'cohort' solidariteitsreserve, het 'cohort' compensatiedepot en mogelijk andere reserves zullen hierbij betrokken worden.</p>
-<p>Met de cohortinformatie kan de FM desgewenst een totaalberekening maken en de aansluiting bij de geleverde informatie op totaal/collectief niveau toetsen aan het beleid van het fonds. Dit is nuttig voor een robuuste overdracht en audittrail afhankelijk van afspraken die partijen maken. Deze informatie kan behalve aan de FM desgewenst ook worden verstrekt aan de BA/asset serviceprovider om ook deze in staat te stellen toetsings- en rapportage-activiteiten uit te voeren met behulp van de leidende beleggingsadministratie.</p></td>
+<td><p>Inflow and outflow</p>
+<p><strong>From 🡪 To</strong></p>
+<p>From PUO to FM and BA/asset service provider.</p>
+<p>On a periodic (expected to be monthly) basis, the FM receives, for a pension provider, per scheme the inflow in the period and the outflow. In addition to total level, inflow and outflow can also be supplied per cohort.</p>
+<p>Besides premiums, value transfers and benefit payments, the inflow and outflow also contain the shifts between cohorts, where applicable. A cohort can also be a year of birth. The ‘cohort’ solidarity reserve, the ‘cohort’ compensation deposit and possibly other reserves will also be included.</p>
+<p>With the cohort information, the FM can, if desired, make a total calculation and test the reconciliation with the information supplied at total/collective level against the policy of the fund. This is useful for a robust handover and audit trail, depending on agreements the parties make. In addition to the FM, this information can, if desired, also be provided to the BA/asset service provider, so that it too is able to carry out testing and reporting activities using the leading investment administration.</p></td>
 </tr>
 <tr>
 <th>SPR</th>
-<td><p>3. Pensioenprojectie (0001c)</p>
+<td><p>3. Pension Projection (0001c)</p>
 <p>(4.2.1.3)</p></td>
 <td>Pensioenprojectie/<br />
 PensionProjection</td>
-<td><p>Geprojecteerde uitkeringen</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Van PUO naar FM en BA/asset serviceprovider.</p>
-<p>Op periodieke (verwachting is maandelijkse) basis ontvangt de FM van een pensioenuitvoerder per regeling en per cohort de geprojecteerde uitkeringen op basis van de opgebouwde vermogens naar toekomstige periodes.</p>
-<p>Tevens bevat de gegevensuitwisseling de af te dekken kasstromen per regeling per toekomstige periode. Dit is gelijk aan de som van de gewogen geprojecteerde uitkeringen per cohort. De wegingsfactor is gelijk aan het percentage bescherming per cohort. Op deze manier ontstaat een profiel van de af te dekken kasstromen. Deze uitwisseling vermijdt misverstanden ten aanzien van af te dekken kasstromen en kan desgewenst een toets in het proces introduceren.</p></td>
+<td><p>Projected benefits</p>
+<p><strong>From 🡪 To</strong></p>
+<p>From PUO to FM, BA/asset service provider and LDI manager (see Figure 1, flow 1c, and Figures 8 and 9, steps F and G).</p>
+<p>On a periodic (the expectation is monthly) basis, the FM receives from a pension provider, per scheme and per cohort, the projected benefits based on the accrued assets for future periods.</p>
+<p>The data exchange also contains the cash flows to be hedged per scheme per future period. This is equal to the sum of the weighted projected benefits per cohort. The weighting factor is equal to the protection percentage per cohort. In this way a profile of the cash flows to be hedged is created. This exchange avoids misunderstandings regarding the cash flows to be hedged and can, if desired, introduce a check into the process.</p></td>
 </tr>
 <tr>
 <th>SPR</th>
-<td><p>4. Rendementsinformatie (00002)</p>
+<td><p>4. Return Information (00002)</p>
 <p>(4.2.2.)</p></td>
 <td>Rendementsinformatie/<br />
 ReturnOnInvestment</td>
-<td><p>Informatiebehoefte PUO</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Informatiestroom van BA/asset serviceprovider naar de PUO.</p>
-<p>De PUO heeft voor het uitvoeren van de solidaire premieregeling periodiek (naar verwachting maandelijks) informatie nodig over het behaalde rendement.</p>
-<p>Periodiek ontvangt de PUO over de periode voor een pensioenuitvoerder per regeling en per portefeuille de waarde aan het begin van de periode, de waarde aan het einde van de periode en het rendement in portefeuille valuta en (eventueel) uitgedrukt als percentage. De PUO draagt zorg voor de toedeling van rendementen naar deelnemers op basis van portefeuillerendementen. Optioneel kunnen ook per cohort in de regeling pensioenvermogen, beschermingsrendement en overrendement worden gedeeld met de PUO. Of deze optionele elementen worden uitgewisseld hangt af van de overeengekomen rollen en verantwoordelijkheden tussen de samenwerkende partijen.</p>
-<p>Daarbij is het uitgangspunt dat de PUO de verantwoordelijkheid heeft om conform de door de pensioenuitvoerder vastgestelde toedelingsregels rendementen toe te delen naar de persoonlijke pensioenvermogens van deelnemers, de solidariteitsreserve, een eventueel compensatiedepot en mogelijk andere reserves.</p></td>
+<td><p>Information need of the PUO</p>
+<p><strong>From 🡪 To</strong></p>
+<p>Information flow from BA/asset service provider to the PUO.</p>
+<p>To carry out the Solidarity Premium Scheme, the PUO periodically (expected to be monthly) needs information about the return achieved.</p>
+<p>Periodically, the PUO receives over the period, for a pension provider, per scheme and per portfolio, the value at the start of the period, the value at the end of the period and the return in portfolio currency and (where applicable) expressed as a percentage. The PUO is responsible for allocating returns to participants on the basis of portfolio returns. Optionally, pension assets, protection return and excess return can also be shared with the PUO per cohort in the scheme. Whether these optional elements are exchanged depends on the agreed roles and responsibilities between the cooperating parties.</p>
+<p>The principle is that the PUO is responsible for allocating returns, in accordance with the allocation rules set by the pension provider, to the personal pension assets of participants, the solidarity reserve, any compensation deposit and possibly other reserves.</p></td>
 </tr>
 <tr>
 <th>FPR</th>
-<td><p>5. Orderopdracht (00541)</p>
+<td><p>5. Order Instruction (00541)</p>
 <p>(5.4.1.)</p></td>
 <td>Orderopdracht/<br />
 Trade</td>
-<td><p>Direct order (PUO belegt zelf)</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Informatiestroom van PUO naar Brokers/Transfer Agents/Order Desks.</p>
-<p>Dit is de minimale set aan gegevens die benodigd is om een order te kunnen sturen aan een order verwerkende partij. Tevens kan er een switch mee worden uitgevoerd.</p>
-<p>De PUO stuurt orders in op het hoogste niveau van het beleggingsfonds. De aanbieder van het fonds voert zelf de ordering uit in de onderliggende beleggingen. Dat kan onder andere genoteerde en illiquide beleggingen betreffen.</p></td>
+<td><p><strong>From 🡪 To</strong></p>
+<p>Information flow from PUO to BA (see Figures 8 and 9, step A).</p>
+<p>This is the minimum set of data needed to be able to send an order to an order-processing party. It can also be used to carry out a switch.</p>
+<p>The PUO submits orders at the level of the investment product. The provider of the product carries out the ordering in the underlying investments itself. This may concern, among other things, listed and illiquid investments.</p></td>
 </tr>
 <tr>
 <th>FPR</th>
-<td><p>6. Orderconfirmation (00542)</p>
+<td><p>6. Order Confirmation (00542)</p>
 <p>(5.4.2.)</p></td>
 <td>Orderconfirmation</td>
-<td><p>Direct order (PUO belegt via een order platform)</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Van brokers/transfer agents/order desks naar PUO.</p>
-<p>Vanuit de order verwerkende partij komen de confirmationtgegevens van de order terug naar de PUO.</p></td>
-</tr>
-<tr>
-<th><del>FPR</del></th>
-<td><del><p>7. Mutatiesaldi (00551)</p>
-<p>(5.5.1)</p></del></td>
-<td><del>Mutatiesaldi/<br />
-BalanceAdjustments</del></td>
-<td><p><strong>Vervallen vanaf release 2027.</strong></p>
-<p><del>Informatiebehoefte administrateur cohortenpools en beleggingspools</del></p>
-<p><del><strong>Van 🡪 Naar</strong></del></p>
-<p><del>Van PUO naar administrateur van cohortenpools en beleggingspools.</del></p>
-<p><del>De eerste (naar verwachting maandelijkse) informatiestroom van de PUO naar de administrateur van cohortenpools en beleggingspools betreft gesaldeerde mutaties, zijnde aankoop, verkoop en switches op totaalniveau per cohortenpool welke worden doorgegeven aan de administrateur cohortenpools en beleggingspools. Deze administrateur kan hiermee de in- of uitstroom voor beleggingspools berekenen en daarmee de FM instrueren.</del></p></td>
-</tr>
-<tr>
-<th><del>FPR</del></th>
-<td><del><p>8. Reconciliatie-informatie (00552a)</p>
-<p>(5.5.2)</p></del></td>
-<td><del>Reconciliatie-informatie/<br />
-InvestmentDetails</del></td>
-<td><p><strong>Vervallen vanaf release 2027.</strong></p>
-<p><del>Reconciliatie administrateur van cohortenpools en beleggingspools, FM en BA.</del></p>
-<p><del><strong>Van 🡪 Naar</strong></del></p>
-<p><del>Informatiestroom tussen administrateur van cohortenpools en beleggingspools, FM en BA.</del></p>
-<p><del>De administrateur cohortenpools en beleggingspools ontvangt maandelijks de posities uit de leidende administratie van de BA van de beleggingspools, mogelijk aangevuld uit de (schaduw) administratie van de FM. Deze posities worden gereconcilieerd met de posities in de eigen administratie van de administrateur van cohortenpools en beleggingspools.</del></p></td>
-</tr>
-<tr>
-<th><del>FPR</del></th>
-<td><del><p>9. PUO-reconciliatie-informatie (00552b)</p>
-<p>(5.5.2)</p></del></td>
-<td><del>PUO-reconciliatie-informatie/<br />
-InvestmentDetailsPUO</del></td>
-<td><p><strong>Vervallen vanaf release 2027.</strong></p>
-<p><del>Additionele informatie als de PUO (ook) de rol van administrateur van cohortenpools vervuld.</del></p>
-<p><del><strong>Van 🡪 Naar</strong></del></p>
-<p><del>Administrateur beleggingspools naar de PUO.</del></p>
-<p><del>Indien de PUO de rol van administrateur cohortenpools vervult dan is een additionele informatie-uitwisseling nodig van de administrateur beleggingspools naar de PUO over de voorlopige unitwaarden van de beleggingspools. Deze is in de onderstaande tabel weergegeven. Door ook het aantal uitgegeven units per beleggingspool te delen wordt de PUO in staat gesteld om de aansluiting bij het aantal gehouden units in de beleggingspools door alle cohortenpools te reconciliëren.</del></p></td>
+<td><p><strong>From 🡪 To</strong></p>
+<p>Information flow from BA to PUO (see Figures 8 and 9, step B).</p>
+<p>The confirmation data of the order come back from the order-processing party to the PUO.</p></td>
 </tr>
 <tr>
 <th>FPR</th>
-<td><p>10. Stuurinformatie beleggingspools (00553)</p>
+<td><p>10. Control Information Investment Pools (00553)</p>
 <p>(5.5.3)</p></td>
 <td><p>Stuurinformatie</p>
 <p>Beleggingspools/<br />
 ControlInformationInvestmentPools</p></td>
-<td><p>Informatie aansturen beleggingspools</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Van PUO en/of BA naar FM (zie Figuur 8 en 9, stappen D en E).</p>
-<p>De PUO en/of de BA berekent de participatiewaarden van actieve leeftijdsgroepen en combineert deze waarden met de opgegeven mutaties om de casheffecten op de beleggingspools te schatten. De stuurinformatie op de beleggingspool (met onderbouwing) wordt verstuurd naar de FM in het volgende format.</p></td>
-</tr>
-<tr>
-<th><del>FPR</del></th>
-<td><del><p>11. Rebalancinginformatie (00554)</p>
-<p>(5.5.4)</p></del></td>
-<td><del>Rebalancinginformatie/<br />
-RebalancingDetails</del></td>
-<td><p><strong>Vervallen vanaf release 2027.</strong></p>
-<p><del>Rebalancing cohortenpools</del></p>
-<p><del><strong>Van 🡪 Naar</strong></del></p>
-<p><del>Informatiestroom tussen administrateur van cohortenpools en beleggingspools en FM.</del></p>
-<p><del>De administrateur van cohortenpools en beleggingspools herbalanceert de relevante leeftijdsgroepen om op basis van de unitwaarden van de beleggingspools van tijdstip T conform het normbeleid belegd te zijn voor alle cohorten.</del></p>
-<p><del>De administrateur van cohortenpools en beleggingspools verstuurt alle maandultimo transacties in de cohortenpools en beleggingspools in het afgesproken format naar de FM.</del></p></td>
-</tr>
-<tr>
-<th><del>FPR</del></th>
-<td><del><p>12. Waarde-informatie cohortenpool (00555a)</p>
-<p>(5.5.5)</p></del></td>
-<td><del>Waarde-informatie cohortenpool/<br />
-ValueAmountCohortPool</del></td>
-<td><p><strong>Vervallen vanaf release 2027.</strong></p>
-<p><del>Doorgeven waardes per beleggingspool en per cohortenpool</del></p>
-<p><del>(Fiduciair ontvangt van de PUO)</del></p>
-<p><del><strong>Van 🡪 Naar</strong></del></p>
-<p><del>Fiduciair ontvangt van de PUO (PUO administreert cohortenpools)</del></p>
-<p><del>De administrateur van cohortenpools en beleggingspools berekent de unitwaarde per unit in de beleggingspool en de participatiewaarde per participatie in de cohortenpool.</del></p>
-<p><del>Indien de PUO de rol van de administrateur cohortenpools vervult dan zal deze de unitwaarden van de beleggingspools ontvangen van de administrateur beleggingspools maar zelf zorgdragen voor de berekening van de participatiewaarden van de cohortenpools. De FM zal deze dan ook ontvangen van de PUO.</del></p>
-<p><del>De administrateur van cohortenpools en beleggingspools geeft daarnaast de gesommeerde (unit)waarden van beleggingspools door aan partijen.</del></p></td>
+<td><p>Information for controlling investment pools</p>
+<p><strong>From 🡪 To</strong></p>
+<p>From BA to FM (see Figures 8 and 9, step E). The PUO sends it only when it fulfils the role of BA itself.</p>
+<p>The BA calculates the participation values of active age groups and combines these values with the specified changes to estimate the cash effects on the investment pools. The control information on the investment pool (with substantiation) is sent to the FM in the following format.</p></td>
 </tr>
 <tr>
 <th>FPR</th>
-<td><p>13. Waarde-informatie beleggingspool (00555b)</p>
+<td><p>13. Value Information Investment Pool (00555b)</p>
 <p>(5.5.5)</p></td>
 <td>Waarde-informatie Beleggingspool/<br />
 ValueAmountInvestmentPool</td>
-<td><p>Doorgeven waardes per beleggingspool en per cohortenpool</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Informatiestroom tussen BA, PUO en FM (zie Figuur 8 en 9, stap J).</p>
-<p>De BA berekent de unitwaarde per unit in de beleggingspool en de participatiewaarde per participatie in de cohortenpool.</p>
-<p>De BA geeft de (participatie)waarden van de cohortenpools door aan de PUO en aan de FM.</p></td>
+<td><p>Passing on values per investment pool</p>
+<p><strong>From 🡪 To</strong></p>
+<p>Information flow from BA to PUO (see Figures 8 and 9, steps C and J).</p>
+<p>The BA calculates the unit value per unit in the investment pool and passes it on, together with the value per investment pool, to the PUO.</p>
+</td>
 </tr>
 <tr>
 <th>FPR</th>
-<td><p>14. Betaalinformatie (00556)</p>
+<td><p>14. Payment Information (00556)</p>
 <p>(5.5.6)</p></td>
 <td>Betaalinformatie/<br />
 PaymentDetailsCreditor</td>
-<td><p>Betaalinstructies onttrekkingen</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Informatiestroom van PUO of BA naar FM, begin van de maand (zie Figuur 8 en 9, stappen K en L).</p>
-<p>De PUO of de BA verstuurt de betaalinstructie voor onttrekkingen naar de FM.</p></td>
+<td><p>Payment instructions for withdrawals</p>
+<p><strong>From 🡪 To</strong></p>
+<p>Information flow from BA to FM, at the beginning of the month (see Figures 8 and 9, step L). The PUO sends it only when it fulfils the role of BA itself.</p>
+<p>The BA sends the payment instruction for withdrawals to the FM.</p></td>
 </tr>
 <tr>
 <th>FPR</th>
 <td><p>15. Corporate Actions (00557)</p></td>
 <td>Corporate Actions/<br />
 CorporateActions</td>
-<td><p>Doorgeven corporate-action gebeurtenissen op beleggingsproducten</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>Informatiestroom van de vermogensbeheerketen naar de PUO.</p>
-<p>Bericht 15 wordt gebruikt voor het doorgeven van corporate-action gebeurtenissen op beleggingsproducten vanuit de vermogensbeheerketen aan de PUO. Het bericht is bedoeld voor situaties waarin dergelijke gebeurtenissen wel binnen de vermogensbeheeradministratie worden verwerkt, maar niet automatisch zichtbaar zijn binnen de administratie van de PUO.</p></td>
+<td><p>Passing on corporate action events on investment products</p>
+<p><strong>From 🡪 To</strong></p>
+<p>Information flow from the asset management chain to the PUO.</p>
+<p>Message 15 is used to pass on corporate action events on investment products from the asset management chain to the PUO. The message is intended for situations in which such events are processed within the asset management administration, but are not automatically visible within the administration of the PUO.</p></td>
 </tr>
 <tr>
 <th>SPR/ FPR</th>
 <td>Feedback Message</td>
 <td>Feedback Message/<br />
 Feedback</td>
-<td><p>Terugkoppeling van fouten of bevestigen van verwerkbaarheid.</p>
-<p><strong>Van 🡪 Naar</strong></p>
-<p>De ontvanger van het inhoudelijke bericht, de berichten 1 tot en met 15, is de verzender van de feedback message.</p></td>
+<td><p>Reporting of errors or confirmation of processability.</p>
+<p><strong>From 🡪 To</strong></p>
+<p>The receiver of the substantive message, messages 1 to 15, is the sender of the feedback message.</p></td>
 </tr>
 </tbody>
 </table>
 
 ### 6.4.1 Base Message
 
-The base structure for messages (transaction) shows the hierarchical relationships between different entities in the data model. The entities and entity types form a coherent hierarchy. By definition, it is necessary to establish a hierarchy in exchanged messages, and the transaction structure forms the basis for this. The structure indicates, among other things, which child entity belongs to which parent entity.
+The base structure for messages (transaction) shows the hierarchical relationships between different entities in the data model. The entities and entity types form a coherent hierarchy. By definition, a hierarchy must be applied in the messages to be exchanged, and the structure of the transaction forms the basis for this. Among other things, the structure indicates which child entity belongs to which parent entity.
 
-In the "Kardinaliteit" (Cardinality) column, it is shown how many times that entity can occur at minimum and maximum. With R (required) or O (optional), it is indicated under Cardinality whether an entity.entitytype must or may occur. Within the base message, all entities have been left optional.
+The column "Cardinality" shows the minimum and maximum number of times that entity can occur. V (mandatory, Dutch *verplicht*) or O (optional) indicates whether an entity.entitytype must or may occur.
 
-From the table below, the following can be derived:
+The base message is a **generalisation** over the individual messages and not a message in itself. It shows every position in the hierarchy that occurs in at least one message. An entity that can occur in more than one position therefore appears more than once, each time under its own parent entity: `financialTransaction.payment` occurs directly under the scheme, under the cohort and under the investment portfolio. Not every message has every position. Which positions a message contains, and with which cardinality, is shown in the message structure of that message (§6.4.2 onwards); this may differ from this table.
 
-1)  Per party.sender multiple party.contact are possible
+From the table below it can be derived, for example, that:
 
-2)  Per party.pensionProvider
+1)  Per party.sender, multiple party.contact are possible
 
-    1)  maximally 1 financialInformation.reportingPeriod occurs and possibly
 
-    2)  multiple pension.schema's
 
-| **Entity.entitytype**                | **Kardinaliteit** |
-|--------------------------------------|-------------------|
-| commonTechnical.default              | 1..1, V           |
-| party.sender                         | 1..1, V           |
-| party.contact                        | 0..\*, O          |
-| party.receiver                       | 1..1, V           |
-| commonFunctional.default             | 1..1, V           |
-| party.pensionProvider                | 1..1, V           |
-| pension.scheme                       | 1..\*, V          |
-| financialInformation.reportingPeriod | 1..1, V           |
-| financialTransaction.payment         | 0..\*, O          |
-| party.creditor                       | 1..\*, V          |
-| financialTransaction.cashflow        | 0..1, O           |
-| pension.cohort                       | 0..\*, O          |
-| financialTransaction.payment         | 0..\*, O          |
-| pension.cohortPool                   | 0..\*, O          |
-| investment.pool                      | 1..\*, V          |
-| investment.pool                      | 0..\*, O          |
-| investment.investmentDetails         | 1..\*, V          |
-| investment.corporateAction           | 1..\*, V          |
-| investment.portfolio                 | 0..\*, O          |
-| investment.investmentDetails         | 0..\*, O          |
-| financialTransaction.trade           | 1..\*, V          |
-| error.default                        | 0..\*, O          |
-| document.default                     | 0..\*, O          |
-| chunking.default                     | 0..1, O           |
+2)  Per party.pensionProvider, one or more pension.schemes occur
 
-N.B. In the technical implementation, the number of repetitions (\*) is limited. See the overview below:
+3)  Per pension.scheme, exactly one financialInformation.reportingPeriod occurs; message 15 has no reporting period (§6.4.11)
+
+| Entity.entitytype | Cardinality |
+|---|---|
+| commonTechnical.default | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;party.sender | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;party.contact | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;party.receiver | 1..1, V |
+| commonFunctional.default | 1..1, V |
+| party.pensionProvider | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;pension.scheme | 1..\*, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialInformation.reportingPeriod | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pension.cohort | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;investment.portfolio | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.payment | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;investment.portfolio | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.cashflow | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.payment | 0..\*, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.cashflow | 0..1, O |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.payment | 1..\*, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;party.creditor | 1..1, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;investment.investmentDetails | 1..\*, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;financialTransaction.trade | 1..\*, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;investment.corporateAction | 1..\*, V |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;investment.pool | 1..\*, V |
+| document.default | 0..\*, O |
+| chunking.default | 0..1, O |
+| error.default | 0..\*, O |
+
+<u>  
+</u>
+
+<u>NB. In the technical implementation, the number of repetitions (\*) is limited. See the overview below:</u>
+
 
 <table>
 <colgroup>
@@ -345,7 +253,8 @@ N.B. In the technical implementation, the number of repetitions (\*) is limited.
 <thead>
 <tr>
 <th><strong>Entity.entitytype</strong></th>
-<th style="text-align: right;"><strong>Maximum iterations</strong></th>
+<th style="text-align: right;"><strong>Maximum number of<br />
+iterations</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -391,15 +300,11 @@ N.B. In the technical implementation, the number of repetitions (\*) is limited.
 </tr>
 <tr>
 <th>financialTransaction.payment</th>
-<td style="text-align: right;">9999 or 99999[^1]</td>
+<td style="text-align: right;">999, 9999 or 99999<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
 </tr>
 <tr>
 <th>pension.cohort</th>
 <td style="text-align: right;">99999</td>
-</tr>
-<tr>
-<th>pension.cohortPool</th>
-<td style="text-align: right;">99</td>
 </tr>
 <tr>
 <th>investment.pool</th>
@@ -435,174 +340,184 @@ N.B. In the technical implementation, the number of repetitions (\*) is limited.
 </tr>
 </tbody>
 </table>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The maximum number of financialTransaction.payment depends on the position in the message: under pension.scheme 99999 in message 3 and 999 in message 14; under pension.cohort and under investment.portfolio 9999 (message 3).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
-[^1]: The maximum number of financialTransaction.payment under pension.cohort is 9999 and under pension.scheme remains 99999.
+**APF ring-fenced compartments: two common scenarios**
 
-**APF circles: two common scenarios**
+For a General Pension Fund (APF) with multiple ring-fenced compartments (kringen), there is one `pension.scheme` per ring-fenced compartment under one `party.pensionProvider`. Two scenarios exist side by side in the market:
 
-For a General Pension Fund (APF) with multiple circles, there is one `pension.scheme` per circle under one `party.pensionProvider`. Two scenarios exist side by side in the market:
+**Scenario 1 — Ring-fenced compartment has its own PUV code**
+Each ring-fenced compartment is identified by its own `puvCode` in `party.pensionProvider`. Buffer capital above ring-fenced compartment level is handled pragmatically through a cohort construction, because no separate PUV code exists for it.
 
-**Scenario 1 — Circle has its own PUV code**
-Each circle is identified with its own `puvCode` in `party.pensionProvider`. Buffer capital above circle level is pragmatically handled via a cohort construction, because no separate PUV code exists for this.
+**Scenario 2 — Ring-fenced compartment has no PUV code of its own**
+There is one PUV code at APF/provider level. The distinction between ring-fenced compartments runs via references at `pension.scheme` level.
 
-**Scenario 2 — Circle does not have its own PUV code**
-There is one PUV code at APF/provider level. The distinction between circles runs via references at `pension.scheme` level.
+Both scenarios are supported by the standard. Parties lay down the chosen approach in agreements between chain parties (TOM / SLA). See GitHub issue [#114](https://github.com/Stichting-SIVI/VBPUOdsk/issues/114).
 
-Both scenarios are supported by the standard. Parties record the chosen approach in agreements between chain parties (TOM / SLA). See GitHub issue [#114](https://github.com/Stichting-SIVI/VBPUOdsk/issues/114).
+<span id="_Ref153871056" class="anchor"></span>
 
-### 6.4.2 – 6.4.17 Message Structures
-
-The detailed message structure tables are hosted as interactive HTML tables. Each iframe below loads the Dutch-language table from the official docs-prepare site; the technical field names (entity.entitytype, attributes) are the same in both languages.
-
-#### 6.4.2 Message structure 1. Assets (0001a)
+### 6.4.2 Message Structure 1. Assets (0001a)
 
 See also [3.2.1](../chapter-3-spr-processes/#321-message-1-assets-1a).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-01-vermogen.html"
+  src="../assets/berichtstructuur-01-vermogen.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 1. Assets (0001a)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-01-vermogen.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.3 Message structure 2. Cashflow (0001b)
+### 6.4.3 Message Structure 2. Cashflow (0001b)
 
-See also [3.2.2](../chapter-3-spr-processes/#322-message-2-cashflow-1b-inflow-and-outflow).
+See also [3.2.2](../chapter-3-spr-processes/#322-message-2-cashflow-1b-inflow-and-outflow) and, for FPR use, [4.3.2](../chapter-4-fpr-processes/#432-message-2-cashflow-0001b).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-02-cashflow.html"
+  src="../assets/berichtstructuur-02-cashflow.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 2. Cashflow (0001b)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-02-cashflow.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.4 Message structure 3. Pension Projection (0001c)
+### 6.4.4 Message Structure 3. Pension Projection (0001c)
 
 See also [3.2.3](../chapter-3-spr-processes/#323-message-3-pension-projection-1c-projected-benefits).
 
+See also, for FPR use, [4.3.3](../chapter-4-fpr-processes/#433-message-3-pension-projection-0001c), and for the routes in messages 2, 3 and 4 [3.2.5](../chapter-3-spr-processes/#325-spr-and-fpr-route-in-messages-2-3-and-4).
+
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-03-pensioenprojectie.html"
+  src="../assets/berichtstructuur-03-pensioenprojectie.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 3. Pension Projection (0001c)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-03-pensioenprojectie.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.5 Message structure 4. Return Information (00002)
+### 6.4.5 Message Structure 4. Return Information (00002)
+
+See also, for FPR use, [4.3.4](../chapter-4-fpr-processes/#434-message-4-return-information-00002).
 
 See also [3.2.4](../chapter-3-spr-processes/#324-message-4-return-information-2-information-need-of-the-puo).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-04-rendementsinformatie.html"
+  src="../assets/berichtstructuur-04-rendementsinformatie.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 4. Return Information (00002)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-04-rendementsinformatie.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.6 Message structure 5. Trade Order (00541)
+### 6.4.6 Message Structure 5. Order Instruction (00541)
 
-See also [4.2](../chapter-4-fpr-processes/#42-model-1-simpler-direct-order-model) & [4.4.1](../chapter-4-fpr-processes/#441-message-5-trade-order-00541).
+See also [4.2](../chapter-4-fpr-processes/#42-the-fpr-model) &amp; [4.3.5](../chapter-4-fpr-processes/#435-message-5-order-instruction-00541).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-05-orderopdracht.html"
+  src="../assets/berichtstructuur-05-orderopdracht.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
-  title="Message structure 5. Trade Order (00541)">
+  title="Message structure 5. Order Instruction (00541)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-05-orderopdracht.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.7 Message structure 6. Order Confirmation (00542)
+### 6.4.7 Message Structure 6. Order Confirmation (00542)
 
-See also [4.2](../chapter-4-fpr-processes/#42-model-1-simpler-direct-order-model) & [4.4.2](../chapter-4-fpr-processes/#442-message-6-order-confirmation-00542).
+See also [4.2](../chapter-4-fpr-processes/#42-the-fpr-model) &amp; [4.3.6](../chapter-4-fpr-processes/#436-message-6-order-confirmation-00542).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-06-orderconfirmation.html"
+  src="../assets/berichtstructuur-06-orderconfirmation.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 6. Order Confirmation (00542)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-06-orderconfirmation.html" target="_blank">Open table in full screen</a></p>
 
-The following fields under `financialTransaction.trade` have been changed from required to optional: `tradeQuantity`, `tradePrice`, `counterparty`, `broker`, `interestAmount`, `commissionAmount`, `clearingBroker` and `clearingBrokerCashAccount`. `tradeAmount` remains required. See GitHub issue [#105](https://github.com/Stichting-SIVI/VBPUOdsk/issues/105).
+The following fields under `financialTransaction.trade` have been changed from mandatory to optional: `tradeQuantity`, `tradePrice`, `counterparty`, `broker`, `interestAmount`, `commissionAmount`, `clearingBroker` and `clearingBrokerCashAccount`. `tradeAmount` remains mandatory. See GitHub issue [#105](https://github.com/Stichting-SIVI/VBPUOdsk/issues/105).
 
-#### 6.4.8 – 6.4.10 Messages 7, 8, 9 (Discontinued)
+### 6.4.8 Message Structure 10. Control Information Investment Pools (00553)
 
-**Discontinued from release 2027.** Messages 7 (Balance Adjustments / 00551), 8 (Reconciliation Information / 00552a) and 9 (PUO Reconciliation Information / 00552b) are no longer active in the release 2027 message set. See GitHub issues [#99](https://github.com/Stichting-SIVI/VBPUOdsk/issues/99), [#119](https://github.com/Stichting-SIVI/VBPUOdsk/issues/119), [#121](https://github.com/Stichting-SIVI/VBPUOdsk/issues/121).
+From release 2027, the `cohortPool` layer has been removed from this message; the data land directly at `investment.pool` level. See GitHub issue [#124](https://github.com/Stichting-SIVI/VBPUOdsk/issues/124).
 
-#### 6.4.11 Message structure 10. Control Information Investment Pools (00553)
+In addition, the following fields of entity `investment.pool` have been removed from message 00553: `dummyCashId`, `tradeQuantity`, `unitPrice` and `currencyExchangeRate`. The fields `buySellId`, `tradeValueAmount` and `currencyType` remain active. See GitHub issue [#133](https://github.com/Stichting-SIVI/VBPUOdsk/issues/133).
 
-From release 2027, the `cohortPool` layer has been removed from this message; data lands directly at `investment.pool` level. See GitHub issue [#124](https://github.com/Stichting-SIVI/VBPUOdsk/issues/124).
-
-Additionally, the following fields of entity `investment.pool` have been removed from message 00553: `dummyCashId`, `tradeQuantity`, `unitPrice` and `currencyExchangeRate`. The fields `buySellId`, `tradeValueAmount` and `currencyType` remain active. See GitHub issue [#133](https://github.com/Stichting-SIVI/VBPUOdsk/issues/133).
-
-See also [4.3](../chapter-4-fpr-processes/#43-model-2-extended-layered-order-model) & [4.5.3](../chapter-4-fpr-processes/#453-message-10-control-information-investment-pools-00553).
+See also [4.2](../chapter-4-fpr-processes/#42-the-fpr-model) &amp; [4.3.7](../chapter-4-fpr-processes/#437-message-10-control-information-investment-pools-00553).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-10-stuurinformatiebeleggingspools.html"
+  src="../assets/berichtstructuur-10-stuurinformatiebeleggingspools.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 10. Control Information Investment Pools (00553)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-10-stuurinformatiebeleggingspools.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.12 – 6.4.13 Messages 11, 12 (Discontinued)
+### 6.4.9 Message Structure 13. Value Information Investment Pool (00555b)
 
-**Discontinued from release 2027.** Messages 11 (Rebalancing Details / 00554) and 12 (Value Information Cohort Pool / 00555a) are no longer active in the release 2027 message set. See GitHub issues [#99](https://github.com/Stichting-SIVI/VBPUOdsk/issues/99), [#119](https://github.com/Stichting-SIVI/VBPUOdsk/issues/119), [#121](https://github.com/Stichting-SIVI/VBPUOdsk/issues/121).
-
-#### 6.4.14 Message structure 13. Value Information Investment Pool (00555b)
-
-See also [4.3](../chapter-4-fpr-processes/#43-model-2-extended-layered-order-model) & [4.5.5.2](../chapter-4-fpr-processes/#4552-message-13-value-information-investment-pool-00555b).
+See also [4.2](../chapter-4-fpr-processes/#42-the-fpr-model) &amp; [4.3.8](../chapter-4-fpr-processes/#438-message-13-value-information-investment-pool-00555b).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-13-waarde-informatie-beleggingspool.html"
+  src="../assets/berichtstructuur-13-waarde-informatie-beleggingspool.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 13. Value Information Investment Pool (00555b)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-13-waarde-informatie-beleggingspool.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.15 Message structure 14. Payment Information (00556)
+### 6.4.10 Message Structure 14. Payment Information (00556)
 
-See also [4.3](../chapter-4-fpr-processes/#43-model-2-extended-layered-order-model) & [4.5.6](../chapter-4-fpr-processes/#456-message-14-payment-information-00556).
+See also [4.2](../chapter-4-fpr-processes/#42-the-fpr-model) &amp; [4.3.9](../chapter-4-fpr-processes/#439-message-14-payment-information-00556).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-14-betaalinformatie.html"
+  src="../assets/berichtstructuur-14-betaalinformatie.html"
   width="100%"
   height="400"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 14. Payment Information (00556)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-14-betaalinformatie.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.16 Message structure 15. Corporate Actions (00557)
+
+### 6.4.11 Message Structure 15. Corporate Actions (00557)
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-15-corporate-actions.html"
+  src="../assets/berichtstructuur-15-corporate-actions.html"
   width="100%"
   height="380"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure 15. Corporate Actions (00557)">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-15-corporate-actions.html" target="_blank">Open table in full screen</a></p>
 
-#### 6.4.17 Message structure Feedback Message
+### 6.4.12 Message Structure Feedback Message
 
-See also [4.7](../chapter-4-fpr-processes/#47-feedback-message).
+See also [4.4](../chapter-4-fpr-processes/#44-feedback-message-resending).
 
 <iframe
-  src="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/assets/berichtstructuur-feedback-message.html"
+  src="../assets/berichtstructuur-feedback-message.html"
   width="100%"
   height="300"
   style="border: 1px solid #ddd; border-radius: 4px; display: block;"
   title="Message structure Feedback Message">
 </iframe>
+<p style="font-size: 11px; margin-top: 4px;"><a href="../assets/berichtstructuur-feedback-message.html" target="_blank">Open table in full screen</a></p>
 
-Notes:
+Note:
 
 - The initial message is not sent along with the feedback message.
-- In the feedback message, a reference is **always** made to the messageId (via **originalMessageId**) of the message to which the feedback message is a response, and **may** reference the messageType (via **originalMessageType**).
+- The feedback message **always** refers to the messageId (via **originalMessageId**) of the message to which the feedback message is a response and **may** refer to the messageType (via **originalMessageType**).
 
-[^7]: Eindrapport onderzoek standaard VB PUO (september 2023.pdf. zie: [SIVI/Downloads](https://www.sivi.org/pensioen/standaard-data-uitwisseling-vermogensbeheer-en-pensioenuitvoering/)
+[^7]: Eindrapport onderzoek standaard VB PUO (september 2023.pdf. See: [SIVI/Downloads](https://www.sivi.org/pensioen/standaard-data-uitwisseling-vermogensbeheer-en-pensioenuitvoering/)
 
-[^8]: [Zie: OAS (Open API Specificaties)](https://github.com/dma61/VBPUOdsk/tree/main/OAS%20(Open%20API%20Specificaties)%20IN%20ONTWIKKELING)
+[^8]: [See: OAS (Open API Specification)](https://github.com/Stichting-SIVI/VBPUOdsk/tree/main/VBPUO%20OAS%20%28Open%20API%20Specificatie%29)

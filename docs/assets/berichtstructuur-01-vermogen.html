@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Message structure 1. Assets (0001a) — VBPUO</title>
+<link rel="stylesheet" href="vbpuo-tabellen.css">
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  background: #fff;
+  color: #000;
+  padding: 0;
+}
+
+table { border-collapse: collapse; width: 100%; border: 1px solid #BBBBBB; }
+.vbt-struct-titel {
+  background: #FFDA09;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px 8px;
+  color: #1A1A00;
+  border: 1px solid #BBBBBB;
+}
+thead th {
+  background: #FFDA09;
+  color: #1A1A00;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid #BBBBBB;
+  font-size: 12px;
+  text-align: left;
+}
+td {
+  padding: 3px 8px;
+  border: 1px solid #BBBBBB;
+  font-size: 12px;
+  vertical-align: top;
+}
+tr:hover td { background: #FFFFF0; }
+.kard-v { color: #2D5E5E; font-weight: bold; }
+.kard-o { color: #999999; }
+
+</style>
+</head>
+<body>
+<div class="vbt-struct-titel">Message structure 1._Assets_(0001a)</div>
+<table>
+<thead><tr>
+<th style="width:70%">Entity.entitytype</th>
+<th style="width:30%">Cardinality</th>
+</tr></thead>
+<tbody>
+<tr><td style="padding-left:8px;color:#000000; font-weight:bold;">commonTechnical.default</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:24px;color:#3E8080;">party.sender</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:40px;color:#2D5E5E;">party.contact</td><td class="kard-o">0..*, O</td></tr>
+<tr><td style="padding-left:24px;color:#3E8080;">party.receiver</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:8px;color:#000000; font-weight:bold;">commonFunctional.default</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:8px;color:#000000; font-weight:bold;">party.pensionProvider</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:24px;color:#3E8080;">pension.scheme</td><td class="kard-v">1..*, V</td></tr>
+<tr><td style="padding-left:40px;color:#2D5E5E;">financialInformation.reportingPeriod</td><td class="kard-v">1..1, V</td></tr>
+<tr><td style="padding-left:40px;color:#2D5E5E;">pension.cohort</td><td class="kard-v">1..*, V</td></tr>
+<tr><td style="padding-left:56px;color:#1D4040;">investment.portfolio</td><td class="kard-o">0..*, O</td></tr>
+<tr><td style="padding-left:40px;color:#2D5E5E;">investment.portfolio</td><td class="kard-o">0..*, O</td></tr>
+<tr><td style="padding-left:8px;color:#000000; font-weight:bold;">document.default</td><td class="kard-o">0..*, O</td></tr>
+<tr><td style="padding-left:8px;color:#000000; font-weight:bold;">chunking.default</td><td class="kard-o">0..1, O</td></tr>
+</tbody></table>
+</body></html>

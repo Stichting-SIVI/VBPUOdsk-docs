@@ -1,24 +1,39 @@
 site_name: VB-PUO Standard Documentation
-site_description: Functional and technical documentation for the data exchange standard.
-site_author: SIVI_r
+site_description: Functional and technical documentation for the VB-PUO data exchange standard (unofficial English translation).
+site_author: SIVI
 site_url: https://stichting-sivi.github.io/VBPUOdsk-docs/
+
 theme:
   name: material
+  language: en
+  logo: assets/sivi-logo.png
+  favicon: assets/sivi-logo.png
   features:
     - navigation.sections
     - navigation.top
-    - search.suggest
-    - content.code.copy
     - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate
   palette:
     - scheme: default
+      primary: teal
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
+      primary: teal
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font:
+    text: Source Sans Pro
+    code: Source Code Pro
+
 plugins:
   - search
   - print-site:
@@ -28,28 +43,62 @@ plugins:
       add_table_of_contents: true
       toc_title: "Table of contents"
       toc_depth: 3
-markdown_extensions:
-  - attr_list
+      enumerate_headings: false
+      add_cover_page: true
+      cover_page_template: "docs/cover_page.html"
+
+extra_css:
+  - stylesheets/sivi.css
+  - assets/vbpuo-tabellen.css
+
 extra:
+  generator: false
   version:
     provider: mike
     alias: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Stichting-SIVI/VBPUOdsk
+      name: VBPUOdsk on GitHub
+    - icon: fontawesome/solid/globe
+      link: https://www.sivi.org
+      name: SIVI.org
+
+copyright: "&copy; SIVI &mdash; Knowledge and standardisation institute for the financial services sector. Unofficial English translation; the Dutch version prevails."
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - footnotes
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - toc:
+      permalink: false
+      toc_depth: 3
+
 nav:
-  - 'Home': 'index.md'
-  - 'Chapter 1: Introduction': 'chapter-1-introduction.md'
-  - 'Chapter 2: Principles': 'chapter-2-principles.md'
-  - 'Chapter 3: SPR Processes': 'chapter-3-spr-processes.md'
-  - 'Chapter 4: FPR Processes and Feedback (applies to FPR & SPR)': 'chapter-4-fpr-processes.md'
-  - 'Chapter 5: Data Standard Setup': 'chapter-5-data-standard-setup.md'
-  - 'Chapter 6: Functional Specifications': 'chapter-6-functional-specs.md'
-  - 'Chapter 6.4: Messages': 'chapter-6-4-messages.md'
-  - 'Chapter 6.5: Cross-reference': 'chapter-6-5-cross-reference.md'
-  - 'Chapter 7: Technical Specifications': 'chapter-7-tech-specs.md'
-  - 'Chapter 7.4: Transport / OpenAPI': 'chapter-7-4-transport-openapi.md'
-  - 'Chapter 7.5: Message Assembly': 'chapter-7-5-message-assembly.md'
-  - 'Chapter 7.6: Chunking': 'chapter-7-6-chunking.md'
-  - 'Chapter 8: Appendices': 'chapter-8-appendices.md'
-  - 'Chapter 8.1: Glossary VB-PUO': 'chapter-8-1-glossary-vbpuo.md'
-  - 'Chapter 8.2: Glossary Data Exchange': 'chapter-8-2-glossary-data-exchange.md'
-  - 'Chapter 8.3: Standard Components': 'chapter-8-3-standard-components.md'
-  - 'Chapter 8.4: Translation Table': 'chapter-8-4-translation-table.md'
+  - Colophon: index.md
+  - "Chapter 1: Introduction": chapter-1-introduction.md
+  - "Chapter 2: Principles": chapter-2-principles.md
+  - "Chapter 3: SPR processes": chapter-3-spr-processes.md
+  - "Chapter 4: FPR processes": chapter-4-fpr-processes.md
+  - "Chapter 5: Data standard setup": chapter-5-data-standard-setup.md
+  - "Chapter 6: Functional specifications":
+      - "6: Functional specifications": chapter-6-functional-specs.md
+      - "6.4: Messages": chapter-6-4-messages.md
+      - "6.5: Cross-reference": chapter-6-5-cross-reference.md
+  - "Chapter 7: Technical specifications":
+      - "7: Technical specifications": chapter-7-tech-specs.md
+      - "7.4: Transport OpenAPI": chapter-7-4-transport-openapi.md
+      - "7.5: Message assembly": chapter-7-5-message-assembly.md
+      - "7.6: Chunking": chapter-7-6-chunking.md
+  - "Chapter 8: Appendices":
+      - "8: Appendices": chapter-8-appendices.md
+      - "8.1: Glossary VB-PUO": chapter-8-1-glossary-vbpuo.md
+      - "8.2: Glossary data exchange": chapter-8-2-glossary-data-exchange.md
+      - "8.3: Standard components": chapter-8-3-standard-components.md
+      - "8.4: Translation table": chapter-8-4-translation-table.md
+      - "8.5: Changes release 2027": chapter-8-5-changes-release-2027.md
