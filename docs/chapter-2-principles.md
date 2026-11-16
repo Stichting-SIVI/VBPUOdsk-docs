@@ -204,7 +204,7 @@ To make the further development of the standard predictable and manageable, the 
 
 - Continuous development: Changes approved during the year are made available on GitHub as soon as they have been completed.
 
-- Support of versions: In addition to the current annual release, the two preceding annual releases remain available. For 2026 these are: Release 2026, Release “2024 November” and Release “Juli 2024”.
+- Support of versions: In addition to the current annual release, the two preceding annual releases remain available. For 2027 these are: Release 2027 (v1.4.0), Release 2026 (v1.3.x) and Release “2024 November” (v1.2.0).
 
 ### JSON Schema Draft 2020-12
 

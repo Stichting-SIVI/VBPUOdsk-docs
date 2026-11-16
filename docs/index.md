@@ -66,6 +66,11 @@ Model base: 20261011-2252 generieke-bronmetadata-json</p></li>
 <p>The release notes describe the changes. The impact of the changes has been incorporated into this manual.</p></td>
 </tr>
 <tr>
+<td>Changes after publication</td>
+<td><p>16-11-2026 &mdash; &sect;2.9.2 Release Policy and Version Management: the example of the supported releases still listed the releases for 2026 and has been updated to 2027 (Release 2027, Release 2026 and 2024 November). The release policy itself has not changed: in addition to the current annual release, the two preceding ones remain available.</p>
+<p>Reason: questions about the number of supported releases. The proposal to support the current and the immediately preceding annual release, plus <code>main</code>, from release 2028 onwards is in GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/123">#123</a> and has not yet been adopted.</p></td>
+</tr>
+<tr>
 <td>Prerelease 2027</td>
 <td><p>The manual of the prerelease of 21 July 2026 remains available for consultation until April 2027: <a href="../2027-prerelease/">English prerelease 2027</a> (Dutch: <a href="https://stichting-sivi.github.io/VBPUOdsk-docs-prepare/prerelease-2027/">prerelease 2027</a>).</p></td>
 </tr>
