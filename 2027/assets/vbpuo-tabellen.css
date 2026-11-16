@@ -1,0 +1,277 @@
+/*
+ * vbpuo-tabellen.css
+ * Gedeelde stijl voor VB-PUO documentatietabellen.
+ *
+ * Tabeltypen:
+ *   §6.3  Entiteiten-attributen     → inline HTML in markdown (geladen via MkDocs extra_css)
+ *   §6.4  Berichtstructuren         → standalone HTML, <link> in iframe
+ *   §6.5  Kruisreferentie           → standalone HTML, <link> in iframe
+ *
+ * Standalone-specifieke stijlen (overflow, sticky, body-padding) staan
+ * lokaal in <style> binnen het betreffende HTML-bestand.
+ */
+
+:root {
+  /* Entiteitstabellen (§6.3) */
+  --vbt-geel:         #FFDA09;
+  --vbt-teal:         #3E8080;
+  --vbt-teal-donker:  #2D5E5E;
+  --vbt-licht-teal:   #E7F2EE;
+
+  /* Kruisreferentietabel (§6.5) */
+  --vbt-oranje:       #FFC000;
+  --vbt-oranje-donker:#E6AC00;
+  --vbt-licht-oranje: #FFF4D6;
+  --vbt-oranje-tekst: #664D00;
+  --vbt-oranje-v:     #996600;
+
+  /* Gedeeld */
+  --vbt-rand:         #BBBBBB;
+  --vbt-font:         "Courier New", Courier, monospace;
+  --vbt-fs:           12px;
+  --vbt-tekst-donker: #1A1A00;
+}
+
+/* --------------------------------------------------------
+   §6.3 Entiteiten-attributen (inline HTML in markdown)
+   Titel + omschrijving + tabel = één visueel blok.
+   -------------------------------------------------------- */
+
+/* .vbt-entiteit = enkele buitenrand rond titel+omschrijving+tabel */
+.vbt-entiteit {
+  margin-bottom: 28px;
+  font-family: var(--vbt-font);
+  font-size: var(--vbt-fs);
+  border: 1px solid var(--vbt-rand);
+  overflow: hidden !important;
+}
+
+.vbt-titel-rij {
+  background: var(--vbt-geel);
+  padding: 5px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: var(--vbt-tekst-donker);
+}
+
+.vbt-titel-naam {
+  font-weight: bold;
+}
+
+.vbt-titel-nr {
+  font-size: 10px;
+  color: #888888;
+  font-weight: normal;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+.vbt-omschrijving-rij {
+  background: var(--vbt-geel);
+  padding: 4px 8px;
+  border-top: 1px solid var(--vbt-rand);
+  font-style: italic;
+  font-size: var(--vbt-fs);
+  color: var(--vbt-tekst-donker);
+}
+
+/* MkDocs Material wikkelt tabellen in scrollwrap > __table — alles resetten */
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit .md-typeset__scrollwrap {
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit .md-typeset__table {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  max-width: 100%;
+}
+
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none !important;
+  border-top: 1px solid var(--vbt-rand) !important;
+  margin: 0 !important;
+  display: table !important;
+}
+
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit thead th {
+  background: var(--vbt-geel) !important;
+  color: var(--vbt-tekst-donker) !important;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid var(--vbt-rand);
+  border-top: none !important;
+  font-size: var(--vbt-fs);
+  text-align: left;
+  font-family: var(--vbt-font);
+}
+
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit td {
+  padding: 3px 8px;
+  border: 1px solid var(--vbt-rand);
+  font-size: var(--vbt-fs);
+  vertical-align: top;
+  font-family: var(--vbt-font);
+}
+
+[data-md-color-scheme="default"] .md-typeset .vbt-entiteit tr:hover td {
+  background: #FFFFF0;
+}
+
+.vbt-td-c {
+  text-align: center;
+}
+
+/* --------------------------------------------------------
+   §6.4 Berichtstructuren (standalone HTML in iframe)
+   -------------------------------------------------------- */
+
+.vbt-struct-titel {
+  background: var(--vbt-geel);
+  font-weight: bold;
+  font-size: var(--vbt-fs);
+  padding: 5px 8px;
+  color: var(--vbt-tekst-donker);
+  border: 1px solid var(--vbt-rand);
+}
+
+.vbt-struct table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid var(--vbt-rand);
+}
+
+.vbt-struct thead th {
+  background: var(--vbt-geel);
+  color: var(--vbt-tekst-donker);
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid var(--vbt-rand);
+  font-size: var(--vbt-fs);
+  text-align: left;
+}
+
+.vbt-struct td {
+  padding: 3px 8px;
+  border: 1px solid var(--vbt-rand);
+  font-size: var(--vbt-fs);
+  vertical-align: top;
+}
+
+.vbt-struct tr:hover td {
+  background: #FFFFF0;
+}
+
+.kard-v { color: var(--vbt-teal-donker); font-weight: bold; }
+.kard-o { color: #999999; }
+
+/* Hiërarchie-kleuren berichtstructuur */
+.vbt-lvl0 { color: #000000; font-weight: bold; }
+.vbt-lvl1 { color: var(--vbt-teal); }
+.vbt-lvl2 { color: var(--vbt-teal-donker); }
+
+/* --------------------------------------------------------
+   §6.5 Kruisreferentie (standalone HTML in iframe)
+   -------------------------------------------------------- */
+
+.vbt-kruis thead th {
+  background-color: var(--vbt-oranje);
+  color: #000;
+}
+
+.vbt-kruis thead th:first-child {
+  background-color: var(--vbt-oranje-donker);
+}
+
+.vbt-kruis tbody tr.groep th {
+  background: var(--vbt-licht-oranje);
+  color: var(--vbt-oranje-tekst);
+  border-top: 2px solid var(--vbt-oranje);
+}
+
+.vbt-kruis tbody tr.groep td {
+  background: var(--vbt-licht-oranje);
+}
+
+.vbt-kruis .v { color: var(--vbt-oranje-v); font-weight: bold; }
+.vbt-kruis .o { color: #999999; }
+
+/* --------------------------------------------------------
+   Inhoudstabellen (Markdown + inline HTML in MkDocs)
+   Overschrijft sivi.css teal-headers met VBPUO-geel.
+   -------------------------------------------------------- */
+
+[data-md-color-scheme="default"] .md-typeset table th,
+[data-md-color-scheme="default"] .md-typeset table thead th {
+  background-color: #F0F0F0 !important;
+  color: var(--vbt-tekst-donker) !important;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid var(--vbt-rand);
+  font-size: var(--vbt-fs);
+  text-align: left;
+  font-family: var(--vbt-font);
+}
+
+[data-md-color-scheme="default"] .md-typeset table td {
+  padding: 3px 8px;
+  border: 1px solid var(--vbt-rand);
+  font-size: var(--vbt-fs);
+  vertical-align: top;
+  font-family: var(--vbt-font);
+}
+
+[data-md-color-scheme="default"] .md-typeset table {
+  border-collapse: collapse;
+  border: 1px solid var(--vbt-rand);
+}
+
+[data-md-color-scheme="default"] .md-typeset table tr:hover td {
+  background: #FFFFF0;
+}
+
+[data-md-color-scheme="default"] .md-typeset table tr:nth-child(even) td {
+  background-color: #FAFAFA;
+}
+
+/* --------------------------------------------------------
+   Gedeelde utility klassen (inline én standalone)
+   -------------------------------------------------------- */
+
+.vbt-v { color: var(--vbt-teal-donker); font-weight: bold; }
+.vbt-o { color: #999999; }
+
+/* Kruisreferentie per entiteit (§6.5) — losse tabellen in plaats van één brede.
+   De rij "(entiteit)" zegt iets over de entiteit zelf, de regels eronder over
+   de attributen; daarom krijgt die rij een eigen achtergrond. */
+.vbt-rij-entiteit td {
+  background: var(--vbt-licht-teal);
+  font-style: italic;
+}
+.vbt-titel-herhaling {
+  font-size: 11px;
+  font-style: italic;
+  color: #777777;
+  margin-left: 6px;
+}
+
+/* Berichtkoppen in de kruisreferentie per entiteit (§6.5). Het nummer alleen
+   zegt de lezer niets, dus staat er een korte naam onder; het nummer blijft
+   klein zichtbaar omdat de tekst er in de hoofdstukken naar verwijst. */
+.vbt-kop-bericht {
+  font-size: 10px;
+  line-height: 1.2;
+  white-space: normal;
+  padding: 3px 2px;
+}
+.vbt-kop-nr {
+  display: block;
+  font-size: 9px;
+  font-weight: normal;
+  opacity: 0.75;
+}

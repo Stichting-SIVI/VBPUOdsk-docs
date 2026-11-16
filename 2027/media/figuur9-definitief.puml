@@ -1,0 +1,129 @@
+@startuml
+
+title Figuur 9 — Procesflow FPR:\nopbouw unitized; CVP in EUR
+
+skinparam participant<<hidden>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+}
+
+legend right
+<b>Rollen:</b> PUO/ZAF, BA, FM/VB, LDI
+
+<b>Kleurcodering:</b>
+- <color:gray>grijs</color> = generieke/ongewijzigde stroom
+- <color:green>groen</color> = specifiek voor CVP in EUR:
+  extra berichten omdat de CVP niet in units
+  maar in EUR wordt geadministreerd
+  (SIVI 2 cash-instructie, SIVI 4 rendement,
+   beleggingsproces + terugkoppeling).
+
+<b>Berichten 10 en 14:</b>
+De BA is de reguliere afzender (stappen E en L).
+De PUO/ZAF stuurt deze berichten alleen bij uitzondering.
+
+<b>Bericht 2 (cash-instructie CVP):</b>
+Beide afzenders komen voor, afhankelijk van de mutatie:
+bij een switch verstuurt de BA (stap P),
+bij een complete sell de PUO/ZAF (stap O).
+
+<b>Geen SIVI 13 voor de CVP in EUR:</b>
+De CVP wordt niet in units geadministreerd, zodat er
+geen unitwaarde is door te geven. Het rendement bereikt
+de PUO via SIVI 4 (stap K).
+
+<b>Stapletters:</b>
+Figuur 8 en 9 delen hun stapletters. Ontbreekt een
+letter in deze figuur, dan komt die stap in deze
+inrichting niet voor.
+
+<b>Lezing van figuur 8 en 9:</b>
+Geen twee FPR-modellen, maar twee administratieve
+inrichtingen van opbouwfase en CVP.
+
+<b>Tijdsaanduidingen (geel):</b>
+T = handelsmoment; T-4 / T+3 / Tussen T & T+3 indicatief.
+endlegend
+
+participant " " as TIJD <<hidden>>
+actor "PUO / ZAF" as PUO
+participant "BA\nBeleggingsadministrateur" as BA
+actor "FM / VB\nFiduciair manager /\nVermogensbeheerder" as FM
+actor "LDI\nLDI-manager" as LDI
+
+
+== Order inleg: opbouw in units ==
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> BA: <b>A</b> <b>SIVI 5</b> Orderopdracht
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#gray]-> PUO: <b>C</b> <b>SIVI 13</b> Waarde-informatie beleggingspool
+
+
+== Sturing richting FM/VB en LDI ==
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#gray]> FM: <b>E</b> <b>SIVI 10</b> Netto stuurinformatie / estimated cashflow (EUR)
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> FM: <b>F</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase\n(CVP en overige collectieve reserves)
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> LDI: <b>G</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase\n(CVP en overige collectieve reserves)
+
+
+== CVP in EUR: cash-instructie ==
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#green]> FM: <b><color:green>O</color></b> <b><color:green>SIVI 2</color></b> <color:green>Cash-instructie CVP (EUR)</color>\n<color:green>bij complete sell</color>
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#green]> FM: <b><color:green>P</color></b> <b><color:green>SIVI 2</color></b> <color:green>Cash-instructie CVP (EUR)</color>\n<color:green>bij switch</color>
+
+
+== Handelsuitvoering en terugkoppeling ==
+
+rnote over TIJD #F5CC27 : T
+LDI -[#gray]> LDI: <b>H1</b> Uitvoeren netto koop-/verkoopbehoefte\nLDI-mandaat
+FM -[#gray]> FM: <b>H2</b> Uitvoeren netto koop-/verkoopbehoefte\noverige (non-LDI) portefeuilles
+
+rnote over TIJD #F5CC27
+  Tussen
+  T & T+3
+end rnote
+LDI -[#gray]-> BA: <b>I</b> Uitgevoerde transacties (LDI-mandaat)
+FM -[#gray]-> BA: <b>I</b> Uitgevoerde transacties (non-LDI)
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#gray]-> PUO: <b>B</b> <b>SIVI 6</b> Orderconfirmation
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#gray]-> PUO: <b>J</b> <b>SIVI 13</b> Definitieve maandeinde-NAV beleggingspool
+
+
+== Rendement CVP en collectieve reserves ==
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#green]-> PUO: <b><color:green>K</color></b> <b><color:green>SIVI 4</color></b> <color:green>Rendementen CVP en</color>\n<color:green>overige collectieve reserves</color>
+
+
+== Definitieve betaalinformatie en cash-afwikkeling ==
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#gray]> FM: <b>L</b> <b>SIVI 14</b> Definitieve betaalinformatie (EUR)
+
+rnote over TIJD #F5CC27 : T+3
+FM -[#gray]-> BA: <b>M</b> Cash-overboeking definitieve betalingen\n(tussen beleggingsrekeningen en\nvan beleggingsrekeningen naar pensioenrekening)
+
+
+== CVP in EUR: uitvoering ==
+
+rnote over TIJD #F5CC27 : T+3
+FM -[#green]> FM: <b><color:green>Q</color></b> <color:green>Geld vrijmaken uit de CVP of toevoegen aan CVP</color>\n<color:green>m.b.v. beleggingsproces</color>
+
+rnote over TIJD #F5CC27 : T+3
+FM -[#green]-> BA: <b><color:green>R</color></b> <color:green>Uitgevoerde transacties &</color>\n<color:green>cash-overboekingen definitieve betalingen</color>\n<color:green>naar pensioenrekening</color>
+
+@enduml

@@ -6,10 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Functional and technical documentation for the data exchange standard.">
+        <meta name="description" content="Functional and technical documentation for the VB-PUO data exchange standard (unofficial English translation).">
       
       
-        <meta name="author" content="SIVI_r">
+        <meta name="author" content="SIVI">
       
       
         <link rel="canonical" href="https://stichting-sivi.github.io/VBPUOdsk-docs/2027/chapter-8-2-glossary-data-exchange/">
@@ -24,19 +24,19 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../assets/sivi-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
-        <title>Chapter 8.2: Glossary Data Exchange - VB-PUO Standard Documentation</title>
+        <title>8.2: Glossary data exchange - VB-PUO Standard Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,14 +50,18 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
       
     
     
       <link rel="stylesheet" href="../css/print-site.css">
     
       <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/sivi.css">
+    
+      <link rel="stylesheet" href="../assets/vbpuo-tabellen.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -75,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -84,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#82-glossary-data-exchange-based-on-standards" class="md-skip">
+        <a href="#82-glossary-of-data-exchange-based-on-standards" class="md-skip">
           Skip to content
         </a>
       
@@ -106,8 +110,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VB-PUO Standard Documentation" class="md-header__button md-logo" aria-label="VB-PUO Standard Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/sivi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 8.2: Glossary Data Exchange
+              8.2: Glossary data exchange
             
           </span>
         </div>
@@ -137,7 +140,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -147,7 +150,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -228,12 +231,13 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="VB-PUO Standard Documentation" class="md-nav__button md-logo" aria-label="VB-PUO Standard Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/sivi-logo.png" alt="logo">
 
     </a>
     VB-PUO Standard Documentation
@@ -255,7 +259,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Colophon
   
 
     
@@ -336,7 +340,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: SPR Processes
+    Chapter 3: SPR processes
   
 
     
@@ -363,7 +367,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: FPR Processes and Feedback (applies to FPR & SPR)
+    Chapter 4: FPR processes
   
 
     
@@ -390,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5: Data Standard Setup
+    Chapter 5: Data standard setup
   
 
     
@@ -405,6 +409,58 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Functional specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 6: Functional specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -417,7 +473,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6: Functional Specifications
+    6: Functional specifications
   
 
     
@@ -429,9 +485,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -444,7 +501,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.4: Messages
+    6.4: Messages
   
 
     
@@ -456,9 +513,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -471,7 +529,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.5: Cross-reference
+    6.5: Cross-reference
   
 
     
@@ -483,9 +541,69 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Technical specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 7: Technical specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -498,7 +616,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7: Technical Specifications
+    7: Technical specifications
   
 
     
@@ -510,9 +628,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -525,7 +644,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.4: Transport / OpenAPI
+    7.4: Transport OpenAPI
   
 
     
@@ -537,9 +656,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -552,7 +672,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.5: Message Assembly
+    7.5: Message assembly
   
 
     
@@ -564,9 +684,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -579,7 +700,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.6: Chunking
+    7.6: Chunking
   
 
     
@@ -591,16 +712,42 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../chapter-8-appendices/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -614,13 +761,50 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 8: Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-8-appendices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8: Appendices
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -633,7 +817,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.1: Glossary VB-PUO
+    8.1: Glossary VB-PUO
   
 
     
@@ -645,9 +829,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
     
@@ -667,7 +852,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.2: Glossary Data Exchange
+    8.2: Glossary data exchange
   
 
     
@@ -685,7 +870,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.2: Glossary Data Exchange
+    8.2: Glossary data exchange
   
 
     
@@ -709,10 +894,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#82-glossary-data-exchange-based-on-standards" class="md-nav__link">
+  <a href="#82-glossary-of-data-exchange-based-on-standards" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.2 Glossary Data Exchange Based on Standards
+        8.2 Glossary of Data Exchange Based on Standards
       
     </span>
   </a>
@@ -726,9 +911,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -741,7 +927,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.3: Standard Components
+    8.3: Standard components
   
 
     
@@ -753,9 +939,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -768,7 +955,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.4: Translation Table
+    8.4: Translation table
   
 
     
@@ -777,6 +964,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-8-5-changes-release-2027/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.5: Changes release 2027
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -815,41 +1038,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#82-glossary-data-exchange-based-on-standards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8.2 Glossary Data Exchange Based on Standards
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -860,31 +1048,9 @@
 
 
 
-  <h1>Chapter 8.2: Glossary Data Exchange</h1>
+  <h1>8.2: Glossary data exchange</h1>
 
-<h2 id="82-glossary-data-exchange-based-on-standards">8.2 Glossary Data Exchange Based on Standards</h2>
-<blockquote>
-<p><strong>Note:</strong> The glossary table below is in Dutch. These are terms related to data exchange standards and interoperability.</p>
-<p><strong>NL → EN Legend for table headers:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Dutch</th>
-<th>English</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Begrip</td>
-<td>Term / Concept</td>
-</tr>
-<tr>
-<td>Betekenis</td>
-<td>Meaning / Definition</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
+<h2 id="82-glossary-of-data-exchange-based-on-standards">8.2 Glossary of Data Exchange Based on Standards</h2>
 <table>
 <colgroup>
 <col style="width: 34%" />
@@ -892,144 +1058,144 @@
 </colgroup>
 <thead>
 <tr>
-<th>Begrip</th>
-<th>Betekenis</th>
+<th>Term</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th>API</th>
-<td>Een application programming interface (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Voor steeds meer organisaties vormen API's (bibliotheek met webservices) de sleutelrol in het aanbieden van transacties, het distribueren van content of het ontsluiten van een workflow tussen schakels in de keten.</td>
+<td>An application programming interface (API) is a structured and documented interface for communication between applications. For more and more organisations, APIs (library of web services) play the key role in offering transactions, distributing content or opening up a workflow between links in the chain.</td>
 </tr>
 <tr>
-<th>Attribuut</th>
-<td>Een uniek kenmerk of gegeven van een entiteit.</td>
+<th>Attribute (attribuut)</th>
+<td>A unique characteristic or data item of an entity.</td>
 </tr>
 <tr>
-<th>Begrijpelijkheid gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens eenvoudig gelezen en geïnterpreteerd kunnen worden door gebruikers.</p></td>
+<th>Understandability of data (begrijpelijkheid gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data can easily be read and interpreted by users.</p></td>
 </tr>
 <tr>
-<th>Bericht</th>
-<td>Een bericht beschrijft de interface tussen twee geautomatiseerde toepassingen die berichten uitwisselen.</td>
+<th>Message (bericht)</th>
+<td>A message describes the interface between two automated applications that exchange messages.</td>
 </tr>
 <tr>
-<th>Berichtschema</th>
-<td>Een bericht-/productdefinitie in schemavorm.</td>
+<th>Message schema (berichtschema)</th>
+<td>A message/product definition in schema form.</td>
 </tr>
 <tr>
-<th>Berichtstructuur</th>
-<td>Op basis van de bouwstenendoos met entiteiten, attributen etc. worden een of meer hiërarchische structuren gespecificeerd. In deze structuur worden de relaties tussen de entiteiten aangegeven.</td>
+<th>Message structure (berichtstructuur)</th>
+<td>On the basis of the building block set of entities, attributes etc., one or more hierarchical structures are specified. This structure indicates the relationships between the entities.</td>
 </tr>
 <tr>
-<th>Consistentie gegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens vrij van tegenspraak zijn en samenhang vertonen met andere gegevens.</p></td>
+<th>Consistency of data (consistentie gegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are free of contradiction and are coherent with other data.</p></td>
 </tr>
 <tr>
-<th>CSV-bestand</th>
-<td>Een gegevensbestand waarvan de waarden door een leesteken worden gescheiden (in de regel een komma of puntkomma) als specificatie voor tabelbestanden. De waarden kunnen in een rekenblad­ of een databaseprogramma worden ingelezen en vervolgens op een beeldscherm als tabel worden gepresenteerd.</td>
+<th>CSV file (CSV-bestand)</th>
+<td>A data file whose values are separated by a punctuation mark (usually a comma or semicolon), as a specification for table files. The values can be read into a spreadsheet or database program and then presented as a table on a screen.</td>
 </tr>
 <tr>
 <th>Data Exchange</th>
-<td>Data Exchange is de techniek waarbij de data van verschillende geautomatiseerde toepassingen op geautomatiseerde wijze met elkaar uitwisselbaar zijn op basis van gemaakte afspraken over onder andere standaarden.</td>
+<td>Data Exchange is the technique whereby the data of different automated applications can be exchanged with each other in an automated way on the basis of agreements made on, among other things, standards.</td>
 </tr>
 <tr>
 <th>Data Governance</th>
-<td>Een systeem dat interoperabiliteitscomponenten (standaarden en beleidsregels) toepast om het acceptabele gebruik en de hoge kwaliteit van gegevens binnen een specifiek ecosysteem te garanderen. Beheert de beschikbaarheid, bruikbaarheid, consistentie, integriteit en beveiliging van de gebruikte gegevens.</td>
+<td>A system that applies interoperability components (standards and policy rules) to guarantee the acceptable use and high quality of data within a specific ecosystem. Manages the availability, usability, consistency, integrity and security of the data used.</td>
 </tr>
 <tr>
-<th>Entiteit</th>
-<td>Dit is 'iets wat een bestaan heeft'. Dus iets dat er toe doet, dat men kan duiden, kan benoemen en waarde heeft. Bijvoorbeeld een persoon is een entiteit en kan beschreven worden met attributen zoals voornaam, familienaam of <a href="https://nl.wikipedia.org/wiki/Burgerservicenummer">BSN</a>-nummer (uniek persoonsgebonden nummer).</td>
+<th>Entity (entiteit)</th>
+<td>This is ‘something that has an existence’. In other words, something that matters, that can be identified, can be named and has value. For example, a person is an entity and can be described with attributes such as first name, surname or <a href="https://nl.wikipedia.org/wiki/Burgerservicenummer">BSN</a> number (unique personal number).</td>
 </tr>
 <tr>
-<th>Gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Weergave van een feit, begrip of aanwijzing, geschikt voor overdracht, interpretatie of verwerking door een persoon of apparaat.</p></td>
+<th>Data item (gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Representation of a fact, concept or instruction, suitable for transfer, interpretation or processing by a person or device.</p></td>
 </tr>
 <tr>
-<th>Gegevensgroep (entiteit)</th>
-<td>Groep van gegevenselementen die logisch bij elkaar hoort.</td>
+<th>Data group (entity) (gegevensgroep)</th>
+<td>Group of data elements that logically belong together.</td>
 </tr>
 <tr>
-<th>Gegevenskwaliteit of Datakwaliteit</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin een geheel van eigenschappen en kenmerken van één of meer gegevens voldoet aan eisen.</p>
-<p>Het streven is dat gegevenskwaliteit "fit-for-purpose" is; dat deze aansluit bij het gebruik. Kwaliteit heeft betrekking op de mate waarin wordt voldaan aan verwachtingen.</p></td>
+<th>Data quality (gegevenskwaliteit, datakwaliteit)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which a set of properties and characteristics of one or more data items meets requirements.</p>
+<p>The aim is for data quality to be "fit-for-purpose"; that it matches the use. Quality relates to the extent to which expectations are met.</p></td>
 </tr>
 <tr>
-<th>Gegevensoverdraagbaarheid</th>
-<td>Dataportabiliteit. De mogelijkheid om gegevens gemakkelijk te verplaatsen tussen interoperabele toepassingen en domeinen.</td>
+<th>Data portability (gegevensoverdraagbaarheid)</th>
+<td>Data portability. The ability to move data easily between interoperable applications and domains.</td>
 </tr>
 <tr>
-<th>Interoperabiliteit</th>
-<td><p>I<a href="https://www.noraonline.nl/wiki/Interoperabiliteit">nteroperabiliteit</a> is het vermogen van organisaties (en hun processen en systemen) om effectief en efficiënt informatie te delen met hun omgeving.</p>
-<p>In het <a href="https://joinup.ec.europa.eu/collection/nifo-national-interoperability-framework-observatory/european-interoperability-framework-detail">European Interoperability Framework</a> worden drie vormen van interoperabiliteit onderscheiden:</p>
+<th>Interoperability (interoperabiliteit)</th>
+<td><p>I<a href="https://www.noraonline.nl/wiki/Interoperabiliteit">nteroperability</a> is the ability of organisations (and their processes and systems) to share information with their environment effectively and efficiently.</p>
+<p>The <a href="https://joinup.ec.europa.eu/collection/nifo-national-interoperability-framework-observatory/european-interoperability-framework-detail">European Interoperability Framework</a> distinguishes three forms of interoperability:</p>
 <ol type="1">
-<li><p>Technische interoperabiliteit – Om systemen te kunnen koppelen, moeten er afspraken worden gemaakt over interfaces, standaarden en protocollen voor communicatie, berichtenformaten, gegevensintegratie, beveiliging, beschikbaarheid, etc.</p></li>
-<li><p>Semantische interoperabiliteit – De informatie die partijen uitwisselen, moet wederzijds begrijpelijk zijn. Context en betekenis van gegevens moet eenduidig zijn vastgelegd.</p></li>
-<li><p>Organisatorische interoperabiliteit – Om gezamenlijke diensten te kunnen leveren, moeten organisaties op elkaar zijn afgestemd in termen van hun businessdoelen, verdeling van verantwoordelijkheden en uitwisselingsprocessen.</p></li>
+<li><p>Technical interoperability – In order to connect systems, agreements must be made on interfaces, standards and protocols for communication, message formats, data integration, security, availability, etc.</p></li>
+<li><p>Semantic interoperability – The information that parties exchange must be mutually understandable. The context and meaning of data must be laid down unambiguously.</p></li>
+<li><p>Organisational interoperability – In order to deliver joint services, organisations must be aligned with each other in terms of their business goals, division of responsibilities and exchange processes.</p></li>
 </ol></td>
 </tr>
 <tr>
-<th>Koppelvlak</th>
-<td>Het geheel van gemeenschappelijke afspraken dat de uitwisseling van gegevens tussen digitale systemen mogelijk maakt.</td>
+<th>Interface (koppelvlak)</th>
+<td>The set of common agreements that makes the exchange of data between digital systems possible.</td>
 </tr>
 <tr>
-<th>Kwaliteitseis of norm</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Een norm waaraan gegevens moeten voldoen.</p>
-<p>Een kwaliteitseis wordt in veel gevallen uitgedrukt in een getal zoals een percentage.</p></td>
+<th>Quality requirement or norm (kwaliteitseis, norm)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>A norm that data must meet.</p>
+<p>In many cases a quality requirement is expressed as a number, such as a percentage.</p></td>
 </tr>
 <tr>
 <th>Metadata</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Metagegevens. Data over data.</p>
-<p>Metadata zijn data die de karakteristieken van andere data beschrijven. Het bewaren bij of koppelen van metadata aan de data waarop ze betrekking hebben, heeft als voordeel dat de data makkelijker gevonden kunnen worden.</p></td>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Metadata (metagegevens). Data about data.</p>
+<p>Metadata are data that describe the characteristics of other data. Storing metadata with, or linking them to, the data to which they relate has the advantage that the data can be found more easily.</p></td>
 </tr>
 <tr>
-<th>Metagegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Gegevens die context, inhoud, structuur en vorm van informatie en het beheer ervan door de tijd heen beschrijven.</p></td>
+<th>Metadata (metagegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Data that describe the context, content, structure and form of information and its management over time.</p></td>
 </tr>
 <tr>
-<th>Onweerlegbaarheid gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Begrip dat gebruikt wordt bij elektronische berichtuitwisseling en dat inhoudt dat de zender van een bericht niet kan ontkennen een bepaald bericht te hebben verstuurd en dat de ontvanger van een bericht niet kan ontkennen het bericht van de zender in de oorspronkelijke staat te hebben ontvangen.</p></td>
+<th>Non-repudiation of data (onweerlegbaarheid gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>Concept used in electronic message exchange, meaning that the sender of a message cannot deny having sent a particular message and that the recipient of a message cannot deny having received the message from the sender in its original state.</p></td>
 </tr>
 <tr>
-<th>Plausibiliteit gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens worden beschouwd als waar en geloofwaardig door gebruikers.</p></td>
+<th>Plausibility of data (plausibiliteit gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are regarded as true and credible by users.</p></td>
 </tr>
 <tr>
-<th>Precisie gegeven</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens exact of onderscheidend genoeg zijn.</p></td>
+<th>Precision of data (precisie gegeven)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data are exact or sufficiently distinctive.</p></td>
 </tr>
 <tr>
-<th>Semantiek</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>Leer van de betekenis van woorden en woordgroepen.</p></td>
+<th>Semantics (semantiek)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The study of the meaning of words and word groups.</p></td>
 </tr>
 <tr>
-<th>Standaard</th>
-<td>Dit zijn afspraken over informatie of over een proces, dit kan zowel op het niveau van semantische als technische standaarden. Veelal worden de afspraken vastgelegd in documenten met erkende status. Standaarden worden onderhouden vanuit standaardisatie organisaties zoals het NEN en aanbevolen of verplicht gesteld door bijvoorbeeld <a href="https://forumstandaardisatie.nl/node/229">Bureau Forum Standaardisatie.</a></td>
+<th>Standard (standaard)</th>
+<td>These are agreements about information or about a process; this can be at the level of both semantic and technical standards. The agreements are often laid down in documents with a recognised status. Standards are maintained by standardisation organisations such as NEN and recommended or made mandatory by, for example, <a href="https://forumstandaardisatie.nl/node/229">Bureau Forum Standaardisatie.</a></td>
 </tr>
 <tr>
 <th>Straight Through Processing (STP)</th>
-<td>STP is de elektronische verwerking van processen waarbij de elkaar opvolgende administratieve handelingen plaatsvinden met zo min mogelijk menselijke tussenkomst.</td>
+<td>STP is the electronic processing of processes in which successive administrative actions take place with as little human intervention as possible.</td>
 </tr>
 <tr>
-<th>Transparantie</th>
-<td><p>Bron: <a href="https://open.overheid.nl/repository/ronl-9fa0e23a-0b04-442a-917b-36bce29403a8/1/pdf/eindrapport-nederlandse-self-sovereign-identity-ecosysteem-ssi.pdf">SSI Speelveldanalyse</a>, Innopay &amp; TNO, 1 oktober 2021</p>
-<p>De mate waarin personen, groepen en organisaties zicht hebben op welke gegevens die op henzelf betrekking hebben voor welk doel gebruikt worden.</p></td>
+<th>Transparency (transparantie)</th>
+<td><p>Source: <a href="https://open.overheid.nl/repository/ronl-9fa0e23a-0b04-442a-917b-36bce29403a8/1/pdf/eindrapport-nederlandse-self-sovereign-identity-ecosysteem-ssi.pdf">SSI Speelveldanalyse</a>, Innopay &amp; TNO, 1 October 2021</p>
+<p>The extent to which persons, groups and organisations have insight into which data relating to themselves are used for which purpose.</p></td>
 </tr>
 <tr>
-<th>Validiteit gegevens</th>
-<td><p>Bron: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
-<p>De mate waarin gegevens voldoen aan de verwachte structuur en opslagvorm.</p></td>
+<th>Validity of data (validiteit gegevens)</th>
+<td><p>Source: <a href="https://www.noraonline.nl/wiki/NORA_online">NORA</a></p>
+<p>The extent to which data comply with the expected structure and storage form.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1067,10 +1233,30 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      &copy; SIVI &mdash; Knowledge and standardisation institute for the financial services sector. Unofficial English translation; the Dutch version prevails.
+    </div>
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Stichting-SIVI/VBPUOdsk" target="_blank" rel="noopener" title="VBPUOdsk on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.sivi.org" target="_blank" rel="noopener" title="SIVI.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
     </a>
   
 </div>
@@ -1088,10 +1274,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "content.code.copy", "navigation.instant"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       

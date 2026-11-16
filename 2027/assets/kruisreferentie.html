@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cross-reference Attributes &amp; Messages — VBPUO</title>
+<link rel="stylesheet" href="vbpuo-tabellen.css">
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  background: #fff;
+  color: #000;
+  padding: 0;
+}
+
+body { padding: 8px; }
+.legenda { margin-bottom: 8px; font-size: 11px; color: #555; }
+.legenda span { margin-right: 14px; }
+.tabel-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 50px);
+  border: 1px solid #BBBBBB;
+}
+table { border-collapse: collapse; width: auto; }
+/* Koppen volgen de Excel-bron: niet gedraaid maar afgebroken over
+   meerdere regels, links boven uitgelijnd, in amber. Gedraaide koppen
+   waren in de browser onleesbaar. */
+thead th {
+  width: 96px; min-width: 96px; height: auto;
+  vertical-align: top; padding: 5px 6px; text-align: left;
+  background-color: #FFC000; color: #1A1A00;
+  border-right: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  position: sticky; top: 0; z-index: 2;
+}
+thead th span {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px; font-weight: bold; line-height: 1.25;
+  white-space: normal; word-break: break-word;
+}
+thead th:first-child {
+  width: 268px; min-width: 268px;
+  position: sticky; left: 0; z-index: 3;
+}
+thead th:first-child span {
+  font-family: "Courier New", Courier, monospace;
+}
+tbody tr.groep th {
+  background: #E7F2EE; font-weight: bold;
+  color: #2D5E5E; font-size: 12px;
+  padding: 3px 6px; border-top: 2px solid #3E8080;
+  position: sticky; left: 0; z-index: 1;
+  min-width: 268px; max-width: 268px;
+}
+tbody tr.groep td { background: #E7F2EE; }
+tbody th {
+  text-align: left; padding: 3px 6px; font-weight: normal;
+  background: #fff; position: sticky; left: 0; z-index: 1;
+  border-right: 2px solid #BBBBBB;
+  min-width: 268px; max-width: 268px;
+  white-space: nowrap; overflow: hidden;
+}
+/* Een enkele naam is langer dan de kolom. Die krimpt mee in plaats van over
+   twee regels te breken, zodat elke rij even hoog blijft. */
+tbody th span {
+  display: inline-block;
+  transform-origin: left center;
+  max-width: 100%;
+}
+tbody td {
+  text-align: center; padding: 2px 3px;
+  border-right: 1px solid #eee; border-bottom: 1px solid #eee;
+  min-width: 44px;
+}
+
+.vbt-filter {
+  margin-bottom: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+.vbt-filter input {
+  width: 260px; padding: 3px 6px;
+  border: 1px solid #BBBBBB; border-radius: 3px;
+  font-family: "Courier New", Courier, monospace; font-size: 12px;
+}
+.vbt-filter select {
+  padding: 3px 6px; border: 1px solid #BBBBBB; border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif; font-size: 12px;
+}
+.vbt-filter label { margin-right: 4px; }
+.vbt-filter .telling { margin-left: 10px; color: #666; }
+tr.verborgen { display: none; }
+.v { color: #2D5E5E; font-weight: bold; }
+.o { color: #999; }
+tr:nth-child(even) td { background: #fafafa; }
+tr:nth-child(even) th { background: #f3f3f3; }
+
+</style>
+</head>
+<body>
+<div class="legenda">
+  <span class="v">V = Mandatory (verplicht)</span>
+  <span class="o">O = Optional</span>
+  <span>empty = not applicable</span>
+</div>
+<div class="vbt-filter">
+  <label for="filterVeld">Search</label>
+  <input id="filterVeld" type="search" placeholder="entity or attribute" autocomplete="off">
+  <label for="filterBericht" style="margin-left:12px">Message</label>
+  <select id="filterBericht"><option value="">all</option><option value="0">1. Assets (0001a)</option><option value="1">2. Cashflow (0001b)</option><option value="2">3. Pension Projection (0001c)</option><option value="3">4. Return Information (00002)</option><option value="4">5. Order Instruction (00541)</option><option value="5">6. Order Confirmation (00542)</option><option value="6">10. Control Information Investment Pools (00553)</option><option value="7">13. Value Information Investment Pool (00555b)</option><option value="8">14. Payment Information (00556)</option><option value="9">15. Corporate Actions (00557)</option></select>
+  <span class="telling" id="telling"></span>
+</div>
+<div class="tabel-wrapper"><table>
+<thead><tr>
+<th><span>Messages &#8658;<br><br>Entities.entitytypes &amp; Attributes</span></th>
+<th><span>1. Assets (0001a)</span></th>
+<th><span>2. Cashflow (0001b)</span></th>
+<th><span>3. Pension Projection (0001c)</span></th>
+<th><span>4. Return Information (00002)</span></th>
+<th><span>5. Order Instruction (00541)</span></th>
+<th><span>6. Order Confirmation (00542)</span></th>
+<th><span>10. Control Information Investment Pools (00553)</span></th>
+<th><span>13. Value Information Investment Pool (00555b)</span></th>
+<th><span>14. Payment Information (00556)</span></th>
+<th><span>15. Corporate Actions (00557)</span></th>
+</tr></thead>
+<tbody>
+<tr class="groep" data-naam="commontechnical.default" data-groep="commontechnical.default" data-vlag="1111111111"><th><span>commonTechnical.default</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="messageid" data-groep="commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>messageId</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="creationdatetime" data-groep="commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>creationDateTime</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="testmessage" data-groep="commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>testMessage</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr class="groep" data-naam="party.sender — onder commontechnical.default" data-groep="party.sender — onder commontechnical.default" data-vlag="1111111111"><th title="commonTechnical.default"><span>party.sender — under commonTechnical.default</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="refkey" data-groep="party.sender — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="rsinnumber" data-groep="party.sender — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>rsinNumber</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="organizationname" data-groep="party.sender — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>organizationName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="applicationsendername" data-groep="party.sender — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>applicationSenderName</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr class="groep" data-naam="party.contact — onder party.sender" data-groep="party.contact — onder party.sender" data-vlag="1111111111"><th title="commonTechnical.default / party.sender"><span>party.contact — under party.sender</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="emailwork" data-groep="party.contact — onder party.sender" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>emailWork</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="workphonenumber" data-groep="party.contact — onder party.sender" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>workPhoneNumber</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr class="groep" data-naam="party.receiver — onder commontechnical.default" data-groep="party.receiver — onder commontechnical.default" data-vlag="1111111111"><th title="commonTechnical.default"><span>party.receiver — under commonTechnical.default</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="refkey" data-groep="party.receiver — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="rsinnumber" data-groep="party.receiver — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>rsinNumber</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="organizationname" data-groep="party.receiver — onder commontechnical.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>organizationName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr class="groep" data-naam="commonfunctional.default" data-groep="commonfunctional.default" data-vlag="1111111111"><th><span>commonFunctional.default</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="function" data-groep="commonfunctional.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>function</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="afddefinitionname" data-groep="commonfunctional.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>afdDefinitionName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="afddefinitionversion" data-groep="commonfunctional.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>afdDefinitionVersion</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="originalmessageid" data-groep="commonfunctional.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>originalMessageId</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr class="groep" data-naam="party.pensionprovider" data-groep="party.pensionprovider" data-vlag="1111111111"><th><span>party.pensionProvider</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="puvcode" data-groep="party.pensionprovider" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>puvCode</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="rsinnumber" data-groep="party.pensionprovider" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>rsinNumber</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="organizationname" data-groep="party.pensionprovider" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>organizationName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr class="groep" data-naam="pension.scheme — onder party.pensionprovider" data-groep="pension.scheme — onder party.pensionprovider" data-vlag="1111111111"><th title="party.pensionProvider"><span>pension.scheme — under party.pensionProvider</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="refkey" data-groep="pension.scheme — onder party.pensionprovider" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="pensionschemename" data-groep="pension.scheme — onder party.pensionprovider" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>pensionSchemeName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="startamount" data-groep="pension.scheme — onder party.pensionprovider" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>startAmount</span></th>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradingportfolioid" data-groep="pension.scheme — onder party.pensionprovider" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>tradingPortfolioId</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialinformation.reportingperiod — onder pension.scheme" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="1111111110"><th title="party.pensionProvider / pension.scheme"><span>financialInformation.reportingPeriod — under pension.scheme</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="startdate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="1101000000"><th>&nbsp;&nbsp;&nbsp;<span>startDate</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="enddate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0101000000"><th>&nbsp;&nbsp;&nbsp;<span>endDate</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="projectiondate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>projectionDate</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="instructiondate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>instructionDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="investmentordersettlementdate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0000011000"><th>&nbsp;&nbsp;&nbsp;<span>investmentOrderSettlementDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradedate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0000001000"><th>&nbsp;&nbsp;&nbsp;<span>tradeDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="participationvaluationdate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0000000100"><th>&nbsp;&nbsp;&nbsp;<span>participationValuationDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="valuedate" data-groep="financialinformation.reportingperiod — onder pension.scheme" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>valueDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="party.creditor — onder financialtransaction.payment" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th title="party.pensionProvider / pension.scheme / financialTransaction.payment"><span>party.creditor — under financialTransaction.payment</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="collectionaccountiban" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>collectionAccountIban</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="collectionaccountinnameof" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>collectionAccountInNameOf</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="collectionaccountbic" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>collectionAccountBic</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="collectionaccountbiccorrespondent" data-groep="party.creditor — onder financialtransaction.payment" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>collectionAccountBicCorrespondent</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.cashflow — onder pension.scheme" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th title="party.pensionProvider / pension.scheme"><span>financialTransaction.cashflow — under pension.scheme</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="contributionamount" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>contributionAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="contributiondate" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>contributionDate</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="withdrawalamount" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>withdrawalAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="withdrawaldate" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>withdrawalDate</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netamount" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netAmount</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netdate" data-groep="financialtransaction.cashflow — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netDate</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.payment — onder pension.scheme" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0010000010"><th title="party.pensionProvider / pension.scheme"><span>financialTransaction.payment — under pension.scheme</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="expectedpensionpaymentdate" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>expectedPensionPaymentDate</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="amount" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0010000010"><th>&nbsp;&nbsp;&nbsp;<span>amount</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="hedgedexpectedpensionpaymentamount" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>hedgedExpectedPensionPaymentAmount</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="currencytype" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>currencyType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="collectionaccountiban" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>collectionAccountIban</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr data-naam="description" data-groep="financialtransaction.payment — onder pension.scheme" data-vlag="0000000010"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="pension.cohort — onder pension.scheme" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th title="party.pensionProvider / pension.scheme"><span>pension.cohort — under pension.scheme</span></th>
+<td class="v">V</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="description" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="participationstatus" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>participationStatus</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startage" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>startAge</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="endage" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>endAge</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="reserveindicator" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>reserveIndicator</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="reservetype" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>reserveType</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="reservedescription" data-groep="pension.cohort — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>reserveDescription</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="1001000000"><th>&nbsp;&nbsp;&nbsp;<span>startAmount</span></th>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netAmount</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netdate" data-groep="pension.cohort — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netDate</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="contributionamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>contributionAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="withdrawalamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>withdrawalAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="protectionreturnpercentage" data-groep="pension.cohort — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>protectionReturnPercentage</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="excessreturnpercentage" data-groep="pension.cohort — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>excessReturnPercentage</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="protectionreturnamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>protectionReturnAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="excessreturnamount" data-groep="pension.cohort — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>excessReturnAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.payment — onder pension.cohort" data-groep="financialtransaction.payment — onder pension.cohort" data-vlag="0010000000"><th title="party.pensionProvider / pension.scheme / pension.cohort"><span>financialTransaction.payment — under pension.cohort</span></th>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="financialtransaction.payment — onder pension.cohort" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="expectedpensionpaymentdate" data-groep="financialtransaction.payment — onder pension.cohort" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>expectedPensionPaymentDate</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="amount" data-groep="financialtransaction.payment — onder pension.cohort" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>amount</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="hedgedexpectedpensionpaymentamount" data-groep="financialtransaction.payment — onder pension.cohort" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>hedgedExpectedPensionPaymentAmount</span></th>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="investment.portfolio — onder pension.scheme" data-groep="investment.portfolio — onder pension.scheme" data-vlag="1111000000"><th title="party.pensionProvider / pension.scheme"><span>investment.portfolio — under pension.scheme</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="investment.portfolio — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="description" data-groep="investment.portfolio — onder pension.scheme" data-vlag="1111000000"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startexposureamount" data-groep="investment.portfolio — onder pension.scheme" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>startExposureAmount</span></th>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startexposurepercentage" data-groep="investment.portfolio — onder pension.scheme" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>startExposurePercentage</span></th>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startamount" data-groep="investment.portfolio — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>startAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netamount" data-groep="investment.portfolio — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>netAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="endamount" data-groep="investment.portfolio — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>endAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="returnpercentage" data-groep="investment.portfolio — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>returnPercentage</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="returnamount" data-groep="investment.portfolio — onder pension.scheme" data-vlag="0001000000"><th>&nbsp;&nbsp;&nbsp;<span>returnAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="investment.portfolio — onder pension.cohort" data-groep="investment.portfolio — onder pension.cohort" data-vlag="1000000000"><th title="party.pensionProvider / pension.scheme / pension.cohort"><span>investment.portfolio — under pension.cohort</span></th>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="investment.portfolio — onder pension.cohort" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="description" data-groep="investment.portfolio — onder pension.cohort" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startexposureamount" data-groep="investment.portfolio — onder pension.cohort" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>startExposureAmount</span></th>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startexposurepercentage" data-groep="investment.portfolio — onder pension.cohort" data-vlag="1000000000"><th>&nbsp;&nbsp;&nbsp;<span>startExposurePercentage</span></th>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="startamount" data-groep="investment.portfolio — onder pension.cohort" data-vlag="0000000000"><th>&nbsp;&nbsp;&nbsp;<span>startAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netamount" data-groep="investment.portfolio — onder pension.cohort" data-vlag="0000000000"><th>&nbsp;&nbsp;&nbsp;<span>netAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="endamount" data-groep="investment.portfolio — onder pension.cohort" data-vlag="0000000000"><th>&nbsp;&nbsp;&nbsp;<span>endAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="returnpercentage" data-groep="investment.portfolio — onder pension.cohort" data-vlag="0000000000"><th>&nbsp;&nbsp;&nbsp;<span>returnPercentage</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="returnamount" data-groep="investment.portfolio — onder pension.cohort" data-vlag="0000000000"><th>&nbsp;&nbsp;&nbsp;<span>returnAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="investment.pool — onder pension.scheme" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001100"><th title="party.pensionProvider / pension.scheme"><span>investment.pool — under pension.scheme</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001100"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="description" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001100"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="buysellid" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001000"><th>&nbsp;&nbsp;&nbsp;<span>buySellId</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradevalueamount" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001000"><th>&nbsp;&nbsp;&nbsp;<span>tradeValueAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="currencytype" data-groep="investment.pool — onder pension.scheme" data-vlag="0000001100"><th>&nbsp;&nbsp;&nbsp;<span>currencyType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="unitssummedvalueamount" data-groep="investment.pool — onder pension.scheme" data-vlag="0000000100"><th>&nbsp;&nbsp;&nbsp;<span>unitsSummedValueAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="preliminaryunitvalueamount" data-groep="investment.pool — onder pension.scheme" data-vlag="0000000100"><th>&nbsp;&nbsp;&nbsp;<span>preliminaryUnitValueAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="numberofunits" data-groep="investment.pool — onder pension.scheme" data-vlag="0000000100"><th>&nbsp;&nbsp;&nbsp;<span>numberOfUnits</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.cashflow — onder investment.portfolio" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th title="party.pensionProvider / pension.scheme / investment.portfolio"><span>financialTransaction.cashflow — under investment.portfolio</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="contributionamount" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>contributionAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="contributiondate" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>contributionDate</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="withdrawalamount" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>withdrawalAmount</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="withdrawaldate" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>withdrawalDate</span></th>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netamount" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netAmount</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="netdate" data-groep="financialtransaction.cashflow — onder investment.portfolio" data-vlag="0100000000"><th>&nbsp;&nbsp;&nbsp;<span>netDate</span></th>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.payment — onder investment.portfolio" data-groep="financialtransaction.payment — onder investment.portfolio" data-vlag="0010000000"><th title="party.pensionProvider / pension.scheme / investment.portfolio"><span>financialTransaction.payment — under investment.portfolio</span></th>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="financialtransaction.payment — onder investment.portfolio" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="expectedpensionpaymentdate" data-groep="financialtransaction.payment — onder investment.portfolio" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>expectedPensionPaymentDate</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="amount" data-groep="financialtransaction.payment — onder investment.portfolio" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>amount</span></th>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="hedgedexpectedpensionpaymentamount" data-groep="financialtransaction.payment — onder investment.portfolio" data-vlag="0010000000"><th>&nbsp;&nbsp;&nbsp;<span>hedgedExpectedPensionPaymentAmount</span></th>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="investment.investmentdetails — onder pension.scheme" data-groep="investment.investmentdetails — onder pension.scheme" data-vlag="0000110001"><th title="party.pensionProvider / pension.scheme"><span>investment.investmentDetails — under pension.scheme</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="refkey" data-groep="investment.investmentdetails — onder pension.scheme" data-vlag="0000110001"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="description" data-groep="investment.investmentdetails — onder pension.scheme" data-vlag="0000110001"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="currencytype" data-groep="investment.investmentdetails — onder pension.scheme" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>currencyType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="numberofunits" data-groep="investment.investmentdetails — onder pension.scheme" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>numberOfUnits</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="financialtransaction.trade — onder investment.investmentdetails" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th title="party.pensionProvider / pension.scheme / investment.investmentDetails"><span>financialTransaction.trade — under investment.investmentDetails</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradedate" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>tradeDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="refkey" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="buysellid" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>buySellId</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradeamount" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>tradeAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradequantity" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>tradeQuantity</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="switchtype" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>switchType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="financialinformationref" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000110000"><th>&nbsp;&nbsp;&nbsp;<span>financialInformationRef</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="adjustmentindicator" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>adjustmentIndicator</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="tradeprice" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>tradePrice</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="counterparty" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>counterparty</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="broker" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>broker</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="interestamount" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>interestAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="commissionamount" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>commissionAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="clearingbroker" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>clearingBroker</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr data-naam="clearingbrokercashaccount" data-groep="financialtransaction.trade — onder investment.investmentdetails" data-vlag="0000010000"><th>&nbsp;&nbsp;&nbsp;<span>clearingBrokerCashAccount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="groep" data-naam="document.default" data-groep="document.default" data-vlag="1111111111"><th><span>document.default</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="refkey" data-groep="document.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="filename" data-groep="document.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>fileName</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="fileextension" data-groep="document.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>fileExtension</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr class="groep" data-naam="chunking.default" data-groep="chunking.default" data-vlag="1111111111"><th><span>chunking.default</span></th>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="currentchunkid" data-groep="chunking.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>currentChunkId</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="chunksequencenumber" data-groep="chunking.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>chunkSequenceNumber</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="totalnumberofchunks" data-groep="chunking.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>totalNumberOfChunks</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="chunkfragmentpaths" data-groep="chunking.default" data-vlag="1111111111"><th>&nbsp;&nbsp;&nbsp;<span>chunkFragmentPaths</span></th>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+<td class="v">V</td>
+</tr>
+<tr class="groep" data-naam="investment.corporateaction — onder investment.investmentdetails" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th title="party.pensionProvider / pension.scheme / investment.investmentDetails"><span>investment.corporateAction — under investment.investmentDetails</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="refkey" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>refKey</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="description" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>description</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="corporateactiontype" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>corporateActionType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="instructiondate" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>instructionDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="tradedate" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>tradeDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="paymentdate" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>paymentDate</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="v">V</td>
+</tr>
+<tr data-naam="cashdividendtotalamount" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>cashDividendTotalAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="cashdividendperunitamount" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>cashDividendPerUnitAmount</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="currencytype" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>currencyType</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="stockdividendperunitnumber" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>stockDividendPerUnitNumber</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="stockdividendtotalnumber" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>stockDividendTotalNumber</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="newproductname" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>newProductName</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+<tr data-naam="newproductidentifier" data-groep="investment.corporateaction — onder investment.investmentdetails" data-vlag="0000000001"><th>&nbsp;&nbsp;&nbsp;<span>newProductIdentifier</span></th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="o">O</td>
+</tr>
+</tbody></table></div>
+
+<script>
+(function () {
+  var veld    = document.getElementById('filterVeld');
+  var bericht = document.getElementById('filterBericht');
+  var telling = document.getElementById('telling');
+  var rijen   = Array.prototype.slice.call(document.querySelectorAll('tbody tr'));
+
+  // Namen die breder zijn dan de kolom krimpen mee in plaats van af te breken,
+  // zodat elke rij even hoog blijft.
+  function pasNamenAan() {
+    document.querySelectorAll('tbody th span').forEach(function (sp) {
+      sp.style.transform = '';
+      var ruimte = sp.parentNode.clientWidth - 14;
+      var breed  = sp.scrollWidth;
+      if (breed > ruimte && ruimte > 0) {
+        var f = Math.max(0.62, ruimte / breed);
+        sp.style.transform = 'scale(' + f.toFixed(3) + ')';
+      }
+    });
+  }
+
+  function filter() {
+    var zoek = (veld.value || '').trim().toLowerCase();
+    var kol  = bericht.value === '' ? -1 : parseInt(bericht.value, 10);
+    var zichtbaar = 0;
+
+    // Eerst de attribuutregels; groepskoppen volgen daarna, want een kop blijft
+    // staan zolang er iets onder hangt - anders weet je niet meer bij welke
+    // entiteit een attribuut hoort.
+    rijen.forEach(function (tr) {
+      if (tr.classList.contains('groep')) { return; }
+      var naam  = tr.getAttribute('data-naam') || '';
+      var groep = tr.getAttribute('data-groep') || '';
+      var vlag  = tr.getAttribute('data-vlag') || '';
+      var opNaam = !zoek || naam.indexOf(zoek) !== -1 || groep.indexOf(zoek) !== -1;
+      var opKol  = kol < 0 || vlag.charAt(kol) === '1';
+      var toon   = opNaam && opKol;
+      tr.classList.toggle('verborgen', !toon);
+      if (toon) { zichtbaar++; }
+    });
+
+    var laatsteGroep = null, groepHeeftRijen = false;
+    function sluitGroep() {
+      if (laatsteGroep) { laatsteGroep.classList.toggle('verborgen', !groepHeeftRijen); }
+    }
+    rijen.forEach(function (tr) {
+      if (tr.classList.contains('groep')) {
+        sluitGroep();
+        laatsteGroep = tr; groepHeeftRijen = false;
+      } else if (!tr.classList.contains('verborgen')) {
+        groepHeeftRijen = true;
+      }
+    });
+    sluitGroep();
+
+    telling.textContent = zichtbaar + ' of ' + rijen.filter(function (t) {
+      return !t.classList.contains('groep');
+    }).length + ' attributes';
+    pasNamenAan();
+  }
+
+  veld.addEventListener('input', filter);
+  bericht.addEventListener('change', filter);
+  window.addEventListener('resize', pasNamenAan);
+  filter();
+})();
+</script>
+
+</body></html>

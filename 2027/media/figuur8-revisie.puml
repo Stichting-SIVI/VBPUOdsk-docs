@@ -1,0 +1,106 @@
+@startuml
+title Figuur 8 — Procesflow FPR-<s><color:#C00000>model 2</color></s><color:#C00000>model</color>:\n<s><color:#C00000>unitized variant (opbouw en CVP via netting)</color></s> <color:#C00000>opbouw en CVP unitized</color>\n<color:#C00000>— REVISIE 2 —</color>
+
+skinparam participant<<hidden>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+}
+
+legend right
+<b>Rollen:</b> PUO/ZAF, BA, FM/VB, LDI
+
+<b>Kleurcodering:</b>
+- <color:gray>grijs</color> = generieke/ongewijzigde stroom
+- <color:blue>blauw</color> = betekenis specifiek voor opbouw + CVP unitized:
+  deze SIVI 5/6-stromen dekken zowel opbouw als CVP
+  via netting; SIVI 13 dekt tevens CVP-rendement.
+- <color:#C00000>rood</color> = toegevoegd of verplaatst
+- <color:#C00000><s>rood doorgestreept</s></color> = vervalt / oorspronkelijke positie
+
+<b>Berichten 10 en 14:</b>
+De BA is de reguliere afzender (stappen E en L).
+De PUO/ZAF stuurt deze berichten alleen bij uitzondering.
+De route PUO/ZAF -> FM/VB (stappen D en K)
+vervalt daarmee als reguliere route.
+
+<b>Lezing van figuur 8 en 9:</b>
+Geen twee FPR-modellen, maar twee administratieve
+inrichtingen van opbouwfase en CVP.
+Figuur 8: opbouw unitized, CVP unitized.
+
+<b>Waarom hier geen aparte CVP-waardering:</b>
+De CVP loopt via netting mee in dezelfde
+unit-administratie. Stap J dekt daarom zowel de
+beleggingspool als de CVP. Na M vindt geen handel
+meer plaats, dus is een tweede SIVI 13 niet nodig.
+In figuur 9 is dat anders: daar heeft de CVP een
+eigen uitvoeringscyclus en dus een eigen waardering.
+
+<b>Tijdsaanduidingen (geel):</b>
+T = handelsmoment; T-4 / T+3 / Tussen T & T+3 indicatief.
+endlegend
+
+participant " " as TIJD <<hidden>>
+actor "PUO / ZAF" as PUO
+participant "BA\nBeleggingsadministrateur" as BA
+actor "FM / VB\nFiduciair manager /\nVermogensbeheerder" as FM
+actor "LDI\nLDI-manager" as LDI
+
+
+== <s><color:#C00000>Unit-administratie: opbouwfase en unitized CVP</color></s> <color:#C00000>Opbouw en CVP: unit-administratie</color> ==
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#blue]> BA: <b><color:blue>A</color></b> <b><color:blue>SIVI 5</color></b> <color:blue>Orderopdracht (opbouw + CVP via netting)</color>
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#blue]-> PUO: <b><color:blue>B</color></b> <b><color:blue>SIVI 6</color></b> <color:blue>Orderconfirmation (opbouw + CVP via netting)</color>
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#blue]-> PUO: <b><color:blue>C</color></b> <b><color:blue>SIVI 13</color></b> <color:blue>Waarde-informatie beleggingspool</color>\n<color:blue>(dekt tevens CVP-rendement)</color>
+
+
+== Sturing richting FM/VB en LDI ==
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#C00000]> FM: <b><color:#C00000><s>D</s></color></b> <b><color:#C00000><s>SIVI 10</s></color></b> <color:#C00000><s>Netto stuurinformatie / estimated cashflow</s></color>\n<color:#C00000><s>vervalt als reguliere route</s></color>
+
+rnote over TIJD #F5CC27 : T-4
+BA -[#gray]> FM: <b>E</b> <b>SIVI 10</b> Netto stuurinformatie / estimated cashflow
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> FM: <b>F</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase
+
+rnote over TIJD #F5CC27 : T-4
+PUO -[#gray]> LDI: <b>G</b> <b>SIVI 3</b> Profiel renterisico -\nopbouwfase en/of uitkeringsfase
+
+
+== Handelsuitvoering en terugkoppeling ==
+
+rnote over TIJD #F5CC27 : T
+LDI -[#gray]> LDI: <b>H1</b> Uitvoeren netto koop-/verkoopbehoefte\nLDI-mandaat
+FM -[#gray]> FM: <b>H2</b> Uitvoeren netto koop-/verkoopbehoefte\noverige (non-LDI) portefeuilles
+
+rnote over TIJD #F5CC27
+  Tussen
+  T & T+3
+end rnote
+LDI -[#gray]-> BA: <b>I</b> <b>SWIFT</b> Uitgevoerde transacties (LDI-mandaat)
+FM -[#gray]-> BA: <b>I</b> <b>SWIFT</b> Uitgevoerde transacties (non-LDI)
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#blue]-> PUO: <b><color:blue>J</color></b> <b><color:blue>SIVI 13</color></b> <color:blue>Definitieve maandeinde-NAV</color>\n<color:blue>(dekt tevens CVP)</color>
+
+
+== Definitieve betaalinformatie en cash-afwikkeling ==
+
+rnote over TIJD #F5CC27 : T+3
+PUO -[#C00000]> FM: <b><color:#C00000><s>K</s></color></b> <b><color:#C00000><s>SIVI 14</s></color></b> <color:#C00000><s>Definitieve betaalinformatie</s></color>\n<color:#C00000><s>vervalt als reguliere route</s></color>
+
+rnote over TIJD #F5CC27 : T+3
+BA -[#gray]> FM: <b>L</b> <b>SIVI 14</b> Definitieve betaalinformatie
+
+rnote over TIJD #F5CC27 : T+3
+FM -[#gray]-> BA: <b>M</b> <b>SWIFT</b> Cash-overboeking definitieve betalingen\n(tussen beleggingsrekeningen en\nvan beleggingsrekeningen naar pensioenrekening)
+
+@enduml

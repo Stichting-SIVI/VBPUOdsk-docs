@@ -6,10 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Functional and technical documentation for the data exchange standard.">
+        <meta name="description" content="Functional and technical documentation for the VB-PUO data exchange standard (unofficial English translation).">
       
       
-        <meta name="author" content="SIVI_r">
+        <meta name="author" content="SIVI">
       
       
         <link rel="canonical" href="https://stichting-sivi.github.io/VBPUOdsk-docs/2027/chapter-4-fpr-processes/">
@@ -24,19 +24,19 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <link rel="icon" href="../assets/sivi-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
-        <title>Chapter 4: FPR Processes and Feedback (applies to FPR & SPR) - VB-PUO Standard Documentation</title>
+        <title>Chapter 4: FPR processes - VB-PUO Standard Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -50,14 +50,18 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
       
     
     
       <link rel="stylesheet" href="../css/print-site.css">
     
       <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/sivi.css">
+    
+      <link rel="stylesheet" href="../assets/vbpuo-tabellen.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -75,7 +79,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -106,8 +110,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="VB-PUO Standard Documentation" class="md-header__button md-logo" aria-label="VB-PUO Standard Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/sivi-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 4: FPR Processes and Feedback (applies to FPR & SPR)
+              Chapter 4: FPR processes
             
           </span>
         </div>
@@ -137,7 +140,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -147,7 +150,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -228,12 +231,13 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="VB-PUO Standard Documentation" class="md-nav__button md-logo" aria-label="VB-PUO Standard Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../assets/sivi-logo.png" alt="logo">
 
     </a>
     VB-PUO Standard Documentation
@@ -255,7 +259,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Colophon
   
 
     
@@ -336,7 +340,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: SPR Processes
+    Chapter 3: SPR processes
   
 
     
@@ -372,7 +376,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: FPR Processes and Feedback (applies to FPR & SPR)
+    Chapter 4: FPR processes
   
 
     
@@ -390,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 4: FPR Processes and Feedback (applies to FPR & SPR)
+    Chapter 4: FPR processes
   
 
     
@@ -427,10 +431,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#42-model-1-simpler-direct-order-model" class="md-nav__link">
+  <a href="#42-the-fpr-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.2 Model 1: Simpler, Direct Order Model
+        4.2 The FPR Model
       
     </span>
   </a>
@@ -438,33 +442,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#43-model-2-more-extensive-layered-order-model" class="md-nav__link">
+  <a href="#43-fpr-information-flows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.3 Model 2: More Extensive, Layered Order Model
+        4.3 FPR Information Flows
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-information-flows-fpr-model-1-1a-and-1b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4 Information Flows FPR - Model 1 (1a and 1b)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.4 Information Flows FPR - Model 1 (1a and 1b)">
+    <nav class="md-nav" aria-label="4.3 FPR Information Flows">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#441-message-5-order-instruction-00541" class="md-nav__link">
+  <a href="#431-fpr-process-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.4.1 Message 5. Order Instruction (00541)
+        4.3.1 FPR Process Flow
       
     </span>
   </a>
@@ -472,10 +465,109 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#442-message-6-order-confirmation-00542" class="md-nav__link">
+  <a href="#432-message-2-cashflow-0001b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.4.2 Message 6. Order Confirmation (00542)
+        4.3.2 Message 2. Cashflow (0001b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-message-3-pension-projection-0001c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 Message 3. Pension Projection (0001c)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#434-message-4-return-information-00002" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.4 Message 4. Return Information (00002)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#435-message-5-order-instruction-00541" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.5 Message 5. Order Instruction (00541)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#436-message-6-order-confirmation-00542" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.6 Message 6. Order Confirmation (00542)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#437-message-10-control-information-investment-pools-00553" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.7 Message 10. Control Information Investment Pools (00553)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#438-message-13-value-information-investment-pool-00555b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.8 Message 13. Value Information Investment Pool (00555b)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#439-message-14-payment-information-00556" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.9 Message 14. Payment Information (00556)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4310-message-15-corporate-actions-00557" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.10 Message 15. Corporate Actions (00557)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4311-discontinued-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.11 Discontinued Messages
       
     </span>
   </a>
@@ -488,143 +580,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#45-information-flows-fpr-model-2" class="md-nav__link">
+  <a href="#44-feedback-message-resending" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4.5 Information Flows FPR - Model 2
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 Information Flows FPR - Model 2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451-message-7-balance-adjustments-00551-information-need-of-the-cohort-and-investment-pool-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.1 Message 7. Balance Adjustments (00551), Information Need of the Cohort and Investment Pool Administrator
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-messages-for-reconciliation-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.2 Messages for Reconciliation Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-message-10-control-information-investment-pools-00553" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.3 Message 10. Control Information Investment Pools (00553)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#454-message-11-rebalancing-information-00554-rebalancing-cohort-pools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.4 Message 11. Rebalancing Information (00554), Rebalancing Cohort Pools
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#455-communicating-values-per-investment-pool-and-per-cohort-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5 Communicating Values per Investment Pool and per Cohort Pool
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5.5 Communicating Values per Investment Pool and per Cohort Pool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#4551-message-12-value-information-cohort-pool-00555a" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5.1 Message 12. Value Information Cohort Pool (00555a)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4552-message-13-value-information-investment-pool-00555b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5.2 Message 13. Value Information Investment Pool (00555b)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#456-message-14-payment-information-00556" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.6 Message 14. Payment Information (00556)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#457-message-15-corporate-actions-00557" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.7 Message 15. Corporate Actions (00557)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-use-of-spr-messages-in-fpr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.6 Use of SPR Messages in FPR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47-feedback-message-resending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.7 Feedback Message (&amp; Resending)
+        4.4 Feedback Message (&amp; Resending)
       
     </span>
   </a>
@@ -653,7 +612,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 5: Data Standard Setup
+    Chapter 5: Data standard setup
   
 
     
@@ -668,6 +627,58 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Functional specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 6: Functional specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -680,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6: Functional Specifications
+    6: Functional specifications
   
 
     
@@ -692,9 +703,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -707,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.4: Messages
+    6.4: Messages
   
 
     
@@ -719,9 +731,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -734,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 6.5: Cross-reference
+    6.5: Cross-reference
   
 
     
@@ -746,9 +759,69 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Technical specifications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 7: Technical specifications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -761,7 +834,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7: Technical Specifications
+    7: Technical specifications
   
 
     
@@ -773,9 +846,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -788,7 +862,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.4: Transport / OpenAPI
+    7.4: Transport OpenAPI
   
 
     
@@ -800,9 +874,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -815,7 +890,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.5: Message Assembly
+    7.5: Message assembly
   
 
     
@@ -827,9 +902,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -842,7 +918,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 7.6: Chunking
+    7.6: Chunking
   
 
     
@@ -854,6 +930,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -861,9 +945,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../chapter-8-appendices/" class="md-nav__link">
+    
+    
+    
+    
+      
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -877,13 +977,50 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapter 8: Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-8-appendices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8: Appendices
+  
+
+    
+  </span>
+  
+  
+
       </a>
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -896,7 +1033,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.1: Glossary VB-PUO
+    8.1: Glossary VB-PUO
   
 
     
@@ -908,9 +1045,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -923,7 +1061,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.2: Glossary Data Exchange
+    8.2: Glossary data exchange
   
 
     
@@ -935,9 +1073,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -950,7 +1089,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.3: Standard Components
+    8.3: Standard components
   
 
     
@@ -962,9 +1101,10 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -977,7 +1117,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 8.4: Translation Table
+    8.4: Translation table
   
 
     
@@ -986,6 +1126,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter-8-5-changes-release-2027/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8.5: Changes release 2027
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1024,248 +1200,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#41-introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 Introduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#42-model-1-simpler-direct-order-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 Model 1: Simpler, Direct Order Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#43-model-2-more-extensive-layered-order-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 Model 2: More Extensive, Layered Order Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#44-information-flows-fpr-model-1-1a-and-1b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4 Information Flows FPR - Model 1 (1a and 1b)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.4 Information Flows FPR - Model 1 (1a and 1b)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#441-message-5-order-instruction-00541" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4.1 Message 5. Order Instruction (00541)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#442-message-6-order-confirmation-00542" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.4.2 Message 6. Order Confirmation (00542)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#45-information-flows-fpr-model-2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5 Information Flows FPR - Model 2
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5 Information Flows FPR - Model 2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#451-message-7-balance-adjustments-00551-information-need-of-the-cohort-and-investment-pool-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.1 Message 7. Balance Adjustments (00551), Information Need of the Cohort and Investment Pool Administrator
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#452-messages-for-reconciliation-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.2 Messages for Reconciliation Information
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#453-message-10-control-information-investment-pools-00553" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.3 Message 10. Control Information Investment Pools (00553)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#454-message-11-rebalancing-information-00554-rebalancing-cohort-pools" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.4 Message 11. Rebalancing Information (00554), Rebalancing Cohort Pools
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#455-communicating-values-per-investment-pool-and-per-cohort-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5 Communicating Values per Investment Pool and per Cohort Pool
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.5.5 Communicating Values per Investment Pool and per Cohort Pool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#4551-message-12-value-information-cohort-pool-00555a" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5.1 Message 12. Value Information Cohort Pool (00555a)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4552-message-13-value-information-investment-pool-00555b" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.5.2 Message 13. Value Information Investment Pool (00555b)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#456-message-14-payment-information-00556" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.6 Message 14. Payment Information (00556)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#457-message-15-corporate-actions-00557" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.5.7 Message 15. Corporate Actions (00557)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#46-use-of-spr-messages-in-fpr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.6 Use of SPR Messages in FPR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#47-feedback-message-resending" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.7 Feedback Message (&amp; Resending)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -1278,26 +1212,41 @@
 
 <h1 id="4-processes-information-flows-flexible-premium-scheme">4 Processes &amp; Information Flows – Flexible Premium Scheme</h1>
 <h2 id="41-introduction">4.1 Introduction</h2>
-<p>This chapter describes the necessary information exchange between the involved parties to robustly implement the Flexible Premium Scheme. Based on the principles and the scope, the required data set has been established.</p>
-<p>In directing the process of the Flexible Premium Scheme, a distinction can be made between two models for "ordering" investments that are applied in the operational cooperation between pension administration and asset management:</p>
+<p>This chapter describes the exchange of information between the parties involved that is needed to implement the Flexible Premium Scheme in a robust way. The required data set has been determined on the basis of the principles and the scope.</p>
+<p>The process of the flexible premium scheme is controlled according to one FPR model for "ordering" investments, which is applied in the operational cooperation between pension administration and asset management. Earlier releases distinguished between a simpler, direct order model and a more extensive, layered order model. That distinction has been dropped: the data exchange is the same in both cases.</p>
+<p>A model is also conceivable in which the SPR data model can be used for the FPR data exchange. In this model, FPR is set up in a way comparable to SPR, in effect only supporting multiple risk profiles per cohort.</p>
+<p>Within a Flexible Premium Scheme (FPR), there are, in addition to the individual, 'unitized' money flows, also collective premium flows. These are money flows that do not belong to one specific participant, such as risk premiums, contributions to reserves, or withdrawals from a collective payout pool.</p>
+<p>The standard FPR messages (5 to 15) are aimed purely at the unitized world and do not support these collective flows. To solve this, the agreement is that parties fall back on the proven SPR messages 1, 2, 3 and/or 4 for the exchange of this information. This method applies throughout the FPR model.</p>
+<h2 id="42-the-fpr-model">4.2 The FPR Model</h2>
+<p>The FPR model has three layers: participants are assigned to cohorts, and investments are made in investment pools. Participants are assigned to cohorts by the pension administration organisation (PUO).</p>
+<p>The allocation from cohort to investment pool lies with the PUO and is not part of the data exchange. Financial events at participant level are aggregated per cohort by the PUO and lead to net orders for the underlying investment pools, in line with the strategic allocation within the cohort<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">1</a></sup>. For the asset management chain the cohort plays no role in this: participants participate through the investment pools. Because the PUO knows that allocation, assets per cohort can be derived from it.</p>
+<p><img alt="Figure 2 – The FPR model" src="../media/fpr-model.svg" /></p>
+<p><strong>Figure 2 – The FPR model</strong>
+<a href="../media/fpr-model.svg" target="_blank">Full view (SVG)</a></p>
+<p><strong>Investment pool and investment product.</strong> Two layers play a role in this chapter, and we keep them apart:</p>
 <ul>
-<li>
-<p>Model 1, a simpler, direct order model and</p>
-</li>
-<li>
-<p>Model 2, a more extensive, layered order model.</p>
+<li><strong>Investment pool</strong>: the administrative unit in which the investments are grouped and for which units and unit values are kept. In the data model this is the entity <code>investment.pool</code>.</li>
+<li><strong>Investment product</strong>: what an investment pool invests in. An investment product is an<ul>
+<li><strong>investment fund</strong>: with its own fund structure, whether or not tradable through a trading platform; or a</li>
+<li><strong>mandate</strong>: an investment mandate given to an asset manager to manage a portfolio according to guidelines and risk limits agreed in advance, not accessible to other investors (see <a href="../chapter-8-1-glossary-vbpuo/">§8.1</a>).</li>
+</ul>
 </li>
 </ul>
-<p>A model is also conceivable in which the SPR data model can be used for FPR data exchange. In this model, FPR is structured similarly to SPR-actual where only multiple risk profiles per cohort are supported.</p>
-<h2 id="42-model-1-simpler-direct-order-model">4.2 Model 1: Simpler, Direct Order Model</h2>
-<p>In this model (see Figure 2), the investments (bottom layer in Figure 2) consist only of investment funds that are directly tradable via a platform. These concern trading platforms (e.g. AllFunds, Fundsettle, etc.) where investment funds can be traded directly. This model is currently applied mainly for Individual DC schemes. The direct order model can be executed by the Pension Administration Organization (PUO) itself.</p>
-<blockquote>
-<p><img alt="" src="../media/image3.png" /><strong>Figure 2 – Schematic representation of the direct order model</strong></p>
-<p>When applying this model, the PUO translates mutations at the participant level into the required (netted) transactions in the investment funds of operational asset managers and has them executed via a trading platform. Such a setup can also be implemented jointly with the asset service provider/custodian, where the PUO translates participant-level mutations into netted mutations and the asset service provider/custodian handles the execution of transactions in investment funds via a trading platform, see Figure 6 - Model 1b: the PUO gives investment orders to an intermediary (order platform: custodian, fiduciary<strong>)</strong>. When compiling the orders, aspects such as the minimum order size per investment product, the settlement cycle and the associated financial flows are taken into account.</p>
-<p>In the direct order model, the pension administrator is generally supported by the Fiduciary Manager (FM) regarding the design of the lifecycle(s) and their composition (selection and monitoring of underlying investments). Special attention should be paid to the process of changing the composition of investments (replacement of investment funds). Such changes result in transition activities for the pension administrator and/or asset service provider/custodian. More specifically: if an investment product (which can be an investment fund, a virtual pool, or a mandate) is replaced, removed, or added, the PUO will adjust and process this. If adjustments are made <em>within</em> an investment product, this is not relevant to the PUO and only affects the provider of the product.</p>
-<p>In the direct order model, a cohort pool consists of a group of participants who have the same investment allocation based on the lifecycle principle (less investment and interest rate risk as the retirement date/end of the investment horizon approaches). A cohort pool can be used to distinguish between participant groups. This can be based on time (age, period until retirement, etc.) but also on a characteristic such as active, deferred, disabled, etc. The number of pools is basically unlimited. As many pools are created as needed to distinguish the right participant groups that require their own investment mix. Below is a simple example with a division into three lifecycles based on birth years and the established allocation between equities and bonds. The administration of the cohort pool is optional and can be managed by the PUO, the Investment Administrator/asset service provider (BA), or elsewhere. The allocation of weights (percentages) is often determined by the FM.</p>
-<p>A cohort pool is an administrative grouping consisting of a group of participants who, for example based on the lifecycle principle, have the same investment allocation.</p>
-</blockquote>
+<p>This manual uses <em>investment product</em> where it does not matter whether a fund or a mandate is meant. <em>Investment fund</em> and <em>mandate</em> are used only where the distinction matters.</p>
+<p><strong>Scope.</strong> The VB-PUO data exchange extends up to and including the investment pools. What happens below them — the underlying investment products, liquid and illiquid, and further trade execution — falls outside this standard. Depending on how the chain is set up, the party that processes an order may be a broker, transfer agent or order desk; that choice does not affect the data exchange.</p>
+<p>The investments may consist of:</p>
+<ul>
+<li>investment funds tradable directly through a platform,</li>
+<li>investment funds that are not tradable daily,</li>
+<li>(illiquid) funds that are not tradable through a platform,</li>
+<li>mandates.</li>
+</ul>
+<p>Trading platforms are, for example, AllFunds or Fundsettle, where investment funds can be traded directly.</p>
+<p>The PUO translates changes at participant level into the required (netted) transactions in the investment products of operational asset managers. When the orders are compiled, aspects such as the minimum order size per investment product, the settlement cycle and the associated financial flows are taken into account.</p>
+<p>The pension provider is usually supported by the fiduciary manager (FM) with regard to the design of the lifecycle(s) and their composition (selection and monitoring of underlying investments). The process of changes in the composition of the investments (replacement of investment products) deserves specific attention. Such changes result in transition activities at the PUO and/or the asset service provider/custodian. More specifically: if an investment product is replaced, removed or added, the PUO will adjust and process this. If changes are made <em>within</em> an investment product, this is not relevant for the PUO and only affects the provider of the investment product. The exception is the events passed on through message 15 Corporate Actions — dividend, rebate, unit changes — which the PUO does have to process; see <a href="#4310-message-15-corporate-actions-00557">§4.3.10</a>.</p>
+<p><strong>Cohorts</strong></p>
+<p>A cohort is an administrative grouping of participants who, on the basis of the lifecycle principle — less investment and interest rate risk as the retirement date or the end date of the investment horizon approaches — have the same investment allocation. A cohort can be used to distinguish groups of participants. This can be based on time (age, period until retirement, etc.), but also on a status such as active, deferred or unable to work due to disability. The number of cohorts is in principle unlimited: as many are created as are needed to distinguish groups of participants that require their own investment mix. The distribution of the weights (percentages) is usually made by the FM.</p>
+<p>Below is a simple example with a division into three lifecycles based on age and the agreed allocation to equities and bonds.</p>
 <table>
 <thead>
 <tr>
@@ -1306,13 +1255,13 @@
 <th></th>
 <th><strong>Lifecycle neutral</strong></th>
 <th></th>
-<th><strong>Lifecycle offensive</strong></th>
+<th><strong>Lifecycle aggressive</strong></th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Cohort pool</strong></td>
+<td><strong>Cohort</strong></td>
 <td>% Equities</td>
 <td>% Bonds</td>
 <td>% Equities</td>
@@ -1321,7 +1270,7 @@
 <td>% Bonds</td>
 </tr>
 <tr>
-<td>Birth year 1987</td>
+<td>Age 39</td>
 <td>90</td>
 <td>10</td>
 <td>95</td>
@@ -1330,7 +1279,7 @@
 <td>0</td>
 </tr>
 <tr>
-<td>Birth year 1986</td>
+<td>Age 40</td>
 <td>88</td>
 <td>12</td>
 <td>94</td>
@@ -1339,7 +1288,7 @@
 <td>2</td>
 </tr>
 <tr>
-<td>Birth year 1985</td>
+<td>Age 41</td>
 <td>86</td>
 <td>14</td>
 <td>93</td>
@@ -1348,7 +1297,7 @@
 <td>4</td>
 </tr>
 <tr>
-<td>Birth year 1984</td>
+<td>Age 42</td>
 <td>85</td>
 <td>15</td>
 <td>91</td>
@@ -1357,7 +1306,7 @@
 <td>6</td>
 </tr>
 <tr>
-<td>Birth year 1983</td>
+<td>Age 43</td>
 <td>84</td>
 <td>16</td>
 <td>89</td>
@@ -1366,7 +1315,7 @@
 <td>8</td>
 </tr>
 <tr>
-<td>Birth year 1982</td>
+<td>Age 44</td>
 <td>83</td>
 <td>17</td>
 <td>87</td>
@@ -1375,7 +1324,7 @@
 <td>10</td>
 </tr>
 <tr>
-<td>Birth year 1981</td>
+<td>Age 45</td>
 <td>82</td>
 <td>18</td>
 <td>85</td>
@@ -1384,7 +1333,7 @@
 <td>12</td>
 </tr>
 <tr>
-<td>Birth year 1980</td>
+<td>Age 46</td>
 <td>81</td>
 <td>19</td>
 <td>84</td>
@@ -1393,7 +1342,7 @@
 <td>14</td>
 </tr>
 <tr>
-<td>Birth year 1979</td>
+<td>Age 47</td>
 <td>80</td>
 <td>20</td>
 <td>82</td>
@@ -1403,12 +1352,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Figure 3 - Example of cohort pools and lifecycles</strong></p>
-<p>The example in Figure 3 shows how birth years and thus ages can influence the allocation of investments within lifecycles.</p>
-<p>When a participant ages by one year, a so-called age rebalance is performed. Each participant is placed in the next cohort pool.</p>
-<p>The participant's investment mix is then adjusted to that of the new cohort. In the example above (Figure 3), regardless of the chosen risk profile, the share of equities is reduced and the share of bonds is increased. This leads to concrete buy and sell orders towards the product providers.</p>
-<p>Another form of rebalancing is target-weight rebalancing. This can be performed when the actual allocation of investments falls outside pre-established bandwidths due to market movements. This form of rebalancing also leads to buy and sell orders.</p>
-<p>A group (cohort) of participants can be composed in various ways. Generally, three aspects play a role:</p>
+<p><strong>Figure 3 - Example of cohorts and lifecycles</strong></p>
+<p>The example in Figure 3 shows how the age of a participant affects the allocation of investments within lifecycles.</p>
+<p>When a participant becomes a year older, a so-called age rebalance is carried out, in which the participant is placed in the next cohort.</p>
+<p>The participant's investment mix is then adjusted to that of the new cohort. In the example above (Figure 3), regardless of the chosen risk profile, the share of equities is reduced and the share of bonds is built up. This therefore leads to concrete buy and sell orders towards the product providers.</p>
+<p>Another form of rebalancing is target weight rebalancing. This can be carried out when the actual allocation of investments falls outside predetermined bandwidths as a result of price movements. This form of rebalancing also leads to buy and sell orders.</p>
+<p>A group (cohort) of participants can be composed in various ways. In general, 3 aspects play a role:</p>
 <ul>
 <li>
 <p>Age.</p>
@@ -1420,187 +1369,291 @@
 <p>Investment profile.</p>
 </li>
 </ul>
-<p>For the age aspect, the following can be used, for example:</p>
+<p>For the age aspect, for example, use can be made of:</p>
 <ul>
 <li>
 <p>Age.</p>
 </li>
 <li>
-<p>Period until retirement date/end of investment horizon.</p>
+<p>Period until retirement date/end date of the investment horizon.</p>
 </li>
 <li>
-<p>Birth year/month.</p>
+<p>Year/month of birth.</p>
 </li>
 </ul>
 <p>For status, a distinction can be made between:</p>
 <ul>
 <li>
-<p>Accumulating versus decumulating.</p>
+<p>Accumulating versus receiving benefits.</p>
 </li>
 <li>
-<p>Active/Deferred/Disabled/Decumulating/etc.</p>
+<p>Active/Deferred/Occupationally disabled (AO)/Receiving benefits/etc.</p>
 </li>
 </ul>
-<p>Netting of investments takes place across the cohort pools according to the instructions for the investment transactions. In the direct order model, this takes place "in the spaghetti" (see Figure 2: Schematic representation of the direct order model) between the cohort pools and the investments. The risk-sharing reserve is considered a separate cohort pool that invests in investment products according to its own investment policy.</p>
-<h2 id="43-model-2-more-extensive-layered-order-model">4.3 Model 2: More Extensive, Layered Order Model</h2>
-<p>In the "More extensive, layered model" (Figure 4), the investments can also consist of non-daily tradable and/or non-platform-tradable (illiquid) funds or investment mandates. This model is already applied for larger Collective Individual DC (CIDC) schemes.</p>
-<p><img src="../media/image4.png" style="width:6.17795in;height:2.46909in" alt="Schematic representation of the layered order model" /><strong>Figure 4 - Schematic representation of the layered order model</strong></p>
-<p><strong>In this model:</strong></p>
+<p>Netting of the investments takes place across the cohorts in accordance with the instructions for the investment transactions. The risk-sharing reserve is regarded as a separate cohort that invests in investment products according to its own investment policy.</p>
+<p><strong>Roles and responsibilities</strong></p>
+<p>Participants participate in cohorts according to the chosen lifecycle and the chosen composition of cohorts. The PUO aggregates the changes at participant level per cohort and translates them into net orders in one or more investment pools, in line with the strategic allocation within the cohort<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">1</a></sup>. The investment administrator (BA) does not know that allocation and does not need to know it: the BA is instructed by the PUO with purchases and sales in the investment pools or directly in investment products. These investment pools invest in a variety of investment products, liquid and illiquid. To make the allocation to participants robust and traceable, units are issued and unit values are calculated for the investment pools. The participant's assets can therefore be traced exactly to the pro rata share of the underlying investments. Figure 3 also serves as a simple example here, with "% Equities" and "% Bonds" replaced by, for example, "% Return-seeking assets", "% Fixed income, short maturities", "% Fixed income, long maturities", etc.</p>
+<p>Four roles can be distinguished in that process — the same four that appear in the process flow of §4.3.1 and in Figure 8 and Figure 9.</p>
 <ul>
 <li>
-<p>Participants invest in cohort pools according to the chosen lifecycle and composition of cohorts. The cohort pools in turn invest in investment pools. These investment pools can consist of various underlying investments (liquid, illiquid, funds and mandates). The cohort pools invest in investment pools according to the strategic allocation within the cohort pools[^2]. To make the allocation to participants robust and traceable, units are issued and unit values are calculated for the various (layered) pools. The participant's assets can thus be traced exactly to the pro-rata share of the underlying investments. The layer with cohort pools is optional and can reflect the structure of the investment policy and/or the intended function separation. If this layer is absent, the PUO must administer per participant which participations in the various investment pools are held. In the simpler FPR Direct Order model, the cohort pools and/or investment pools are not needed.<br />
-  The investments are then daily tradable and the prices are also available daily. As a simple example for a cohort pool, Figure 3 also applies, where "% Equities" and "% Bonds" are replaced by, for example, "% Return-seeking assets," "% Fixed income, short duration," "% Fixed income, long duration," etc.</p>
+<p>The <strong>PUO</strong> is responsible for allocating the asset development, in accordance with the allocation rules set by the pension provider, to: the personal pension assets of participants, the risk-sharing reserve, any compensation deposit and possibly other reserves. To this end, the PUO processes changes in the participant file and the allocation of personal pension assets to cohorts. The composition of the cohorts takes into account the lifecycle the participant has chosen (aggressive, neutral, defensive, etc.). Premiums paid in and possible settlements, such as with the risk-sharing reserve, are also taken into account. On the basis of these personal pension assets, benefits are projected in accordance with the principles of the pension provider. In addition, the PUO takes care of participant communication.</p>
 </li>
 <li>
-<p>The allocation of returns can be done by the PUO or the administrator of the cohort pools and investment pools:</p>
+<p>The <strong>investment administrator (BA)</strong>, also called asset service provider, keeps the independent investment administration of the investment pools for the pension provider. That administration has two layers:</p>
+<ul>
+<li><strong>the positions</strong>: the BA records which investments are in the investment pool and to what extent. That record is fed from the settlement of changes in those investments, carried out by the operational asset managers instructed by the FM, and reconciled<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">3</a></sup> with the (shadow) administration of the FM;</li>
+<li><strong>the units</strong>: the BA keeps the administration of the investment pools (for example return-seeking assets, fixed income), on the basis of the instructions of the PUO. For this purpose, unit values are calculated for the investment pools and the number of units is administered. Premiums, withdrawals and rebalancing are taken into account. The unit values and the number of units form the basis for the PUO to allocate assets explicitly to participants.</li>
+</ul>
 </li>
 <li>
-<p>The PUO has the responsibility to explicitly allocate returns in accordance with the allocation rules set by the pension administrator to: the personal pension assets of participants, the risk-sharing reserve, any compensation deposit and possible other reserves. For this purpose, the PUO processes mutations in the participant base and the allocation of personal pension assets to cohort pools. When composing the cohort pools, the lifecycle chosen by the participant (offensive, neutral, defensive, etc.) is taken into account. Paid premiums and possible set-offs such as with the risk-sharing reserve are also considered. Based on these personal pension assets, benefits are projected in accordance with the pension administrator's principles. In addition, the PUO handles participant communication.</p>
+<p>The <strong>fiduciary manager / asset manager (FM/VB)</strong> supports the pension provider in drawing up the integral investment policy and takes care of its implementation. In doing so, the FM directs the operational asset managers, who manage parts of the portfolio. The FM will also keep a (shadow) investment administration.</p>
 </li>
 <li>
-<p>The administrator of cohort pools and investment pools processes the allocation and administration of cohort pools as provided by the PUO. In addition, they handle the allocation to investment pools (e.g. return-seeking assets, fixed income). For this purpose, both for the cohort pools and the investment pools, unit values are calculated and the number of units is administered. For cohort pools, we refer to these as participation values; for investment pools, as unit values. Premiums, withdrawals and rebalancings are included. This role can optionally also be performed by a PUO or by a BA/asset service provider. The participation values and the number of participations of the cohort pools form the basis for the PUO to explicitly allocate assets to participants. The administrator of cohort pools and investment pools receives monthly the positions from the leading administration of the BA of the investment pools, supplemented with the positions from the (shadow) administration of the FM. These positions are reconciled[^4] with the positions in the own administration of the administrator of cohort pools and investment pools.</p>
-</li>
-<li>
-<p>There can be a dual cohort administration. The first lies with the PUO and concerns the participant &amp; cohort administration. The second lies with "an administrator," which can be the PUO, another specialized party, or the BA/asset service provider. In this second role, the relationship between the cohort pools and the investment pools is established. This latter administration can also be called a middle-office administration and is optional. If this does not apply, the PUO administers at the participant level in which investment pools the participant invests and provides the necessary information directly to the FM.</p>
-</li>
-<li>
-<p>The FM supports the pension administrator in establishing the integrated investment policy. They ensure the execution of this investment policy and direct the (operational) asset managers. The FM will also maintain a (shadow) investment administration.</p>
-</li>
-<li>
-<p>The asset managers manage parts of the portfolio. They are directed by the FM. It is possible that (for certain parts) the FM and the operational asset manager belong to the same organization.</p>
-</li>
-<li>
-<p>The BA/asset service provider (usually additional services from the custodian) provides independent investment administration of the investment pools for the pension administrator. This administration is fed by the settlement of mutations in the portfolio of the investment pool, executed by the operational asset managers who are instructed by the FM. This investment administration is reconciled with the (shadow) administration of the FM.</p>
+<p>The <strong>LDI manager</strong> carries out the interest rate risk policy on the LDI mandate, aimed at the protection return, and is monitored by the FM/VB in doing so.</p>
 </li>
 </ul>
-<p>In the process for "Model 2: more extensive, layered order model," a distinction is made between an accumulation phase (left of the dotted line in Figure 4) and a payout phase (right in Figure 4).</p>
-<p>Insofar as the payout phase is entirely placed with an insurer, the data exchange is out of scope of this elaboration. In that case, the insurer receives the participant's capital via an outgoing value transfer from the PUO, with which a pension benefit is purchased from the insurer.</p>
-<p>The payout phase executed by a PUO is in scope. In the payout phase, participants have the choice of continuing to invest (with a variable pension benefit) or a fixed pension benefit. With a variable benefit, the pension fund can choose a model with an individual payout phase or a collective payout phase.</p>
-<p>For an individual payout phase, the data exchange for the continued investment variant can be set up in the same way as for the accumulation phase (where at older ages, for example, more is invested in shorter-duration fixed income).</p>
-<p>For a collective payout phase (all retirees in one cohort), for both fixed and variable benefits, aligning the interest rate sensitivity of the investments (in a matching portfolio) with the collective interest rate sensitivity of projected benefits is important. It is possible that the accumulation phase takes place in model 1 (direct order model) and the payout phase via model 2 (more extensive order model). It is also possible to choose to invest individually in the payout phase and later switch to a collective payout phase. This switch has no impact on the data fields and/or data exchange between parties.</p>
-<p>For the payout phase (executed by a pension administrator), the FM will set up (the management of) a matching portfolio. For the required data exchange, the PUO sends on a periodic (expected monthly) basis per scheme the projected cash flows to be hedged per cohort pool to the FM. The data exchange will be structured in accordance with data exchange 1b from the SPR.</p>
-<h2 id="44-information-flows-fpr-model-1-1a-and-1b">4.4 Information Flows FPR - Model 1 (1a and 1b)</h2>
-<p>The information exchange for model 1 can be split into a variant 1a where the PUO invests directly and a variant 1b where the PUO invests via an order platform. Strictly speaking, from the PUO's perspective there is no distinction between both variants, but for clarity both variants are explained separately. This is schematically and simplified shown in Figure 5 and Figure 6. Via a broker, a PUO could, for example, trade ETFs on behalf of the pension fund if these are part of the agreed investment mix.</p>
-<figure>
-<img src="../media/image5.png" />
-<figcaption><p><strong>Figure 5 - Model 1a: the PUO invests directly with various market parties</strong></p></figcaption>
-</figure>
-
-<p>The data exchange, indicated as "scope" in Figure 5, takes place in this model between the PUO on one side and the various types of market parties on the other.</p>
-<figure>
-<img src="../media/image6.png" />
-<figcaption><p><strong>Figure 6 - Model 1b: the PUO gives investment orders to an intermediary (order platform: custodian, fiduciary)</strong></p></figcaption>
-</figure>
-
-<p>Data exchange (scope) from Figure 6 takes place exclusively between PUO and order platform.</p>
-<p>The data exchange for FPR model 1 (a and b) proceeds via the following 2 messages for order processing.</p>
-<p>In addition to the order messages, the FPR also uses Message 2. Cashflow (0001b) for periodic cash flow information. For FPR use, the cash flow runs per investment portfolio via <code>pension.scheme → investment.portfolio → financialTransaction.cashflow</code>. In this fill pattern, <code>netAmount</code> and <code>netDate</code> are mandatory at the portfolio level. See <a href="../chapter-6-4-berichten/#643-berichtstructuur-2-cashflow-0001b">§6.4.3</a> for the message structure.</p>
-<h3 id="441-message-5-order-instruction-00541">4.4.1 Message 5. Order Instruction (00541)</h3>
-<p>Information flow from PUO to Brokers/Transfer Agents/Order Desks (model 1a and 1b)</p>
-<p>This information flow from PUO to Brokers/Transfer Agents/Order Desks contains the minimum set of data required to send an order to an order processing party. A switch can also be executed with this message.</p>
-<p>The PUO submits orders at the investment fund level. The provider of the fund executes the ordering in the underlying investments itself. This can include listed and illiquid investments, among others.</p>
-<p><strong>Switch convention.</strong> A switch consists of two linked orders: one with <code>buySellId</code> = <code>switchfrom</code> (the fund being exited) and one with <code>buySellId</code> = <code>switchto</code> (the fund being entered). The direction of the transaction follows exclusively from <code>buySellId</code>; <code>tradeAmount</code> and <code>tradeQuantity</code> are always specified as positive values. The two switch legs are linked to each other via <code>financialInformationRef</code>, which refers to the <code>refKey</code> of the other leg. The field <code>switchType</code> indicates whether it is a simultaneous (<code>one-day</code>) or sequential (<code>sequential</code>) switch. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/115">#115</a>.</p>
-<p><strong>Order instruction: <code>tradeAmount</code> or <code>tradeQuantity</code>.</strong> Per individual trade instruction, exactly one of <code>tradeAmount</code> or <code>tradeQuantity</code> must be filled in. Filling in both fields simultaneously is not allowed; leaving both empty is also not allowed. If an instruction has both an amount and a quantity component, these are recorded as separate trade records. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/116">#116</a>.</p>
-<p>Functional elaboration into a message: see chapter 6 and specifically <em>6.4.6</em>.</p>
-<h3 id="442-message-6-order-confirmation-00542">4.4.2 Message 6. Order Confirmation (00542)</h3>
-<p>Information flow from Brokers/Transfer Agents/Order Desks to PUO (model 1a and 1b)</p>
-<p>The confirmation data of the order is returned from the order processing party to the PUO. For switches, Message 6 confirms the same structure as Message 5, including <code>switchType</code> and <code>financialInformationRef</code>. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/115">#115</a>.</p>
-<p>Functional elaboration into a message: see chapter 6 and specifically <em>6.4.7</em>.</p>
-<h2 id="45-information-flows-fpr-model-2">4.5 Information Flows FPR - Model 2</h2>
-<p>The information exchange for model 2 (more extensive, layered order model) can be schematically simplified as follows.</p>
-<p><img alt="" src="../media/image7.png" /><strong>Figure 7 - Model 2: the PUO has investments managed</strong></p>
-<p>The scope outlined in Figure 7 leads to the exchange of various information flows. The standardized data exchanges that fall within the scope are indicated by red arrows in the process flow figures below. The data needed for these different information flows/processes is described in the paragraphs below.</p>
-<p>Note: Figure 8 and Figure 9 are indicative process flow diagrams. The time indications are indicative and can be filled in differently per client chain between all involved parties; the order of the steps is, however, directional. This document only covers the information flows.</p>
-<p>The information flow of model 2 is shown below in two process flow diagrams that show the two configuration variants for the collective payout phase (CVP): a unitized variant (Figure 8) and a non-unitized variant (Figure 9)[^3].</p>
-<p><img alt="Figure 8 — Process flow FPR model 2: unitized variant" src="../media/image8.svg" /></p>
-<p><strong>Figure 8 — Process flow FPR model 2: unitized variant (accumulation and CVP via netting)</strong>
-<a href="../media/image8.svg" target="_blank">Full scale view (SVG)</a></p>
-<p><strong>Explanation of Figure 8: unitized variant (accumulation and CVP via netting)</strong></p>
-<p>In the unitized variant, the investment flows of the accumulation phase and the collective payout phase (CVP) are combined via netting. The CVP is administered in units, so that the same order flows (SIVI 5/6) cover both accumulation and CVP mutations.</p>
-<p>The process flow runs in three phases with four actors: PUO/ZAF, BA (investment administrator), FM/VB (fiduciary manager/asset manager) and LDI manager. Under PUO, in this context, the self-administering fund (ZAF) is also included.</p>
-<p><strong>Color coding:</strong> grey arrows are generic flows that are identical in both variants. Blue arrows mark flows that in the unitized variant have a broader meaning because they cover both accumulation and CVP. The time indications (T-4, T, T+3) are indicative.</p>
-<p><strong>Phase 1 — Unit administration (T-4 and T+3):</strong>
-The PUO sends an order instruction (SIVI 5, step A) to the BA on T-4. After trade execution, the order confirmation (SIVI 6, step B) follows back to the PUO on T+3. The BA also delivers on T-4 the investment pool value information (SIVI 13, step C), which in the unitized variant also covers the CVP return.</p>
+<p>This division of roles is not prescriptive: in an alternative set-up, roles can be performed by one and the same party. See <a href="../chapter-2-principles/#25-clarification-of-data-exchange-principles">§2.5</a>.</p>
+<p><strong>Return allocation.</strong> The allocation of returns can be done by the PUO or by the investment administrator. Whether the return is allocated explicitly depends on the set-up. In a unitized set-up, the return is included in the unit price; there is then no explicit return allocation, and the BA periodically shares the valuation of the investment pools with the PUO via message 13. If the collective payout provision is administered in euros, the return is allocated explicitly, via message 4.</p>
+<p><strong>Accumulation phase and payout phase</strong></p>
+<p>The FPR process distinguishes between an accumulation phase and a payout phase.</p>
+<p>Insofar as the payout phase has been placed entirely with an insurer, the data exchange is out of scope of this elaboration of the data exchange. In that case the insurer receives the participant's capital by means of an outgoing value transfer from the PUO, with which a pension benefit is purchased from the insurer.</p>
+<p>The payout phase carried out by a PUO is in scope. In the payout phase, participants can choose between continued investment (with a variable pension benefit) or a fixed pension benefit. With a variable benefit, the pension fund can choose a model with an individual payout phase or a collective payout phase.</p>
+<p>With an individual payout phase, the data exchange for the continued-investment variant can be set up in the same way as for the accumulation phase (with, for example, more investment in shorter fixed-income securities at a higher age).</p>
+<p>With a collective payout phase (all retirees in one cohort), for both fixed and variable benefits, it is important that the interest rate sensitivity of the investments (in a matching portfolio) matches the collective interest rate sensitivity of the projected benefits. It is possible to choose to continue investing individually in the payout phase and to switch to a collective payout phase later. This switch has no impact on the data fields and/or the data exchange between parties.</p>
+<p>For the payout phase, the FM will set up (the management of) a matching portfolio. For the required data exchange, the PUO sends the projected benefits to be hedged per cohort to the FM per scheme on a periodic basis (expected to be monthly). The data exchange for this will be set up in accordance with data exchange 1c from the SPR.</p>
+<h2 id="43-fpr-information-flows">4.3 FPR Information Flows</h2>
+<p>The data exchange within the FPR model takes place through the messages described in this section. Which party sends and receives which message is laid down per role; see Table 12 in <a href="../chapter-6-4-messages/">§6.4</a>. A role can be performed by different parties — a PUO can, for example, perform the role of investment administrator — but that does not change the information flow.</p>
+<p>The two process diagrams in §4.3.1 first give the overview; the messages then follow in ascending message number. Messages 2, 3 and 4 are SPR messages that are reused within FPR: 2 and 4 for the flows that do not run through the unit administration, 3 for the interest rate risk profile towards the FM/VB and the LDI manager; see <a href="#41-introduction">§4.1</a> for the background. Messages 5 to 15 form the FPR's own message set. Of these, messages 7, 8, 9, 11 and 12 have been discontinued as of release 2027; they are listed, with the reason, in <a href="#4311-discontinued-messages">§4.3.11</a>.</p>
+<h3 id="431-fpr-process-flow">4.3.1 FPR Process Flow</h3>
+<p>This section gives the overview of the FPR process flow. The standardised data exchanges are shown in the figures as arrows, with the message numbers next to them. Which data each information flow carries is set out in the message sections that follow.</p>
+<p>Note: Figure 8 and Figure 9 are indicative process flow diagrams. The time indications are indicative and can be filled in differently per client chain between all parties involved; the order of the steps is, however, guiding. This document is only about the information flows. Timing, frequency and whether a message is delivered as provisional, final or in both forms are laid down by the parties in agreements between chain parties (TOM / SLA).</p>
+<p>Figure 8 and Figure 9 do <strong>not show different FPR models</strong>. They show two administrative set-ups of the accumulation phase and the collective payout phase (CVP)<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">2</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Accumulation phase</th>
+<th>CVP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Figure 8</strong></td>
+<td>unitized</td>
+<td>unitized</td>
+</tr>
+<tr>
+<td><strong>Figure 9</strong></td>
+<td>unitized</td>
+<td>in EUR</td>
+</tr>
+</tbody>
+</table>
+<p>The accumulation phase is unitized in both cases. The difference lies solely in the administrative representation of the CVP: in units, or in euros. That choice determines which additional information flows are needed.</p>
+<p>The process flow has four actors: PUO, BA (investment administrator), FM/VB (fiduciary manager/asset manager) and LDI manager. In this context, PUO also includes the self-administering fund (ZAF).</p>
+<p><strong>What the diagrams do not show.</strong> Figure 8 and Figure 9 show one run of the trading cycle for one administrative set-up. Outside of that, exchanges take place that are not shown. A message can be sent to more than one recipient, each with its own endpoint and identification, and with a purpose that can differ per recipient; see <a href="../chapter-2-principles/#24-principles-of-data-exchange">§2.4</a>. Additional deliveries of the same message also have no step of their own in the diagrams.</p>
+<p><strong>Step letters.</strong> Figure 8 and Figure 9 share their step letters: the same letter stands for the same step in both figures. If a letter is missing in a figure, that step does not occur in that set-up. Figure 8, for example, has no step K, because the return of the CVP is included in the unit value there and does not require a separate message 4.</p>
+<p><strong>Message 15 is not in the process diagrams.</strong> Corporate actions follow their own rhythm and fall outside the trading run from T-4 up to and including T+3. Including the message in Figure 8 and 9 would suggest a time relationship with the trading cycle that does not exist. See <a href="#4310-message-15-corporate-actions-00557">§4.3.10</a>.</p>
+<p><img alt="Figure 8 — FPR process flow: accumulation and CVP unitized" src="../media/image8.svg" /></p>
+<p><strong>Figure 8 — FPR process flow: accumulation and CVP unitized</strong>
+<a href="../media/image8.svg" target="_blank">Full view (SVG)</a></p>
+<p><strong>Explanation of Figure 8: accumulation and CVP unitized</strong></p>
+<p>Here the investment flows of the accumulation phase and the CVP are combined through netting. The CVP is administered in units, so the same order flows (SIVI 5/6) cover both accumulation and CVP changes.</p>
+<p><strong>Colour coding:</strong> grey arrows are generic flows that are identical in both figures. Blue arrows mark flows that have a broader meaning here because they cover both accumulation and CVP. The time indications (T-4, T, T+3) are indicative; T is the moment of trading.</p>
+<p><strong>Phase 1 — Order input (T-4):</strong>
+The PUO sends an order instruction (SIVI 5, step A) to the BA. The same day, the BA delivers the value information of the investment pool (SIVI 13, step C), which here also covers the CVP return. That price information is needed to express the order in units.</p>
 <p><strong>Phase 2 — Direction towards FM/VB and LDI (T-4):</strong>
-The PUO/ZAF (step D) and the BA (step E) send net control information (SIVI 10) to the FM/VB. The PUO sends the interest rate risk profile (SIVI 3, steps F and G) to FM/VB and LDI manager.</p>
+The BA sends net control information (SIVI 10, step E) to the FM/VB. The PUO sends the interest rate risk profile (SIVI 3 — message 3, Pension Projection, steps F and G) to the FM/VB and the LDI manager.</p>
 <p><strong>Phase 3 — Trade execution, feedback and payment information (T to T+3):</strong>
-The LDI manager executes on T the net buy/sell need on the LDI mandate (step H1), aimed at the protection return. The FM/VB monitors the LDI manager and executes the net buy/sell need on the other (non-LDI) investment portfolios (step H2). Executed transactions flow via SWIFT (step I) back to the BA. After receipt of the definitive month-end NAV (SIVI 13, step J), the definitive payment information (SIVI 14, steps K and L) follows, and the cash settlement via SWIFT (step M).</p>
-<p><img alt="Figure 9 — Process flow FPR model 2: non-unitized variant" src="../media/image9.svg" /></p>
-<p><strong>Figure 9 — Process flow FPR model 2: non-unitized variant (CVP as EUR mandate)</strong>
-<a href="../media/image9.svg" target="_blank">Full scale view (SVG)</a></p>
-<p><strong>Explanation of Figure 9: non-unitized variant (CVP as EUR mandate)</strong></p>
-<p>In the non-unitized variant, the collective payout phase (CVP) is managed as a separate EUR pool, independent of the unitized accumulation phase. This leads to additional information flows.</p>
-<p><strong>Color coding:</strong> grey arrows are generic flows (see Figure 8 for the full color coding). Green arrows mark the non-unitized-specific flows: extra messages because the CVP is a separate EUR pool.</p>
-<p>The accumulation phase (steps A through J) runs identically to the unitized variant. The difference lies in the additional green flows:</p>
+On T, the LDI manager executes the net buy/sell requirement on the LDI mandate (step H1), aimed at the protection return. The FM/VB monitors the LDI manager and executes the net buy/sell requirement on the other (non-LDI) investment portfolios (step H2). Executed transactions are reported back to the BA (step I).</p>
+<p>On T+3 the feedback to the PUO follows: first the order confirmation (SIVI 6, step B), then the final month-end NAV (SIVI 13, step J). On that basis the BA sends the final payment information to the FM (SIVI 14, step L), after which the FM takes care of the cash settlement (step M).</p>
+<p><strong>On reporting back executed transactions.</strong> Steps I and M carry no channel name. In practice this is usually done via SWIFT, but the standard does not prescribe it: not all instruments are reported back that way — swaps, for example, are handled differently. Which channel chain parties use for this is a matter of mutual agreement and falls outside the VB-PUO data exchange.</p>
+<p><strong>Sender of messages 10 and 14.</strong> These messages are sent by the BA role. The PUO/ZAF sends them only when it performs the role of investment administrator itself. The role matrix in <a href="../chapter-6-4-messages/">§6.4</a> therefore lists only the BA as sender. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/142">#142</a>.</p>
+<p><strong>Why there is no separate CVP valuation here.</strong> Because the CVP runs along in the same unit administration through netting, step J covers both the investment pool and the CVP. No further trading takes place after step M, so a second valuation message is not needed. In Figure 9 this is different: there the CVP has its own execution cycle and therefore its own valuation.</p>
+<p><img alt="Figure 9 — FPR process flow: accumulation unitized, CVP in EUR" src="../media/image9.svg" /></p>
+<p><strong>Figure 9 — FPR process flow: accumulation unitized; CVP in EUR</strong>
+<a href="../media/image9.svg" target="_blank">Full view (SVG)</a></p>
+<p><strong>Explanation of Figure 9: accumulation unitized; CVP in EUR</strong></p>
+<p>Here the CVP is administered not in units but in euros, while the accumulation phase does remain unitized. This leads to additional information flows, because the return and cash flows of the CVP do not run along through the unit administration.</p>
+<p>What is said here about the CVP applies in the same way to other collective parts administered in euros: the risk-sharing reserve, any compensation deposit and other reserves and provisions. They too require a separate cash instruction and a separate statement of returns, for the same reason.</p>
+<p><strong>Colour coding:</strong> grey arrows are generic flows (see Figure 8 for the complete colour coding). Green arrows mark the flows that are specific to a CVP in EUR.</p>
+<p>The accumulation phase (steps A to J) runs in the same way as in Figure 8. The difference lies in the additional green flows:</p>
 <ul>
-<li><strong>Cash instruction CVP</strong> (steps O and P, T-4): the PUO or BA sends cash instructions in EUR to the FM/VB via SIVI 2, simultaneously with SIVI 5 (order instruction).</li>
-<li><strong>Return CVP</strong> (step K): the BA sends returns for the CVP and other collective reserves to the PUO via SIVI 4.</li>
-<li><strong>Investment process CVP</strong> (step Q): the FM/VB frees up or adds funds to the CVP via the investment process.</li>
-<li><strong>SWIFT feedback</strong> (step R): executed transactions and cash transfers flow via SWIFT back to the BA.</li>
+<li>
+<p><strong>Cash instruction CVP</strong> (steps O and P, T-4): cash instructions in EUR go to the FM/VB via SIVI 2, at the same time as the order instruction (SIVI 5). Who sends that instruction depends on the nature of the change. In the case of a <strong>switch</strong> — assets move from the accumulation phase to the CVP and the total invested assets do not change — the BA sends the instruction; after all, it knows both sides of the switch. In the case of a <strong>complete sell</strong> — assets leave the chain, for example on a benefit payment or an outgoing value transfer — the PUO sends the instruction. Both situations occur in practice.</p>
+<p>The EUR order for the CVP therefore does <strong>not</strong> go through the order instruction (SIVI 5). Message 5 concerns the unitized orders in the investment pools; the FM/VB is informed of the upcoming cash flow for the non-unitized parts through the cash instruction (SIVI 2 — message 2, Cashflow). See also <a href="#41-introduction">§4.1</a>.
+- <strong>Return CVP</strong> (step K): the BA sends returns for the CVP and other collective reserves to the PUO via SIVI 4.
+- <strong>Investment process CVP</strong> (step Q): the FM/VB releases money from or adds money to the CVP through the investment process.
+- <strong>Feedback CVP</strong> (step R): executed transactions and cash transfers to the pension account are reported back to the BA.</p>
+</li>
 </ul>
-<p>These additional flows are necessary because the CVP does not use units — returns and cash flows are handled separately in EUR.</p>
-<h3 id="451-message-7-balance-adjustments-00551-information-need-of-the-cohort-and-investment-pool-administrator">4.5.1 Message 7. Balance Adjustments (00551), Information Need of the Cohort and Investment Pool Administrator</h3>
-<p><strong>Discontinued from release 2027.</strong> This message is no longer active in the release 2027 message set. See GitHub issues <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/99">#99</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/119">#119</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/121">#121</a>.</p>
-<h3 id="452-messages-for-reconciliation-information">4.5.2 Messages for Reconciliation Information</h3>
-<p><strong>Discontinued from release 2027.</strong> Messages 8 and 9 in this section are no longer active in the release 2027 message set. See GitHub issues <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/99">#99</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/119">#119</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/121">#121</a>.</p>
-<h3 id="453-message-10-control-information-investment-pools-00553">4.5.3 Message 10. Control Information Investment Pools (00553)</h3>
-<p>See the explanation for Figure 8 and 9 (steps D and E). Functional elaboration: see <em>§6.4.11</em>.</p>
-<h3 id="454-message-11-rebalancing-information-00554-rebalancing-cohort-pools">4.5.4 Message 11. Rebalancing Information (00554), Rebalancing Cohort Pools</h3>
-<p><strong>Discontinued from release 2027.</strong> This message is no longer active in the release 2027 message set. See GitHub issues <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/99">#99</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/119">#119</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/121">#121</a>.</p>
-<h3 id="455-communicating-values-per-investment-pool-and-per-cohort-pool">4.5.5 Communicating Values per Investment Pool and per Cohort Pool</h3>
-<p>See the explanation for Figure 8 and 9 (steps J, K and L).</p>
-<h4 id="4551-message-12-value-information-cohort-pool-00555a">4.5.5.1 Message 12. Value Information Cohort Pool (00555a)</h4>
-<p><strong>Discontinued from release 2027.</strong> This message is no longer active in the release 2027 message set. See GitHub issues <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/99">#99</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/119">#119</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/121">#121</a>.</p>
-<h4 id="4552-message-13-value-information-investment-pool-00555b">4.5.5.2 Message 13. Value Information Investment Pool (00555b)</h4>
-<p>See the explanation for Figure 8 and 9 (step J). Functional elaboration: see <em>§6.4.14</em>.</p>
-<h3 id="456-message-14-payment-information-00556">4.5.6 Message 14. Payment Information (00556)</h3>
-<p>See the explanation for Figure 8 and 9 (steps K and L). Functional elaboration: see <em>§6.4.15</em>.</p>
-<h3 id="457-message-15-corporate-actions-00557">4.5.7 Message 15. Corporate Actions (00557)</h3>
+<p><strong>No separate valuation message after the CVP execution.</strong> Although the CVP has its own execution cycle (steps Q and R), no valuation message (SIVI 13) follows for the CVP in EUR. After all, the CVP is not administered in units, so there is no unit value to pass on. The return on the CVP reaches the PUO via SIVI 4 (step K).</p>
+<h3 id="432-message-2-cashflow-0001b">4.3.2 Message 2. Cashflow (0001b)</h3>
+<p><strong>Information flow from PUO or BA to FM/VB</strong></p>
+<p>Message 2 is an SPR message that is reused within FPR for periodic cash flow information. It is used for those money flows that do not run through the unit administration — in particular the collective flows. Who sends the message depends on the change: in the case of a <strong>switch</strong> the BA, in the case of a <strong>complete sell</strong> the PUO (see <a href="#431-fpr-process-flow">§4.3.1</a>, <em>Cash instruction CVP</em>). See also <a href="#41-introduction">§4.1</a>.</p>
+<p><strong>Purpose and meaning</strong></p>
+<p>The message reports the expected or established net cash flow per investment portfolio, so that the receiving party can arrange liquidity for it. This concerns both benefit payments and transfers of assets from the accumulation phase to the collective payout provision (CVP) or to reserves.</p>
+<p><strong>Population pattern within FPR</strong></p>
+<p>For FPR use, the cash flow per investment portfolio runs via <code>pension.scheme → investment.portfolio → financialTransaction.cashflow</code>. In this population pattern, <code>netAmount</code> and <code>netDate</code> are mandatory at portfolio level. The SPR route (cash flow directly under <code>pension.scheme</code>, with a breakdown via <code>pension.cohort</code>) and the FPR route are mutually exclusive. See <a href="../chapter-6-functional-specs/#consistency-checks-cashflow-message-0001b">§6.3.1</a> for the consistency checks and <a href="../chapter-6-4-messages/#643-message-structure-2-cashflow-0001b">§6.4.3</a> for the message structure.</p>
+<p>In addition to the cash flow per portfolio, the cash flow directly under the scheme can carry the total; it applies in both routes. The amounts and dates of inflow and outflow are optional in every cash flow block; <code>netAmount</code> and <code>netDate</code> are mandatory everywhere. The investment portfolio carries no reserve fields. See <a href="../chapter-3-spr-processes/#325-spr-and-fpr-route-in-messages-2-3-and-4">§3.2.5</a> for messages 2, 3 and 4 together.</p>
+<p><img alt="Figure 1a — Message 2 Cashflow: SPR and FPR route" src="../media/figuur1a-bericht2-cashflow-routes.svg" /></p>
+<p><strong>Figure 1a — Message 2 Cashflow (0001b): SPR and FPR route</strong> (see also <a href="../chapter-3-spr-processes/#322-message-2-cashflow-1b-inflow-and-outflow">§3.2.2</a>)
+<a href="../media/figuur1a-bericht2-cashflow-routes.svg" target="_blank">Full view (SVG)</a></p>
+<p>The FPR route is green: exactly one cash flow per investment portfolio. Grey applies to both routes, blue is the SPR route. Fields in bold are mandatory, fields in italics optional. The figure shows only the fields that matter for the routes; the full message structure is in <a href="../chapter-6-4-messages/#643-message-structure-2-cashflow-0001b">§6.4.3</a>.</p>
+<p><strong>Relationship with messages 5, 10 and 14</strong></p>
+<p>Message 2 and the order chain do two different things. The order chain — message 5 (order instruction), message 10 (control information) and message 14 (payment information) — concerns the unitized flows: these are administered in units per investment pool and lead to orders and the associated settlement. Message 2, on the other hand, concerns the flows that are <em>not</em> unitized and therefore do not result in an order in an investment pool. The two complement each other; they are not alternatives to each other.</p>
+<p><strong>Expected or established cash flow</strong></p>
+<p>Message 2 can carry either an expected or an established net cash flow. <a href="../chapter-3-spr-processes/#322-message-2-cashflow-1b-inflow-and-outflow">§3.2.2</a> describes these two applications — forward-looking for liquidity management, backward-looking for analysis and accountability — and states that in practice they can exist side by side. Within FPR this applies in full. Which application a chain uses, at what moment and with what frequency, is laid down by the parties in agreements between chain parties (TOM / SLA). The position at T-4 in the process diagrams fits the forward-looking application and is indicative.</p>
+<p><strong>Sequence, not timing.</strong> In the process diagrams, message 2 is at T-4 (Figure 9, steps O and P). That fits the forward-looking application: an expected cash flow does not require settlement in advance. If it concerns assets transferred from the accumulation phase to the CVP, the final amount only arises from the settlement of the unit sale — in the diagrams at T+3, where the order confirmation (step B) and the final month-end NAV (step J) are. An established statement therefore follows those steps.</p>
+<p>A chain may deviate from the timing itself; it may not deviate from that sequence. The diagrams show only the forward-looking delivery — see <em>What the diagrams do not show</em> in <a href="#431-fpr-process-flow">§4.3.1</a>.</p>
+<h3 id="433-message-3-pension-projection-0001c">4.3.3 Message 3. Pension Projection (0001c)</h3>
+<p><strong>Information flow from PUO to FM/VB and LDI manager</strong></p>
+<p>Message 3 is also an SPR message that is reused within FPR. In the process flow, the PUO uses it to deliver the interest rate risk profile to the FM/VB and the LDI manager (Figure 8 and 9, steps F and G). For its purpose, see <a href="../chapter-3-spr-processes/#323-message-3-pension-projection-1c-projected-benefits">§3.2.3</a>.</p>
+<p><strong>Population pattern within FPR</strong></p>
+<p>In FPR, the projected benefits can be delivered per investment portfolio, via <code>pension.scheme → investment.portfolio → financialTransaction.payment</code>. The portfolio branch is intended for schemes in which several investment portfolios are distinguished. Per portfolio, the same payment data are given as per cohort; reserve fields are not on the portfolio. The payments directly under the scheme are scheme totals and apply in both routes. See <a href="../chapter-3-spr-processes/#325-spr-and-fpr-route-in-messages-2-3-and-4">§3.2.5</a> for the relationship with the SPR route.</p>
+<p><img alt="Figure 9a — Message 3 Pension Projection: SPR and FPR route" src="../media/figuur9a-bericht3-pensioenprojectie-routes.svg" /></p>
+<p><strong>Figure 9a — Message 3 Pension Projection (0001c): SPR and FPR route</strong>
+<a href="../media/figuur9a-bericht3-pensioenprojectie-routes.svg" target="_blank">Full view (SVG)</a></p>
+<p>The FPR route is green: the payments per investment portfolio. Grey applies to both routes, blue is the SPR route. Fields in bold are mandatory, fields in italics optional. The figure shows only the fields that matter for the routes. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/113">#113</a>.</p>
+<p>Functional specification per message: see chapter 6 and in particular <a href="../chapter-6-4-messages/#644-message-structure-3-pension-projection-0001c">§6.4.4</a>.</p>
+<h3 id="434-message-4-return-information-00002">4.3.4 Message 4. Return Information (00002)</h3>
+<p><strong>Information flow from BA to PUO</strong></p>
+<p>Message 4 is also an SPR message that is reused within FPR. It passes on the return achieved on the part of the assets for which the return is not already included in a unit value.</p>
+<p><strong>Purpose and meaning</strong></p>
+<p>In a unitized set-up, message 4 is not needed: the return is included in the unit price, and message 13 passes that price on. Message 4 is intended for the collective parts administered in euros — the collective payout provision, the risk-sharing reserve and any other reserves and provisions — where the return does have to be allocated explicitly. Message 13 cannot replace it there: without a unit administration there is no unit value to pass on.</p>
+<p>Whether a chain uses message 4 therefore depends on the set-up. Figure 8 and 9 show both variants: with a unitized CVP, message 4 does not occur; with a CVP in euros it does (step K). <a href="../chapter-3-spr-processes/#324-message-4-return-information-2-information-need-of-the-puo">§3.2.4</a> makes the same point from the SPR side: the exchange of returns can also be used in a specific implementation variant of the flexible premium scheme.</p>
+<p><img alt="Figure 9b — Message 4 Return Information: SPR and FPR route" src="../media/figuur9b-bericht4-rendementsinformatie-routes.svg" /></p>
+<p><strong>Figure 9b — Message 4 Return Information (00002): SPR and FPR route</strong>
+<a href="../media/figuur9b-bericht4-rendementsinformatie-routes.svg" target="_blank">Full view (SVG)</a></p>
+<p>In message 4 the investment portfolio is grey: it applies to both routes, with at least one and at most 99 portfolios per scheme. The breakdown per cohort (blue) is optional. Fields in bold are mandatory, fields in italics optional. The figure shows only the fields that matter for the routes.</p>
+<p>Functional specification per message: see chapter 6 and in particular <a href="../chapter-6-4-messages/#645-message-structure-4-return-information-00002">§6.4.5</a>.</p>
+<h3 id="435-message-5-order-instruction-00541">4.3.5 Message 5. Order Instruction (00541)</h3>
+<p><strong>Information flow from PUO to BA</strong></p>
+<p>This information flow contains the minimum set of data needed to send an order to the order-processing party. It can also be used to carry out a switch.</p>
+<p>The PUO submits orders at the level of the investment product. The provider of the product carries out the ordering in the underlying investments itself. That is a different role from the order-processing party, which handles the order of the PUO and may be, for example, a broker, transfer agent or order desk. This may concern, among other things, listed and illiquid investments.</p>
+<p><strong>Switch convention.</strong> A switch consists of two linked orders: one with <code>buySellId</code> = <code>switchfrom</code> (the investment product being left) and one with <code>buySellId</code> = <code>switchto</code> (the investment product being switched to). The direction of the transaction follows solely from <code>buySellId</code>; <code>tradeAmount</code> and <code>tradeQuantity</code> are always given as positive values. The two switch legs are linked to each other through <code>financialInformationRef</code>, which refers to the <code>refKey</code> of the other leg. The field <code>switchType</code> indicates whether it is a sequential (<code>1</code>) or simultaneous (<code>2</code>, one-day) switch (code list AFDSWI). See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/115">#115</a>.</p>
+<p><strong>Order instruction: <code>tradeAmount</code> or <code>tradeQuantity</code>.</strong> Per individual trade instruction, exactly one of <code>tradeAmount</code> or <code>tradeQuantity</code> must be filled. Filling both fields at the same time is not allowed; leaving both empty is not allowed either, except for the leg of a switch that does not drive the switch (see below). If an instruction has both an amount and a quantity component, these are recorded as separate trade records. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/116">#116</a>.</p>
+<p><strong>In a switch, one of the two legs drives.</strong> A switch consists of two linked orders, and only one of them is actually instructed; the other follows from it. If you instruct <em>"move 20 units out of product A"</em>, the <code>switchfrom</code> leg carries <code>tradeQuantity</code> and the <code>switchto</code> leg stays empty: how many units are obtained in the receiving product depends on the proceeds and on the price at the moment of execution, and cannot be determined at the time of instruction. Conversely, if you instruct <em>"invest € 3,000 in product B"</em>, the <code>switchto</code> leg carries the amount and the <code>switchfrom</code> leg stays empty. Hence the rule: <strong>per switch pair, exactly one leg carries exactly one of the two fields, and the other leg carries neither.</strong> Which leg is filled itself indicates which side drives the switch; a separate field for this is not needed.</p>
+<p><strong>Switches in practice.</strong> In practice, message 5 is mainly used to withdraw a number of units from an investment product at the transition from the accumulation phase to the collective payout phase (CVP). The <code>switchfrom</code> leg then carries the number of units (<code>tradeQuantity</code>); the <code>switchto</code> leg stays empty. The money value of those units is not in message 5, but follows through message 6.</p>
+<p><strong>This rule does not apply in message 6.</strong> An order confirmation reports what has been executed, and then quantity, price and amount are all three known. There, <code>tradeQuantity</code>, <code>tradePrice</code> and <code>tradeAmount</code> usually occur together; if quantity and price both occur, <code>tradeQuantity × tradePrice = tradeAmount</code> applies (see §6.3.2). In a switch this is also the link between the two legs: the amount that comes out of the <code>switchfrom</code> leg goes into the <code>switchto</code> leg. The consistency checks of messages 5 and 6 are together in <a href="../chapter-6-functional-specs/#consistency-checks-order-instruction-order-confirmation">§6.3.2</a>.</p>
+<p>Functional specification per message: see chapter 6 and in particular <em>6.4.6</em>.</p>
+<h3 id="436-message-6-order-confirmation-00542">4.3.6 Message 6. Order Confirmation (00542)</h3>
+<p><strong>Information flow from BA to PUO</strong></p>
+<p>The confirmation data of the order come back from the order-processing party to the PUO. For switches, message 6 confirms the same structure as message 5, including <code>switchType</code> and <code>financialInformationRef</code>. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/115">#115</a>.</p>
+<p>Functional specification per message: see chapter 6 and in particular <em>6.4.7</em>.</p>
+<h3 id="437-message-10-control-information-investment-pools-00553">4.3.7 Message 10. Control Information Investment Pools (00553)</h3>
+<p><strong>Information flow from BA to FM</strong></p>
+<p><strong>Purpose and meaning</strong></p>
+<p>Message 10 gives the fiduciary manager the net control information per investment pool: what needs to be added or taken out on balance, so that the FM/VB can direct the underlying investments. Where message 5 is an instruction to the administration, message 10 is a signal to the investment process.</p>
+<p>Message 10 is sent by the investment administrator. The PUO sends it only when it performs the role of investment administrator itself (see <em>Sender of messages 10 and 14</em> in <a href="#431-fpr-process-flow">§4.3.1</a>). It receives the information needed for this from the PUO via message 5 (Order Instruction).</p>
+<p><strong>From message 5 to message 10</strong></p>
+<p>There is a translation step between the two messages, which the BA carries out:</p>
+<ul>
+<li><strong>From instruction to balance.</strong> Message 5 contains the individual order instructions. The BA nets them per investment pool into one net buy or sell requirement. Instructions that cancel each other out therefore do not reach the investment process.</li>
+<li><strong>From units to amounts.</strong> Message 5 can instruct either by amount (<code>tradeAmount</code>) or by number of units (<code>tradeQuantity</code>). Message 10 expresses the requirement as an amount, for which the BA uses the unit value from message 13.</li>
+<li><strong>Switches largely drop out.</strong> A switch consists of a <code>switchfrom</code> and a <code>switchto</code> leg. If they concern the same investment pool, they net out and the switch produces no control information. Only when the legs affect different pools does a net requirement remain.</li>
+</ul>
+<p>See also the explanation of Figure 8 and 9 (step E). Functional specification: see <em>§6.4.8</em>.</p>
+<h3 id="438-message-13-value-information-investment-pool-00555b">4.3.8 Message 13. Value Information Investment Pool (00555b)</h3>
+<p>See the explanation of Figure 8 and 9 (steps C and J).</p>
+<p><strong>Information flow from BA to PUO</strong></p>
+<p><strong>Purpose and meaning</strong></p>
+<p>Message 13 is the message on which the entire unitized administration rests. Without a unit value, the PUO cannot allocate assets to participants, cannot convert an order into units and cannot reconcile a payment. The message is therefore not feedback after the fact but a precondition beforehand: the other parties can only proceed once the BA has issued the valuation.</p>
+<p>Message 13 passes on the valuation of the investment pools. With it, the investment administrator makes the unit values and the administrative price of the investment pools available to the parties involved, so that they can carry out their administration, valuation and further processing.</p>
+<p>Per investment pool, the message contains the ID (<code>refKey</code>) and the description (<code>description</code>), the value per investment pool (<code>unitsSummedValueAmount</code>), the net asset value per unit (<code>preliminaryUnitValueAmount</code>), the number of units issued (<code>numberOfUnits</code>) and the currency of the pool (<code>currencyType</code>).</p>
+<p>This message occurs twice in the process flow. At T-4 it delivers the value information of the investment pool (Figure 8 and 9, step C); at T+3 the final month-end NAV (step J). Message 13 thus provides both the <strong>price information</strong> needed to form orders and the final valuation on which the <strong>reconciliation</strong> and the payment information are based.</p>
+<p>Functional specification: see <em>§6.4.9</em>.</p>
+<h3 id="439-message-14-payment-information-00556">4.3.9 Message 14. Payment Information (00556)</h3>
+<p><strong>Information flow from BA to FM</strong></p>
+<p><strong>Purpose and meaning</strong></p>
+<p>Message 14 is sent by the investment administrator. The PUO sends it only when it performs the role of investment administrator itself. Per scheme, the message contains at least one and at most 999 payments (<code>financialTransaction.payment</code>). See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/149">#149</a>. Message 14 concludes the trading cycle. Once the final month-end NAV is known (message 13, step J), the investment administrator determines which amount actually has to be transferred and to whom. The message is thus the bridge between the administration and the actual money flow: where messages 5 and 10 are about what has to happen, message 14 is about what has happened and what is being paid.</p>
+<p>For the FM, the message is the basis for the cash transfer of the final payments (step M).</p>
+<p>See the explanation of Figure 8 and 9 (step L). Functional specification: see <em>§6.4.10</em>.</p>
+<h3 id="4310-message-15-corporate-actions-00557">4.3.10 Message 15. Corporate Actions (00557)</h3>
 <p><strong>Information flow from the asset management chain to the PUO</strong></p>
-<p>Message 15 is used for communicating corporate action events on investment products from the asset management chain to the Pension Administration Organization (PUO). The message is intended for situations where such events are processed within the asset management administration but are not automatically visible within the PUO's administration.</p>
-<p>The information is provided by the party within the asset management chain that is responsible for recording the relevant event. Depending on the chain's configuration, this can be, for example, a BA, FM, or other asset management party.</p>
+<p>Message 15 is an ad hoc message: it is not part of the regular monthly flow and is therefore not in Figure 8 and 9. Message 15 is used to pass on corporate action events on investment products from the asset management chain to the pension administration organisation (PUO). The message is intended for situations in which such events are processed within the asset management administration, but are not automatically visible in the administration of the PUO.</p>
+<p>The information is delivered by the party within the asset management chain that is responsible for recording the event concerned. Depending on how the chain is set up, this can be, for example, a BA, FM or other asset management party.</p>
+<p><strong>Scope.</strong> The message belongs to the set-up in which investment funds tradable directly through a trading platform are traded; see <a href="#42-the-fpr-model">§4.2</a>. Corporate actions do not apply to the investment pools themselves — they occur on the underlying investment products.</p>
 <p>The message is primarily intended for:</p>
 <ul>
 <li>cash dividend;</li>
 <li>rebate;</li>
 <li>increase or decrease of units;</li>
-<li>capital and unit shifts resulting from collateral calls or collateral returns;</li>
-<li>corrections to previously sent corporate actions.</li>
+<li>capital and unit shifts as a result of collateral calls or collateral returns;</li>
+<li>corrections to corporate actions sent earlier.</li>
 </ul>
-<p>Additionally, the message can be used for supplementary corporate action-related changes, such as product changes or other administrative adjustments, insofar as these fall within the agreed implementation of Message 15.</p>
+<p>In addition, the message can be used for additional changes related to corporate actions, such as product changes or other administrative adjustments, insofar as these fall within the agreed implementation of message 15.</p>
 <p>This enables the PUO to:</p>
 <ul>
-<li>keep its own administration synchronized with the asset management administration;</li>
-<li>correctly process cash and unit mutations;</li>
-<li>administratively record corporate action events;</li>
-<li>prevent differences between PUO and asset management administrations.</li>
+<li>keep its own administration in sync with the asset management administration;</li>
+<li>process money and unit changes correctly;</li>
+<li>record corporate action events administratively;</li>
+<li>prevent differences between the PUO and asset management administrations.</li>
 </ul>
-<p><strong>Modeling Rebate</strong></p>
-<p>A rebate is modeled as a corporate action with <code>corporateActionType</code> = <code>rebate</code> (code list AFDCAE). The rebate amount is recorded in <code>cashDividendTotalAmount</code> and/or <code>cashDividendPerUnitAmount</code>, the same attributes that are also used for <code>cashDividend</code>. The distinction between a cash dividend and a rebate follows exclusively from the value of <code>corporateActionType</code>.</p>
-<p>Functional elaboration into a message: see chapter 6 and specifically <em>6.4.16</em>.</p>
+<p><strong>Modelling of rebate</strong></p>
+<p>A rebate is modelled as a corporate action with <code>corporateActionType</code> = <code>99</code> (<em>Other</em>, code list AFDCOA). A separate code for rebate is not yet available in AFDCOA at the time of writing. The rebate amount is recorded in <code>cashDividendTotalAmount</code> and/or <code>cashDividendPerUnitAmount</code>, the same attributes as for a cash dividend (<code>corporateActionType</code> = <code>1</code>). As long as rebate has no code of its own, a rebate cannot be distinguished in the message from other corporate actions with code <code>99</code>. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/137">#137</a>.</p>
+<p>AFDCOA currently has the codes <code>1</code> Cash dividend, <code>2</code> Stock dividend, <code>3</code> Product change and <code>99</code> Other.</p>
+<p>Functional specification per message: see chapter 6 and in particular <em>6.4.11</em>.</p>
 <p>See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/87">#87</a>.</p>
-<h2 id="46-use-of-spr-messages-in-fpr">4.6 Use of SPR Messages in FPR</h2>
-<p>Within a Flexible Premium Scheme (FPR), in addition to the individual, 'unitized' cash flows, there are also collective premium flows. These are cash flows that do not belong to a single specific participant, such as risk premiums, contributions to reserves, or withdrawals from a collective payout pool.</p>
-<p>The standard FPR messages (5 through 15) are purely aimed at the unitized world and do not support these collective flows. To address this, it has been agreed that parties will revert to the proven SPR messages 1, 2, 3 and/or 4 for the exchange of this information. This method applies to both the direct (Model 1) and the layered (Model 2) FPR order model.</p>
-<h2 id="47-feedback-message-resending">4.7 Feedback Message (&amp; Resending)</h2>
+<h3 id="4311-discontinued-messages">4.3.11 Discontinued Messages</h3>
+<p>Five messages from earlier releases are no longer active as of release 2027. They are listed together here, so that the description of the active messages above remains readable as one whole. The message numbering has been left unchanged: numbers 7, 8, 9, 11 and 12 will not be issued again.</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Description</th>
+<th>Why discontinued</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7 (00551)</td>
+<td>Balance Adjustments — information need of the cohort pool and investment pool administrator</td>
+<td>The cohort pool as an administrative layer has been dropped; the data land directly at investment pool level.</td>
+</tr>
+<tr>
+<td>8 (00552a)</td>
+<td>Reconciliation Information</td>
+<td>Belonged to the role of cohort pool administrator, which has been dropped as an independent actor.</td>
+</tr>
+<tr>
+<td>9 (00552b)</td>
+<td>PUO Reconciliation Information</td>
+<td>Idem; additional flow for the case in which the PUO performed that role.</td>
+</tr>
+<tr>
+<td>11 (00554)</td>
+<td>Rebalancing Information — rebalancing of cohort pools</td>
+<td>Rebalancing at cohort pool level no longer exists.</td>
+</tr>
+<tr>
+<td>12 (00555a)</td>
+<td>Value Information Cohort Pool</td>
+<td>Replaced by message 13, which gives the value at investment pool level.</td>
+</tr>
+</tbody>
+</table>
+<p>See GitHub issues <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/99">#99</a>, <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/119">#119</a> and <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/121">#121</a>.</p>
+<p>The message schema can still support these exchanges if desired; they are simply no longer part of the active message set.</p>
+<h2 id="44-feedback-message-resending">4.4 Feedback Message (&amp; Resending)</h2>
 <p><strong>Purpose and Function</strong></p>
-<p>When exchanging messages, it is essential that the sender knows whether a message has been correctly received and processed. The feedback message has been developed to provide this certainty in the following situations:</p>
+<p>When exchanging messages, it is essential that the sender knows whether a message has been received and processed correctly. The feedback message has been developed to provide this certainty in the following situations:</p>
 <ul>
 <li>
-<p>For asynchronous processing: To provide the definitive status (both success and failure) of a message after background processing is complete.</p>
+<p>In asynchronous processing: to report back the final status (both success and error) of a message after processing in the background has been completed.</p>
 </li>
 <li>
-<p>For synchronous processing: To provide immediate, detailed error information when a message cannot be accepted.</p>
+<p>In synchronous processing: to return immediate, detailed error information when a message cannot be accepted.</p>
 </li>
 </ul>
-<p>A feedback message is therefore always used to specify errors. For successful processing, it is only sent as part of an asynchronous process. For successful synchronous processing, an HTTP 200 OK status code is sufficient.</p>
+<p>A feedback message is therefore always used to specify errors. In the case of successful processing, it is only sent as part of an asynchronous process. In the case of successful synchronous processing, an HTTP 200 OK status code is sufficient.</p>
 <p><strong>Structure of the Feedback Message</strong></p>
-<p>The feedback message has a compact, fixed structure optimized for communicating status information. The image below (also available on GitHub under <a href="https://github.com/dma61/VBPUOdsk/wiki/Berichtenoverzicht">message overview</a> and in the <a href="https://github.com/dma61/VBPUOdsk/tree/main/VBPUO_Feedback_Message/MessageStructureView">MessageStructureView</a> of the message) shows the hierarchical structure and the main entities.</p>
-<p><img src="../media/feedbackmessage_structure.svg" style="width:6.49583in;height:4.383in" /></p>
+<p>The feedback message has a compact, fixed structure optimised for reporting status information. The image below (also available on GitHub under <a href="https://github.com/Stichting-SIVI/VBPUOdsk/wiki/Berichtenoverzicht#feedback-message">message overview</a> and in the <a href="https://github.com/Stichting-SIVI/VBPUOdsk/tree/main/VBPUO_Feedback_Message/MessageStructureView">MessageStructureView</a> of the message) shows the hierarchical structure and the most important entities.</p>
+<p><img src="../media/feedbackmessage_structure.svg" style="width:7.80in;height:5.262in" /></p>
 <p>The core of the message is formed by the following components:</p>
 <ul>
 <li>
-<p>commonTechnical: Contains the technical identification of the feedback message itself, such as a new, unique <code>messageId</code>. Additionally, an optional <code>party</code> block can be included with information about the sender and receiver of the message, to support routing and for consistency with other <code>commonTechnical</code> structures (<a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/90">#90</a>).</p>
+<p>commonTechnical: Contains the technical identification of the feedback message itself, such as a new, unique <code>messageId</code>. In addition, a <code>party</code> block can optionally be included with information about the sender and receiver of the message, to support routing and for consistency with other <code>commonTechnical</code> structures (<a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/90">#90</a>).</p>
 </li>
 <li>
 <p>commonFunctional: Contains the functional metadata, including:</p>
@@ -1609,50 +1662,50 @@ The LDI manager executes on T the net buy/sell need on the LDI mandate (step H1)
 <p>statusType: The status of the original message: Accepted (8) or Rejected (0).</p>
 </li>
 <li>
-<p>originalMessageId: A mandatory reference to the <code>messageId</code> of the message to which this feedback pertains.</p>
+<p>originalMessageId: A mandatory reference to the <code>messageId</code> of the message to which this feedback relates.</p>
 </li>
 <li>
-<p>originalMessageType: An optional field indicating the type of the original message, to simplify routing at the receiver.</p>
+<p>originalMessageType: An optional field indicating the type of the original message, to simplify routing at the recipient.</p>
 </li>
 <li>
-<p>error: An optional block that, in case of rejection, contains an <code>errorCode</code> and an <code>errorCodeExplanation</code>.</p>
+<p>error: An optional block that, in the case of rejection, contains an <code>errorCode</code> and an <code>errorCodeExplanation</code>.</p>
 </li>
 <li>
-<p>party.pensionProvider: Identifies the pension administrator to whom the original message pertained.</p>
+<p>party.pensionProvider: Identifies the pension provider to which the original message related.</p>
 </li>
 </ul>
-<p><em>For a detailed specification of all attributes and code lists, see sections 6.5 and 6.4.16.</em></p>
+<p><em>For a detailed specification of all attributes and code lists, see sections 6.5 and 6.4.12.</em></p>
 <p><strong>Interaction Patterns and Process Flow</strong></p>
-<p>The technical handling of the feedback is defined in the OpenAPI Specification (OAS) and follows six fixed scenarios. These describe both synchronous and asynchronous processing, including the handling of errors and "panic" situations where the feedback loop itself fails.</p>
-<p><em>A visual overview of these scenarios can be found on GitHub: <a href="https://github.com/dma61/VBPUOdsk/wiki/Feedback-(Error)-handling---activity-diagram">Feedback activity diagram</a>.</em></p>
+<p>The technical handling of the feedback is laid down in the OpenAPI Specification (OAS) and follows six fixed scenarios. These describe both synchronous and asynchronous processing, including the handling of errors and "panic" situations in which the feedback loop itself fails.</p>
+<p><em>A visual overview of these scenarios can be found on GitHub: <a href="https://github.com/Stichting-SIVI/VBPUOdsk/wiki/Feedback-%28Error%29-handling---activity-diagram">Feedback activity diagram</a>.</em></p>
 <p><em>The scenarios are explained functionally below.</em></p>
 <ol>
 <li>
-<p>Synchronous validation - Success: Immediate 200 OK.</p>
+<p>Synchronous validation - Success: immediate 200 OK.</p>
 </li>
 <li>
-<p>Synchronous validation - Error: Immediate 400 Bad Request with a feedback message in the body.</p>
+<p>Synchronous validation - Error: immediate 400 Bad Request with a feedback message in the body.</p>
 </li>
 <li>
-<p>Asynchronous validation - Success: First 202 Accepted, later followed by a callback with an "Accepted" feedback message.</p>
+<p>Asynchronous validation - Success: first 202 Accepted, later followed by a callback with an "Accepted" feedback message.</p>
 </li>
 <li>
-<p>Asynchronous validation - Error: First 202 Accepted, later followed by a callback with a "Rejected" feedback message.</p>
+<p>Asynchronous validation - Error: first 202 Accepted, later followed by a callback with a "Rejected" feedback message.</p>
 </li>
 <li>
-<p>Panic scenario (after Error): The callback with "Rejected" feedback is not accepted by the recipient (400 Bad Request).</p>
+<p>Panic scenario (after Error): the callback with "Rejected" feedback is not accepted by the recipient (400 Bad Request).</p>
 </li>
 <li>
-<p>Panic scenario (after Success): The callback with "Accepted" feedback is not accepted by the recipient (400 Bad Request).</p>
+<p>Panic scenario (after Success): the callback with "Accepted" feedback is not accepted by the recipient (400 Bad Request).</p>
 </li>
 </ol>
-<p>In panic scenarios (5 and 6), manual coordination via another channel is necessary.</p>
+<p>In panic scenarios (5 and 6), manual coordination through another channel is necessary.</p>
 <p><strong>Protocol for Corrections and Resending</strong></p>
 <p>The feedback mechanism dictates the protocol for correcting messages. This protocol is based on the fundamental principle:</p>
-<p><strong>"Once-accepted messages are not unilaterally corrected."</strong></p>
-<p>The received feedback message is the primary form of communication that determines how a correction should be handled.</p>
+<p><strong>"Once accepted, messages are not corrected unilaterally."</strong></p>
+<p>The feedback message received is the primary form of communication that determines how a correction is to be handled.</p>
 <p><strong>Scenario 1: Correction after an Error Message (Feedback "Rejected")</strong><br />
-If the receiving party has sent a feedback message with the status "Rejected," this serves as the official request for correction.</p>
+If the receiving party has sent a feedback message with the status "Rejected", this serves as the official request for correction.</p>
 <ul>
 <li>
 <p>The receiving party expects a new, corrected message.</p>
@@ -1661,38 +1714,49 @@ If the receiving party has sent a feedback message with the status "Rejected," t
 <p>The sending party may and must send a corrected message without further, separate coordination.</p>
 </li>
 </ul>
-<p><strong>Scenario 2: Correction after Acceptance of a Message</strong></p>
-<p>This scenario occurs when a message has been successfully accepted (via a 200 OK) and the sending party subsequently discovers an error. Since there is no official trigger for a correction, unilaterally sending a new version of the message (a correction message) is <u>not permitted</u>.</p>
-<p>A message with an already-used messageId is treated by the receiving party as a duplicate message. This concerns, for example, reuse of an existing messageId or a network retry of a previously processed message.</p>
+<p><strong>Scenario 2: Correction after Acceptance of a message</strong></p>
+<p>This scenario occurs when a message has been accepted successfully (via a 200 OK) and the sending party discovers an error afterwards. Because there is no official trigger for a correction, unilaterally sending a new version of the message (a correction message) is <u>not allowed</u>.</p>
+<p>A message with a messageId that has already been used is treated by the receiving party as a duplicate message. This concerns, for example, reuse of an existing messageId or a network retry of a message processed earlier. The exception is chunking: chunks of the same logical message share the same messageId (see <a href="../chapter-7-6-chunking/">§7.6</a>).</p>
 <p>A duplicate message is rejected with:
 - HTTP 400 Bad Request
 - a Feedback message in the response body</p>
-<p>The Feedback message contains at minimum:
+<p>The Feedback message contains at least:
 - originalMessageId
 - statusType = Rejected (0)
 - errorCode
 - errorCodeExplanation</p>
-<p>The errorCode identifies the type of error. The errorCodeExplanation describes that a previously used or non-unique messageId is involved.</p>
-<p>In such situations, the sending party must contact the receiving party to discuss the situation. The outcome of this consultation determines the follow-up action. Possible solutions are:</p>
+<p>The errorCode identifies the type of error. The errorCodeExplanation describes that the messageId has already been used or is not unique.</p>
+<p>In such situations, the sending party must contact the receiving party to discuss the situation. The outcome of that consultation determines the follow-up action. Possible solutions are:</p>
 <ul>
-<li>Ad hoc agreement for resending.</li>
+<li>Ad hoc agreement to resend.</li>
 <li>Correction in the next regular delivery.</li>
-<li>Following an agreed-upon incident procedure.</li>
+<li>Following an agreed incident procedure.</li>
 </ul>
-<p><strong>Functional Rejection in Order Processing</strong></p>
-<p>An order that is functionally non-executable — for example due to an unknown fund or an invalid combination of instruction fields — is communicated back by the receiving party via the feedback message. The feedback message contains:</p>
+<p><strong>Functional failure in order processing</strong></p>
+<p>An order that cannot be executed functionally — for example because of an unknown fund or an invalid combination of instruction fields — is reported back by the receiving party via the feedback message. The feedback message contains:</p>
 <ul>
 <li>statusType = Rejected (0)</li>
-<li>an errorCode that classifies the type of rejection</li>
+<li>an errorCode that classifies the type of failure</li>
 <li>an errorCodeExplanation with a readable explanation</li>
 </ul>
 <p>The feedback follows the synchronous or asynchronous interaction patterns as described above. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/132">#132</a>.</p>
-<p><strong>Force Majeure and Deadlines</strong></p>
-<p>Force majeure situations fall outside the scope of the VB-PUO standard. The standard does not provide a separate message or status code for force majeure; the handling thereof is a matter of bilateral agreements between chain parties, for example in an SLA or TOM.</p>
-<p>Additionally, the standard does not prescribe normative deadlines for feedback. The speed at which a feedback message is sent after receipt of a content message is a matter of operational agreements between the involved parties. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/132">#132</a>.</p>
-<p>[^2]: For example, within cohort pool A, the (strategic) allocation of investments can be 30% investment pool I and 70% investment pool II. For cohort pool B, the allocation can be 40:60.</p>
-<p>[^3]: In appendix 10.3 "Process flow &amp; data exchange FPR," the process flow diagrams are included in a larger format.</p>
-<p>[^4]: Reconciliation between FM and BA is not in scope for the data exchange, but the reconciliation between the BA, the FM and the PUO is in scope for the data exchange.</p>
+<p><strong>Force majeure and time limits</strong></p>
+<p>Situations of force majeure fall outside the scope of the VB-PUO standard. The standard does not provide for a separate message or status code for force majeure; handling it is a matter of bilateral agreements between chain parties, for example in an SLA or TOM.</p>
+<p>In addition, the standard does not lay down normative time limits for feedback. The speed with which a feedback message is sent after receipt of a substantive message is a subject of operational agreements between the parties involved. See GitHub issue <a href="https://github.com/Stichting-SIVI/VBPUOdsk/issues/132">#132</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:2">
+<p>For example, within cohort A the (strategic) allocation of the investments may be 30% investment pool I and 70% investment pool II. For cohort B that allocation may be 40:60.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>The process diagrams can be opened in large format via the link <em>Full view (SVG)</em> under each figure.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Reconciliation between FM and BA is not in scope of the data exchange, but reconciliation between the BA, the FM and the PUO is in scope of the data exchange.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -1727,10 +1791,30 @@ If the receiving party has sent a feedback message with the status "Rejected," t
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      &copy; SIVI &mdash; Knowledge and standardisation institute for the financial services sector. Unofficial English translation; the Dutch version prevails.
+    </div>
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Stichting-SIVI/VBPUOdsk" target="_blank" rel="noopener" title="VBPUOdsk on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.sivi.org" target="_blank" rel="noopener" title="SIVI.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
     </a>
   
 </div>
@@ -1748,10 +1832,10 @@ If the receiving party has sent a feedback message with the status "Rejected," t
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "search.suggest", "content.code.copy", "navigation.instant"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.instant", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="../js/print-site.js"></script>
       
